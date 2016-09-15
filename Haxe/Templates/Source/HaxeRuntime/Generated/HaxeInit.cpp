@@ -59,6 +59,10 @@ static void *get_top_of_stack(void)
 static volatile int32 gDidInit = 0;
 DECLARE_FAST_TLS(tlsDidInit);
 
+bool is_thread_registered_in_hxcpp() {
+  return GET_TLS_VALUE(tlsDidInit);
+}
+
 void check_hx_init()
 {
   bool firstInit = true;

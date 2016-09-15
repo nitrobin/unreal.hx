@@ -1,6 +1,7 @@
 #pragma once
 
 #include "IntPtr.h"
+#include "NativeAttach.h"
 #include <GcRef.h>
 #include <unreal/helpers/HxcppRuntime.h>
 #include <uhx/TypeParamGlue.h>
@@ -18,6 +19,7 @@ public:
     this->haxeGcRef.set(haxeFn);
   }
   RV operator() (Args... params) const {
+    NativeAttach attachThreadToHxcpp;
     return TypeParamGlue<RV>::haxeToUe(
       ::unreal::helpers::HxcppRuntime::callFunction(
         const_cast<LambdaBinder<RV, Args...>*>(this)->haxeGcRef.get(),
@@ -37,6 +39,7 @@ public:
     this->haxeGcRef.set(haxeFn);
   }
   void operator() (Args... params) const {
+    NativeAttach attachThreadToHxcpp;
     ::unreal::helpers::HxcppRuntime::callFunction(
       const_cast<LambdaBinderVoid<Args...>*>(this)->haxeGcRef.get(),
       TypeParamGlue<Args>::ueToHaxe(params)...

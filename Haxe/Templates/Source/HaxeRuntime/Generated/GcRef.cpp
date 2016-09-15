@@ -1,4 +1,5 @@
 #include "HaxeRuntime.h"
+#include "NativeAttach.h"
 #include "IntPtr.h"
 #include "HaxeInit.h"
 #include <GcRef.h>
@@ -13,6 +14,8 @@
 }
 
 ::unreal::helpers::GcRef::GcRef(const GcRef& rhs) {
+  // register this since it might be copied from an unregistered thread
+  uhx::NativeAttach attachThreadToHxcpp;
   this->ref = ::unreal::helpers::GcRefStatic::init();
   this->set(const_cast<GcRef&>(rhs).get());
 }
