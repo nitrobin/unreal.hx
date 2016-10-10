@@ -306,6 +306,30 @@ class HaxeModuleRules extends BaseModuleRules
           if (this.config.disableUObject) {
             args.push('-D UHX_NO_UOBJECT');
           }
+          switch (target.Platform) {
+          case Win32 | Win64:
+            args.push('-D PLATFORM_WINDOWS');
+          case WinRT | WinRT_ARM:
+            args.push('-D PLATFORM_WINRT');
+          case Mac:
+            args.push('-D PLATFORM_MAC');
+            args.push('-D PLATFORM_APPLE');
+          case XboxOne:
+            args.push('-D PLATFORM_XBOXONE');
+          case PS4:
+            args.push('-D PLATFORM_PS4');
+          case IOS:
+            args.push('-D PLATFORM_IOS');
+            args.push('-D PLATFORM_APPLE');
+          case Android:
+            args.push('-D PLATFORM_ANDROID');
+          case HTML5:
+            args.push('-D PLATFORM_HTML5');
+          case Linux:
+            args.push('-D PLATFORM_LINUX');
+          case platform:
+            trace('Unknown platform $platform');
+          }
 
           if (this.config.dce != null) {
             args.push('-dce ${this.config.dce}');
