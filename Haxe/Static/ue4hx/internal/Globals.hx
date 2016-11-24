@@ -161,12 +161,12 @@ class Globals {
     if (hasOlderCache == null) {
       var dir = haxeRuntimeDir;
       if (dir == null) return;
-      if (FileSystem.exists('$dir/Generated/defines.txt')) {
-        var defines = getDefinesString();
-        this.hasOlderCache = File.getContent('$dir/Generated/defines.txt') == defines;
-      } else {
+//      if (FileSystem.exists('$dir/Generated/defines.txt')) {
+//        var defines = getDefinesString();
+//        this.hasOlderCache = File.getContent('$dir/Generated/defines.txt') == defines;
+//      } else {
         this.hasOlderCache = false;
-      }
+//      }
     }
   }
 

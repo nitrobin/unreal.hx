@@ -293,8 +293,11 @@ class HaxeModuleRules extends BaseModuleRules
           case WinRT:
             args.push('-D HXCPP_M64');
             args.push('-D winrt');
-          case _:
-            args.push('-D HXCPP_M64');
+          case Android:
+            Log.TraceWarning('Android');
+          case _:{
+            //args.push('-D HXCPP_M64');
+          }
           }
 
           // set correct ABI
@@ -339,6 +342,21 @@ class HaxeModuleRules extends BaseModuleRules
             } else {
               Log.TraceWarning('Cross-compilation was detected but no LINUX_ROOT environment variable was set');
             }
+            case "Android":
+//              // cross compiling
+              isCrossCompiling = true;
+              Log.TraceInformation('Cross compiling using Android NDK');
+              extraArgs = [
+                '-D toolchain=android',
+                '-D android',
+                '-D HXCPP_CLANG',
+                '-D magiclibs',
+                '-D HXCPP_ARMV7',
+                '-D HXCPP_ANDROID_PLATFORM=21',
+                '-D PLATFORM=android-21',
+                '-D TOOLCHAIN_VERSION=4.9',
+                '-D HXCPP_VERBOSE'
+              ];
           case _:
           }
 
