@@ -22,7 +22,9 @@ public:
   inline VariantPtr(void *inRHS) : raw( inRHS == 0 ? 0 : (((UIntPtr) inRHS) + 1) ) { }
   inline VariantPtr(IntPtr inRHS) : raw((UIntPtr) inRHS) { }
   inline VariantPtr(UIntPtr inRHS) : raw(inRHS) { }
+  #ifndef HX_ANDROID
   inline VariantPtr(int inRHS) : raw((UIntPtr) inRHS) { }
+  #endif
 #ifndef __UNREAL__
   inline VariantPtr(const Dynamic& inRHS) {
     if (inRHS.mPtr == 0) {
