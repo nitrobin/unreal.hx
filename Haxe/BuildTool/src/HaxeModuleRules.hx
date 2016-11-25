@@ -294,9 +294,9 @@ class HaxeModuleRules extends BaseModuleRules
             args.push('-D HXCPP_M64');
             args.push('-D winrt');
           case Android:
-            Log.TraceWarning('Android');
+            //
           case _:{
-            //args.push('-D HXCPP_M64');
+            args.push('-D HXCPP_M64');
           }
           }
 
@@ -346,15 +346,27 @@ class HaxeModuleRules extends BaseModuleRules
 //              // cross compiling
               isCrossCompiling = true;
               Log.TraceInformation('Cross compiling using Android NDK');
+
+//              Log.TraceInformation('Sys.environment: ');
+//              var e = Sys.environment();
+//              for(k in e.keys()){
+//                Log.TraceInformation(k + ' = ' + e.get(k));
+//              }
+
+              var platform = "19";
+              var toolchain = "4.8";
+//              var platform = "21";
+//              var toolchain = "4.9";
+
               extraArgs = [
                 '-D toolchain=android',
                 '-D android',
                 '-D HXCPP_CLANG',
                 '-D magiclibs',
                 '-D HXCPP_ARMV7',
-                '-D HXCPP_ANDROID_PLATFORM=21',
-                '-D PLATFORM=android-21',
-                '-D TOOLCHAIN_VERSION=4.9',
+                '-D HXCPP_ANDROID_PLATFORM=' + platform,
+                '-D PLATFORM=android-' + platform,
+                '-D TOOLCHAIN_VERSION=' + toolchain,
                 '-D HXCPP_VERBOSE'
               ];
           case _:
