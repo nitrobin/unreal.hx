@@ -353,23 +353,27 @@ class HaxeModuleRules extends BaseModuleRules
 //                Log.TraceInformation(k + ' = ' + e.get(k));
 //              }
 
-              var platform = "19";
-              var toolchain = "4.8";
-//              var platform = "21";
+//              var platform = "19";
 //              var toolchain = "4.9";
+              var platform = "21";
+              var toolchain = "4.9";
+              var clangVersion = "3.6";
 
               extraArgs = [
                 '-D toolchain=android',
                 '-D android',
+                '-D HXCPP_CPP11',
                 '-D HXCPP_CLANG',
                 '-D magiclibs',
                 '-D HXCPP_ARMV7',
                 '-D HXCPP_ANDROID_PLATFORM=' + platform,
                 '-D PLATFORM=android-' + platform,
                 '-D TOOLCHAIN_VERSION=' + toolchain,
+                '-D CLANG_VERSION=' + clangVersion,
                 '-D HXCPP_VERBOSE'
               ];
-          case _:
+              
+         case _:
           }
 
           if (extraArgs != null)
