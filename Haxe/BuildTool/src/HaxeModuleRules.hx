@@ -360,7 +360,7 @@ class HaxeModuleRules extends BaseModuleRules
               var clangVersion = "3.6";
 
               extraArgs = [
-                '-D toolchain=android',
+                '-D toolchain=androidue',
                 '-D android',
                 '-D HXCPP_CPP11',
                 '-D HXCPP_CLANG',
