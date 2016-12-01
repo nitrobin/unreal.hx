@@ -355,8 +355,8 @@ class HaxeModuleRules extends BaseModuleRules
 
 //              var platform = "19";
 //              var toolchain = "4.9";
-              var platform = "21";
-              var toolchain = "4.9";
+              var platform = "19";
+              var toolchain = "4.8";
               var clangVersion = "3.6";
 
               extraArgs = [
