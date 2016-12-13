@@ -3,6 +3,11 @@ package unreal;
 extern class UPlayerInput_Extra {
 
   /**
+    This player's version of Action Mappings
+   **/
+  public var ActionMappings : TArray<FInputActionKeyMapping>;
+
+  /**
     This player's version of Axis Mappings
    **/
   public var AxisMappings : TArray<FInputAxisKeyMapping>;
@@ -16,4 +21,6 @@ extern class UPlayerInput_Extra {
     Returns whether an Axis Mapping is inverted
    **/
   public function GetInvertAxis(AxisName : FName) : Bool;
+
+  public function AddActionMapping(KeyMapping : Const<PRef<FInputActionKeyMapping>>) : Void;
 }

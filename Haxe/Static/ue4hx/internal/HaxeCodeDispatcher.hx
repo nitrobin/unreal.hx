@@ -6,7 +6,7 @@ import haxe.CallStack;
  **/
 @:keep class HaxeCodeDispatcher {
   private static var inHaxeCode = false;
-  private static var inDebugger = unreal.FPlatformMisc.IsDebuggerPresent();
+  private static var inDebugger = #if (debug && HXCPP_DEBUGGER) true; #else unreal.FPlatformMisc.IsDebuggerPresent(); #end
 
   @:extern inline public static function runWithValue<T>(fn:Void->T, ?name:String):T {
     if (!inHaxeCode && !inDebugger) {
@@ -58,9 +58,13 @@ import haxe.CallStack;
     }
     trace('Error', 'Stack trace:\n' + CallStack.toString(stack));
     inHaxeCode = false;
-#if !WITH_EDITOR
-    trace('Fatal', 'Haxe run failed');
-    throw 'Error';
+#if WITH_EDITOR
+    var world = unreal.UEngine.GWorld.GetReference();
+    if (world == null || !world.IsPlayInEditor())
 #end
+    {
+    unreal.Log.fatal('Haxe run failed');
+    throw 'Error';
+    }
   }
 }

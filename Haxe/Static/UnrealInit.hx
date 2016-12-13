@@ -1,15 +1,16 @@
 import cpp.link.StaticStd;
 import cpp.link.StaticRegexp;
 import cpp.link.StaticZlib;
+#if WITH_EDITOR
 import unreal.*;
 import unreal.helpers.HxcppRuntime;
 import ue4hx.internal.HaxeCodeDispatcher;
-#if WITH_EDITOR
 import unreal.editor.UEditorEngine;
 import unreal.developer.hotreload.IHotReloadModule;
 import unreal.FTimerManager;
 import unreal.editor.*;
 import sys.FileSystem;
+import unreal.developer.directorywatcher.*;
 #end
 
 // this code is needed on windows since we're compiling with -MT instead of -MD
@@ -21,6 +22,12 @@ class UnrealInit
   {
     haxe.Log.trace = customTrace;
     trace("initializing unreal haxe");
+
+#if (debug && HXCPP_DEBUGGER)
+    if (Sys.getEnv("HXCPP_DEBUG") != null) {
+      new debugger.HaxeRemote(true, "localhost");
+    }
+#end
 
 #if WITH_EDITOR
     try {
@@ -61,22 +68,26 @@ class UnrealInit
 #if WITH_CPPIA
     function loadCppia() {
       trace('loading cppia');
-      untyped __global__.__scriptable_load_cppia(sys.io.File.getContent(target));
-      var cls:Dynamic = Type.resolveClass('ue4hx.internal.LiveReloadScript');
-      if (cls != null) {
-        trace('Setting cppia live reload types');
-        cls.bindFunctions();
-      }
-      cls = Type.resolveClass('ue4hx.internal.CppiaCompilation');
-      if (cls != null) {
-        var newStamp:Float = cls.timestamp;
-        if (Math.abs(newStamp - internalStamp) < .1) {
-          trace('Error', 'There seems to be an error loading the new cppia script, as the last built script has the same timestamp as the current. Ignore this if the output file had its timestamp updated, ' +
-                'but it wasn\'t recompiled. Otherwise, please check your UE4Editor console (stdout log) to have more information on the error');
-        } else if (newStamp < internalStamp) {
-          trace('Warning', 'Newly loaded cppia script seems to be older than last version: ${Date.fromTime(newStamp)} and ${Date.fromTime(internalStamp)}');
+      try {
+        untyped __global__.__scriptable_load_cppia(sys.io.File.getContent(target));
+        var cls:Dynamic = Type.resolveClass('ue4hx.internal.LiveReloadScript');
+        if (cls != null) {
+          trace('Setting cppia live reload types');
+          cls.bindFunctions();
         }
-        internalStamp = newStamp;
+        cls = Type.resolveClass('ue4hx.internal.CppiaCompilation');
+        if (cls != null) {
+          var newStamp:Float = cls.timestamp;
+          if (Math.abs(newStamp - internalStamp) < .1) {
+            trace('Error', 'There seems to be an error loading the new cppia script, as the last built script has the same timestamp as the current. Ignore this if the output file had its timestamp updated, ' +
+                  'but it wasn\'t recompiled. Otherwise, please check your UE4Editor console (stdout log) to have more information on the error');
+          } else if (newStamp < internalStamp) {
+            trace('Warning', 'Newly loaded cppia script seems to be older than last version: ${Date.fromTime(newStamp)} and ${Date.fromTime(internalStamp)}');
+          }
+          internalStamp = newStamp;
+        }
+      } catch(e:Dynamic) {
+        trace('Error', 'Error while loading cppia: $e');
       }
       stamp = FileSystem.stat(target).mtime.getTime();
     }
@@ -88,15 +99,7 @@ class UnrealInit
     }
 
     // add file watcher
-    var watchHandle = FTimerHandle.create();
-    var timerDelegate = FTimerDelegate.create();
-    timerDelegate.BindLambda(function() {
-      if (FileSystem.exists(target) && FileSystem.stat(target).mtime.getTime() > stamp) {
-        if (!disabled) {
-          loadCppia();
-        }
-      }
-    });
+    var dirWatchHandle:FTickerDelegate = null;
 #end
 
     var hotReloadHandle = null,
@@ -131,9 +134,10 @@ class UnrealInit
       if (shouldCleanup) {
         trace('Hot reload detected');
 #if WITH_CPPIA
-        if (watchHandle != null) {
-          UEditorEngine.GEditor.GetTimerManager().Get().ClearTimer(watchHandle);
-          watchHandle = null;
+        if (dirWatchHandle != null) {
+          dirWatchHandle.Unbind();
+          dirWatchHandle.dispose();
+          dirWatchHandle = null;
         }
 #end
         if (hotReloadHandle != null) {
@@ -147,10 +151,22 @@ class UnrealInit
       }
     }
 
-    function addWatcher() {
 #if WITH_CPPIA
-      UEditorEngine.GEditor.GetTimerManager().Get().SetTimer(watchHandle, timerDelegate, 1, true, 0);
+    var dirWatchHandle = FTickerDelegate.create();
+    dirWatchHandle.BindLambda(function(deltaTime) {
+      if (FileSystem.exists(target) && FileSystem.stat(target).mtime.getTime() > stamp) {
+        if (!disabled) {
+          loadCppia();
+        }
+      }
+
+      return true;
+    });
+
+    FTicker.GetCoreTicker().AddTicker(dirWatchHandle, 2);
 #end
+
+    function addWatcher() {
       hotReloadHandle = IHotReloadModule.Get().OnHotReload().AddLambda(onHotReload);
       onCompHandle = IHotReloadModule.Get().OnModuleCompilerFinished().AddLambda(onCompilation);
       onBeginCompHandle = IHotReloadModule.Get().OnModuleCompilerStarted().AddLambda(onBeginCompilation);
@@ -184,6 +200,8 @@ class UnrealInit
         case "ERROR":
           unreal.Log.error(str + infos.customParams.join(','));
         case "FATAL":
+          unreal.Log.error(str + infos.customParams.join(','));
+          unreal.Log.error('Stack trace:\n' + haxe.CallStack.toString(haxe.CallStack.callStack()));
           unreal.Log.fatal(str + infos.customParams.join(','));
         case _:
           unreal.Log.trace(str + v + ',' + infos.customParams.join(','));

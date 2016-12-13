@@ -51,6 +51,10 @@ class HaxeModuleRules extends BaseModuleRules
   }
 
   private function shouldCompileCppia(target:TargetInfo) {
+    if (Std.is(this, HaxeProgramRules)) {
+      return false;
+    }
+
     if (this.config.disableCppia) {
       return false;
     }
@@ -65,7 +69,7 @@ class HaxeModuleRules extends BaseModuleRules
     return true;
   }
 
-  public static function getLibLocation(target:TargetInfo) {
+  public static function getLibLocation(curName:Null<String>, target:TargetInfo) {
     var folder:Dynamic = cs.Lib.array(UProjectInfo.FilterGameProjects(false, null).ToArray())[0].Folder;
     var gameDir = folder.ToString();
     var libName = switch(target.Platform) {
@@ -74,7 +78,8 @@ class HaxeModuleRules extends BaseModuleRules
       case _:
         'libhaxeruntime.a';
     };
-    var outputDir = gameDir + '/Intermediate/Haxe/${target.Platform}-${target.Configuration}';
+    var name = curName == null ? '' : '${curName}-';
+    var outputDir = gameDir + '/Intermediate/Haxe/${name}${target.Platform}-${target.Configuration}';
     if (UEBuildConfiguration.bBuildEditor) {
       outputDir += '-Editor';
     }
@@ -84,6 +89,10 @@ class HaxeModuleRules extends BaseModuleRules
 
   override private function run(target:TargetInfo, firstRun:Bool)
   {
+    if (ProjectFileGenerator.bGenerateProjectFiles) {
+      firstRun = false;
+    }
+
     this.config = getConfig();
     if (this.config == null) this.config = {};
     var base = Path.GetFullPath('$modulePath/..');
@@ -110,15 +119,20 @@ class HaxeModuleRules extends BaseModuleRules
         }
       }
     }
-    this.PublicDependencyModuleNames.addRange(['Core','CoreUObject','Engine','InputCore','SlateCore']);
+
+    if (!Std.is(this, HaxeProgramRules)) {
+      // only include default dependencies if not compiling an external program
+      this.PublicDependencyModuleNames.addRange(['Core','CoreUObject','Engine','InputCore','SlateCore']);
+      if (UEBuildConfiguration.bBuildEditor)
+        this.PublicDependencyModuleNames.addRange(['UnrealEd']);
+    }
     this.PrivateIncludePaths.Add(base + '/Generated/Private');
     this.PublicIncludePaths.Add(base + '/Generated');
     this.PublicIncludePaths.Add(base + '/Generated/Shared');
     this.PublicIncludePaths.Add(base + '/Generated/Public');
-    if (UEBuildConfiguration.bBuildEditor)
-      this.PublicDependencyModuleNames.addRange(['UnrealEd']);
 
-    var outputStatic = getLibLocation(target),
+    var curName = cs.Lib.toNativeType(std.Type.getClass(this)).Name;
+    var outputStatic = getLibLocation(Std.is(this, HaxeProgramRules) ? curName : null, target),
         outputDir = haxe.io.Path.directory(outputStatic);
     if (!exists(outputDir)) createDirectory(outputDir);
 
@@ -163,6 +177,10 @@ class HaxeModuleRules extends BaseModuleRules
     if (!this.config.disabled && firstRun)
     {
       var debugSymbols = target.Configuration != Shipping && config.noDebug != true;
+      if (config.noDebug == false) {
+        debugSymbols = true;
+      }
+
       var teverything = timer('Haxe setup (all compilation times included)');
       if (Sys.systemName() != 'Windows' && Sys.getEnv('PATH').indexOf('/usr/local/bin') < 0) {
         Sys.putEnv('PATH', Sys.getEnv('PATH') + ":/usr/local/bin");
@@ -181,19 +199,20 @@ class HaxeModuleRules extends BaseModuleRules
 
         // Windows paths have '\' which needs to be escaped for macro arguments
         var escapedPluginPath = pluginPath.replace('\\','\\\\');
-        var escapedGameDir = gameDir.replace('\\','\\\\');
+        var escapedHaxeDir = haxeDir.replace('\\','\\\\');
         var forceCreateExterns = this.config.forceBakeExterns == null ? Sys.getEnv('BAKE_EXTERNS') != null : this.config.forceBakeExterns;
 
         var externsFolder = UEBuildConfiguration.bBuildEditor ? 'Externs_Editor' : 'Externs';
         var bakeArgs = [
           '# this pass will bake the extern type definitions into glue code',
+          exists('$haxeDir/baker-arguments.hxml') ? 'baker-arguments.hxml' : '',
           '-cp $pluginPath/Haxe/Static',
           '-D use-rtti-doc', // we want the documentation to be persisted
           '-D bake-externs',
           '',
-          '-cpp $gameDir/Haxe/Generated/$externsFolder',
+          '-cpp $haxeDir/Generated/$externsFolder',
           '--no-output', // don't generate cpp files; just execute our macro
-          '--macro ue4hx.internal.ExternBaker.process(["$escapedPluginPath/Haxe/Externs","$escapedGameDir/Haxe/Externs"], $forceCreateExterns)'
+          '--macro ue4hx.internal.ExternBaker.process(["$escapedPluginPath/Haxe/Externs","$escapedHaxeDir/Externs"], $forceCreateExterns)'
         ];
         if (UEBuildConfiguration.bBuildEditor) {
           bakeArgs.push('-D WITH_EDITOR');
@@ -201,6 +220,13 @@ class HaxeModuleRules extends BaseModuleRules
         if (target.Configuration == Shipping) {
           bakeArgs.push('-D UE_BUILD_SHIPPING');
         }
+        if (Std.is(this, HaxeProgramRules)) {
+          bakeArgs.push('-D UE_PROGRAM');
+        }
+        if (this.config.disableUObject) {
+          bakeArgs.push('-D UHX_NO_UOBJECT');
+        }
+
         trace('baking externs');
         var tbake = timer('bake externs');
         var ret = compileSources(bakeArgs);
@@ -209,8 +235,8 @@ class HaxeModuleRules extends BaseModuleRules
 
         // compileSource('bake-externs',
         // get all modules that need to be compiled
-        var modulePaths = ['$gameDir/Haxe/Static'],
-            scriptPaths = ['$gameDir/Haxe/Scripts'];
+        var modulePaths = ['$haxeDir/Static'],
+            scriptPaths = ['$haxeDir/Scripts'];
         if (this.config.extraStaticClasspaths != null) {
           modulePaths = modulePaths.concat(this.config.extraStaticClasspaths);
         }
@@ -241,7 +267,7 @@ class HaxeModuleRules extends BaseModuleRules
 
           cps = [
             'arguments.hxml',
-            '-cp $gameDir/Haxe/Generated/$externsFolder',
+            '-cp $haxeDir/Generated/$externsFolder',
             '-cp $pluginPath/Haxe/Static',
           ];
           for (path in modulePaths) {
@@ -255,7 +281,7 @@ class HaxeModuleRules extends BaseModuleRules
             '-D static_link',
             '-D destination=$outputStatic',
             '-D haxe_runtime_dir=$curSourcePath',
-            '-D bake_dir=$gameDir/Haxe/Generated/$externsFolder',
+            '-D bake_dir=$haxeDir/Generated/$externsFolder',
             '-D HXCPP_DLL_EXPORT',
             '-cpp $targetDir/Built',
             '--macro ue4hx.internal.CreateGlue.run(' +toMacroDef(modulePaths) +', ' + toMacroDef(scriptPaths) + ')',
@@ -274,6 +300,12 @@ class HaxeModuleRules extends BaseModuleRules
           if (target.Configuration == Shipping) {
             args.push('-D UE_BUILD_SHIPPING');
           }
+          if (Std.is(this, HaxeProgramRules)) {
+            args.push('-D UE_PROGRAM');
+          }
+          if (this.config.disableUObject) {
+            args.push('-D UHX_NO_UOBJECT');
+          }
 
           if (this.config.dce != null) {
             args.push('-dce ${this.config.dce}');
@@ -281,6 +313,10 @@ class HaxeModuleRules extends BaseModuleRules
 
           if (debugSymbols) {
             args.push('-debug');
+            if (this.config.debugger) {
+              args.push('-lib hxcpp-debugger');
+              args.push('-D HXCPP_DEBUGGER');
+            }
           }
 
           switch (target.Platform) {
@@ -331,7 +367,9 @@ class HaxeModuleRules extends BaseModuleRules
               ];
               oldEnvs = setEnvs([
                 'PATH' => Sys.getEnv("PATH") + (Sys.systemName() == "Windows" ? ";" : ":") + crossPath + '/bin',
-                'CXX' => 'clang++ --sysroot "$crossPath" -target x86_64-unknown-linux-gnu',
+                'CXX' => (Sys.getEnv("CROSS_LINUX_SYMBOLS") == null ?
+                  'clang++ --sysroot "$crossPath" -target x86_64-unknown-linux-gnu' :
+                  'clang++ --sysroot "$crossPath" -target x86_64-unknown-linux-gnu -g'),
                 'CC' => 'clang --sysroot "$crossPath" -target x86_64-unknown-linux-gnu',
                 'HXCPP_AR' => 'x86_64-unknown-linux-gnu-ar',
                 'HXCPP_AS' => 'x86_64-unknown-linux-gnu-as',
@@ -393,7 +431,7 @@ class HaxeModuleRules extends BaseModuleRules
           thaxe();
           if (!isCrossCompiling) {
             this.createHxml('build-static', args);
-            var complArgs = ['--cwd $gameDir/Haxe', '--no-output'].concat(args);
+            var complArgs = ['--cwd $haxeDir', '--no-output'].concat(args);
             this.createHxml('compl-static', complArgs.filter(function(v) return !v.startsWith('--macro')));
           }
 
@@ -468,6 +506,8 @@ class HaxeModuleRules extends BaseModuleRules
           if (target.Configuration == Shipping) {
             args.push('-D UE_BUILD_SHIPPING');
           }
+          if (config.extraCppiaCompileArgs != null)
+            args = args.concat(config.extraCppiaCompileArgs);
 
           if (!FileSystem.exists('$gameDir/Binaries/Haxe')) {
             FileSystem.createDirectory('$gameDir/Binaries/Haxe');
@@ -527,9 +567,16 @@ class HaxeModuleRules extends BaseModuleRules
       //   this.PrivateIncludePaths.Add('$hxcppPath/include');
       this.Definitions.Add('WITH_HAXE=1');
       this.Definitions.Add('HXCPP_EXTERN_CLASS_ATTRIBUTES=');
+      if (this.config.disableUObject) {
+        this.Definitions.Add('UHX_NO_UOBJECT=1');
+      }
       // this.PublicAdditionalLibraries.Add(outputStatic);
       if (this.config.glueTargetModule == null) {
-        this.PrivateDependencyModuleNames.Add('HaxeExternalModule');
+        if (!Std.is(this, HaxeProgramRules)) {
+          this.PrivateDependencyModuleNames.Add('HaxeExternalModule');
+        } else {
+          this.PublicAdditionalLibraries.Add(HaxeModuleRules.getLibLocation(curName, target));
+        }
         this.Definitions.Add('MAY_EXPORT_SYMBOL=');
       }
 
@@ -568,7 +615,7 @@ class HaxeModuleRules extends BaseModuleRules
   {
     var proj = getProjectName();
     if (proj == null) throw 'no uproject found!';
-    InitPlugin.updateProject(this.gameDir, this.pluginPath, proj, false, targetModule);
+    InitPlugin.updateProject(this.gameDir, this.haxeDir, this.pluginPath, proj, false, targetModule);
   }
 
   private static function setEnvs(envs:Map<String,String>):Map<String,String> {
@@ -589,7 +636,7 @@ class HaxeModuleRules extends BaseModuleRules
     var i = -1;
     for (arg in args)
       hxml.add(arg + '\n');
-    File.saveContent('$gameDir/Haxe/gen-$name.hxml', hxml.toString());
+    File.saveContent('$haxeDir/gen-$name.hxml', hxml.toString());
   }
 
   private function compileSources(args:Array<String>, ?realOutput:String)
@@ -614,7 +661,7 @@ class HaxeModuleRules extends BaseModuleRules
       }
       cmdArgs.push(arg);
     }
-    cmdArgs = ['--cwd', haxeSourcesPath].concat(cmdArgs);
+    cmdArgs = ['--cwd', haxeDir].concat(cmdArgs);
     if (this.config.enableTimers) {
       cmdArgs.push('--times');
       cmdArgs.push('-D');

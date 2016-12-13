@@ -13,6 +13,9 @@ extern class UWorld_Extra {
   public function GetGameInstance() : UGameInstance;
 
   @:thisConst
+  public function GetGameViewport() : UGameViewportClient;
+
+  @:thisConst
   public function IsPlayInEditor() : Bool;
 
   @:thisConst
@@ -50,6 +53,22 @@ extern class UWorld_Extra {
   @:thisConst
   public function GetTimeSeconds() : Float32;
 
+	/**
+	* Returns time in seconds since world was brought up for play, does NOT stop when game pauses, NOT dilated/clamped
+	*
+	* @return time in seconds since world was brought up for play
+	*/
+  @:thisConst
+	public function GetRealTimeSeconds() : Float32;
+
+  /**
+	* Returns time in seconds since world was brought up for play, IS stopped when game pauses, NOT dilated/clamped
+	*
+	* @return time in seconds since world was brought up for play
+	*/
+  @:thisConst
+  public function GetAudioTimeSeconds() : Float32;
+
   /**
    * Returns the frame delta time in seconds adjusted by e.g. time dilation.
    *
@@ -58,6 +77,23 @@ extern class UWorld_Extra {
   @:thisConst
   public function GetDeltaSeconds() : Float32;
 
+	/** Return the URL of this level on the local machine. */
+  @:thisConst
+	function GetLocalURL() : FString;
+
+	// Return the URL of this level, which may possibly
+	// exist on a remote machine.
+  @:thisConst
+	function GetAddressURL() : FString;
+
+	/**
+	 * Returns the name of the current map, taking into account using a dummy persistent world
+	 * and loading levels into it via PrepareMapChange.
+	 *
+	 * @return	name of the current map
+	 */
+   @:thisConst
+	 function GetMapName() : FString;
 
   /**
    * Jumps the server to new level.  If bAbsolute is true and we are using seemless traveling, we
@@ -104,6 +140,9 @@ extern class UWorld_Extra {
   @:thisConst
   public function LineTraceMultiByChannel(OutHits:PRef<TArray<FHitResult>>, Start:Const<PRef<FVector>>,End:Const<PRef<FVector>>, TraceChannel:ECollisionChannel, Params:Const<PRef<FCollisionQueryParams>>) : Bool;
 
+  @:thisConst
+  public function SweepSingleByChannel(OutHit:PRef<FHitResult>, Start:Const<PRef<FVector>>, End:Const<PRef<FVector>>, Rot:Const<PRef<FQuat>>, TraceChannel:ECollisionChannel, Shape:Const<PRef<FCollisionShape>>, Params:Const<PRef<FCollisionQueryParams>>) : Bool;
+
   @:typeName public function SpawnActorDeferred<T>(
     aClass:UClass,
     transform:Const<PRef<FTransform>>,
@@ -121,8 +160,33 @@ extern class UWorld_Extra {
       params:Const<PRef<FCollisionQueryParams>>,
       responseParam:Const<PRef<FCollisionResponseParams>>):Bool;
 
+
+	/**
+	 *  Test the collision of a shape at the supplied location using a specific channel, and determine the set of components that it overlaps
+	 *  @param  OutOverlaps     Array of components found to overlap supplied box
+	 *  @param  Pos             Location of center of shape to test against the world
+	 *  @param  TraceChannel    The 'channel' that this query is in, used to determine which components to hit
+	 *  @param	CollisionShape	CollisionShape - supports Box, Sphere, Capsule
+	 *  @param  Params          Additional parameters used for the trace
+	 * 	@param 	ResponseParam	ResponseContainer to be used for this trace
+	 *  @return TRUE if OutOverlaps contains any blocking results
+	 */
+  @:thisConst
+	function OverlapMultiByChannel(
+    OutOverlaps:PRef<TArray<FOverlapResult>>,
+    Pos:Const<PRef<FVector>>,
+    Rot:Const<PRef<FQuat>>,
+    TraceChannel:ECollisionChannel,
+    CollisionShape:Const<PRef<FCollisionShape>>,
+    Params:Const<PRef<FCollisionQueryParams>>,
+    ResponseParam:Const<PRef<FCollisionResponseParams>>
+  ) : Bool;
+
   /**
     Returns the AWorldSettings actor associated with this world.
    **/
   function GetWorldSettings(bCheckStreamingPesistent:Bool, bChecked:Bool):AWorldSettings;
+
+	/** Gets this world's instance for a given collection. */
+  function GetParameterCollectionInstance(Collection:Const<UMaterialParameterCollection>) : UMaterialParameterCollectionInstance;
 }

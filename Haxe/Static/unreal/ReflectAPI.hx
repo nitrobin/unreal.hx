@@ -2,6 +2,7 @@ package unreal;
 using StringTools;
 
 class ReflectAPI {
+#if !UHX_NO_UOBJECT
   /**
     Sets the `obj` `field` to `value`.
     Additionally from the basic types supported by Haxe, the following type transformations are made:
@@ -271,4 +272,5 @@ class ReflectAPI {
     }
     return obj.GeneratedClass;
   }
+#end
 }

@@ -1,5 +1,6 @@
 package unreal.helpers;
 import unreal.Wrapper;
+import ue4hx.internal.HaxeCodeDispatcher;
 
 @:headerClassCode('
   inline static unreal::UIntPtr callFunction(unreal::UIntPtr ptr) { return callFunction0(ptr); }
@@ -30,11 +31,20 @@ import unreal.Wrapper;
 
 
   public static function uobjectWrap(uobj:UIntPtr) : UIntPtr {
+#if !UHX_NO_UOBJECT
     return HaxeHelpers.dynamicToPointer(UObject.wrap(uobj));
+#else
+    return throw 'Cannot access uobjects on UE programs';
+#end
   }
 
   public static function uobjectUnwrap(uobj:UIntPtr) : UIntPtr {
-    return @:privateAccess (HaxeHelpers.pointerToDynamic(uobj) : UObject).wrapped;
+#if !UHX_NO_UOBJECT
+    var uobj = (HaxeHelpers.pointerToDynamic(uobj) : UObject);
+    return uobj != null ? @:privateAccess uobj.wrapped : 0;
+#else
+    return throw 'Cannot access uobjects on UE programs';
+#end
   }
 
   public static function arrayIndex(array:UIntPtr, index:Int) : UIntPtr {
@@ -86,6 +96,14 @@ import unreal.Wrapper;
   public static function boxVariantPtr(ptr:VariantPtr):UIntPtr {
     var dyn:Dynamic = ptr;
     return HaxeHelpers.dynamicToPointer(dyn);
+  }
+
+  public static function enterGCFreeZone() {
+    cpp.vm.Gc.enterGCFreeZone();
+  }
+
+  public static function exitGCFreeZone() {
+    cpp.vm.Gc.exitGCFreeZone();
   }
 
   public static function createInlinePodWrapper(size:Int, info:UIntPtr) : VariantPtr {
@@ -153,31 +171,31 @@ import unreal.Wrapper;
 
 
   public static function callFunction0(ptr:UIntPtr) : UIntPtr {
-    return toPtr( toDyn(ptr)() );
+    return toPtr( HaxeCodeDispatcher.runWithValue( function() return toDyn(ptr)() ));
   }
   public static function callFunction1(ptr:UIntPtr, arg0:UIntPtr) : UIntPtr {
-    return toPtr( (toDyn(ptr))(toDyn(arg0)) );
+    return toPtr( HaxeCodeDispatcher.runWithValue( function() return (toDyn(ptr))(toDyn(arg0)) ));
   }
   public static function callFunction2(ptr:UIntPtr, arg0:UIntPtr, arg1:UIntPtr) : UIntPtr {
-    return toPtr( (toDyn(ptr))(toDyn(arg0), toDyn(arg1)) );
+    return toPtr( HaxeCodeDispatcher.runWithValue( function() return (toDyn(ptr))(toDyn(arg0), toDyn(arg1)) ));
   }
   public static function callFunction3(ptr:UIntPtr, arg0:UIntPtr, arg1:UIntPtr, arg2:UIntPtr) : UIntPtr {
-    return toPtr( (toDyn(ptr))(toDyn(arg0), toDyn(arg1), toDyn(arg2)) );
+    return toPtr( HaxeCodeDispatcher.runWithValue( function() return (toDyn(ptr))(toDyn(arg0), toDyn(arg1), toDyn(arg2)) ));
   }
   public static function callFunction4(ptr:UIntPtr, arg0:UIntPtr, arg1:UIntPtr, arg2:UIntPtr, arg3:UIntPtr) : UIntPtr {
-    return toPtr( (toDyn(ptr))(toDyn(arg0), toDyn(arg1), toDyn(arg2), toDyn(arg3)) );
+    return toPtr( HaxeCodeDispatcher.runWithValue( function() return (toDyn(ptr))(toDyn(arg0), toDyn(arg1), toDyn(arg2), toDyn(arg3)) ));
   }
   public static function callFunction5(ptr:UIntPtr, arg0:UIntPtr, arg1:UIntPtr, arg2:UIntPtr, arg3:UIntPtr, arg4:UIntPtr) : UIntPtr {
-    return toPtr( (toDyn(ptr))(toDyn(arg0), toDyn(arg1), toDyn(arg2), toDyn(arg3), toDyn(arg4)) );
+    return toPtr( HaxeCodeDispatcher.runWithValue( function() return (toDyn(ptr))(toDyn(arg0), toDyn(arg1), toDyn(arg2), toDyn(arg3), toDyn(arg4)) ));
   }
   public static function callFunction6(ptr:UIntPtr, arg0:UIntPtr, arg1:UIntPtr, arg2:UIntPtr, arg3:UIntPtr, arg4:UIntPtr, arg5:UIntPtr) : UIntPtr {
-    return toPtr( (toDyn(ptr))(toDyn(arg0), toDyn(arg1), toDyn(arg2), toDyn(arg3), toDyn(arg4), toDyn(arg5)) );
+    return toPtr( HaxeCodeDispatcher.runWithValue( function() return (toDyn(ptr))(toDyn(arg0), toDyn(arg1), toDyn(arg2), toDyn(arg3), toDyn(arg4), toDyn(arg5)) ));
   }
   public static function callFunction7(ptr:UIntPtr, arg0:UIntPtr, arg1:UIntPtr, arg2:UIntPtr, arg3:UIntPtr, arg4:UIntPtr, arg5:UIntPtr, arg6:UIntPtr) : UIntPtr {
-    return toPtr( (toDyn(ptr))(toDyn(arg0), toDyn(arg1), toDyn(arg2), toDyn(arg3), toDyn(arg4), toDyn(arg5), toDyn(arg6)) );
+    return toPtr( HaxeCodeDispatcher.runWithValue( function() return (toDyn(ptr))(toDyn(arg0), toDyn(arg1), toDyn(arg2), toDyn(arg3), toDyn(arg4), toDyn(arg5), toDyn(arg6)) ));
   }
   public static function callFunction8(ptr:UIntPtr, arg0:UIntPtr, arg1:UIntPtr, arg2:UIntPtr, arg3:UIntPtr, arg4:UIntPtr, arg5:UIntPtr, arg6:UIntPtr, arg7:UIntPtr) : UIntPtr {
-    return toPtr( (toDyn(ptr))(toDyn(arg0), toDyn(arg1), toDyn(arg2), toDyn(arg3), toDyn(arg4), toDyn(arg5), toDyn(arg6), toDyn(arg7)) );
+    return toPtr( HaxeCodeDispatcher.runWithValue( function() return (toDyn(ptr))(toDyn(arg0), toDyn(arg1), toDyn(arg2), toDyn(arg3), toDyn(arg4), toDyn(arg5), toDyn(arg6), toDyn(arg7)) ));
   }
 }
 

@@ -401,7 +401,7 @@ class UExtensionBuild {
               }
 
               var repType = MacroHelpers.extractStrings(uprop.meta, ':ureplicate')[0];
-              replicatedProps[uprop] = repType;
+              replicatedProps[getUName(uprop)] = repType;
               hasReplicatedProperties = true;
             }
 
@@ -443,9 +443,10 @@ class UExtensionBuild {
 
           cppCode += 'void ${nativeUe.getCppClass()}::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {\n';
           cppCode += '\tSuper::GetLifetimeReplicatedProps(OutLifetimeProps);\n';
-          for (replicatedProp in replicatedProps.keys()) {
-            var uname = getUName(replicatedProp);
-            var repType = replicatedProps[replicatedProp];
+          var repKeys = [ for (prop in replicatedProps.keys()) prop ];
+          repKeys.sort(Reflect.compare);
+          for (uname in repKeys) {
+            var repType = replicatedProps[uname];
             if (repType == null) {
               cppCode += '\tDOREPLIFETIME(${nativeUe.getCppClass()}, $uname);\n';
             } else {
@@ -678,7 +679,7 @@ class UExtensionBuild {
         throw new Error(':uoverrideSubobject requires two parameters: the name of the component, and the override type', clt.pos);
       }
       var overrideName = switch (fld.params[0].expr) {
-      case EConst(CString(_)): fld.params[0].toString();
+      case EConst(CString(s)): '"${s.replace("\n","\\n").replace("\t","\\t").replace("'","\\'").replace('"',"\\\"")}"';
       case EField(_) | EConst(CIdent(_)):
         fld.params[0].toString().replace('.','::');
       default: throw new Error('@:uoverrideSubobject first parameter should be the name of the component to override', clt.pos);

@@ -28,6 +28,13 @@ typedef HaxeModuleConfig = {
   ?extraCompileArgs:Array<String>,
 
   /**
+    Adds compilation arguments to the cppia build hxml.
+    This follows the hxml convention, with each argument representing a line in the hxml.
+    Empty lines and comments are supported
+   **/
+  ?extraCppiaCompileArgs:Array<String>,
+
+  /**
     Adds extra static classpaths to be compiled
     Every .hx type in this folder will be compiled
    **/
@@ -71,9 +78,20 @@ typedef HaxeModuleConfig = {
   ?cppiaModuleExclude:Array<String>,
 
   /**
-    forces the Haxe compilation to not include -debug
+    forces the Haxe compilation to not include -debug. Set explicitly to `false` to force debug mode,
+    even in Shipping
    **/
-  ?noDebug:Bool
+  ?noDebug:Bool,
+
+  /**
+    Do not compile with UObject support (defines -D UHX_NO_UOBJECT)
+   **/
+  ?disableUObject:Bool,
+
+  /**
+    Compile with hxcpp debugger support
+   **/
+  ?debugger:Bool
 }
 
 @:enum abstract Dce(String) from String {

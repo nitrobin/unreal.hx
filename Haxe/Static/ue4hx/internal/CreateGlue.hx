@@ -28,8 +28,10 @@ class CreateGlue {
       getModules(path, toCompile);
     }
     toCompile.push('UnrealInit');
-    toCompile.push('unreal.ReflectAPI');
-    toCompile.push('unreal.ByteArray');
+    if (!Context.defined('UHX_NO_UOBJECT')) {
+      toCompile.push('unreal.ReflectAPI');
+      toCompile.push('unreal.ByteArray');
+    }
     var scriptModules = [];
     for (path in scriptPaths) {
       getModules(path, scriptModules);
@@ -208,7 +210,7 @@ class CreateGlue {
     if (firstCompilation) {
       firstCompilation = false;
       Context.onMacroContextReused(function() {
-        trace('macro context reused');
+        // trace('macro context reused');
         hasRun = false;
         // we need to add these classpaths again
         // otherwise, the compilation server will not find the

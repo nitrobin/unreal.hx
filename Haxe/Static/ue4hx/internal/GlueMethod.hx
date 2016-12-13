@@ -68,6 +68,26 @@ class GlueMethod {
       this.meth.ret = this.thisConv;
     }
 
+    if (meth.flags.hasAny(Static) && meth.specialization != null && meth.specialization.types.length > 0) {
+      switch(meth.uname) {
+        case 'new' | '.ctor':
+        case _:
+          switch(thisConv.data) {
+          case CStruct(type,flags,info,params):
+            if (params != null && params.length > 0) {
+              var sParams = meth.specialization.types.slice(0,params.length),
+                  methParams = meth.specialization.types.slice(params.length);
+              this.thisConv = thisConv.withData(CStruct(type,flags,info,sParams));
+              if (methParams.length > 0) {
+                meth.specialization = { types:methParams, genericFunction:meth.specialization.genericFunction };
+              } else {
+                meth.specialization = null;
+              }
+            }
+          case _:
+          }
+      }
+    }
 
     this.process();
   }
@@ -232,18 +252,29 @@ class GlueMethod {
       } else {
         '${this.glueType}.${escapeGlue(meth.name)}';
       };
+      this.haxeCode = [];
+      if (this.meth.uname != '.equals') {
+        for (arg in meth.args) {
+          switch(arg.t.data) {
+            case CStruct(_) if(!arg.t.hasModifier(Ref) && !arg.t.hasModifier(Ptr)):
+              haxeCode.push('if (${arg.name} == null) unreal.helpers.HaxeHelpers.nullDeref("${arg.name}");');
+            case _:
+          }
+        }
+      }
 
       var haxeBody =
         '$haxeBodyCall(' +
           [ for (arg in this.glueArgs) arg.t.haxeToGlue(arg.name, this.ctx) ].join(', ') +
         ')';
       if (meth.flags.hasAny(Property) && meth.name.startsWith('set_')) {
-        this.haxeCode = [haxeBody + ';' , 'return value;'];
+        this.haxeCode = this.haxeCode.concat([haxeBody + ';' , 'return value;']);
       } else if (!isVoid) {
-        this.haxeCode = ['return ' + meth.ret.glueToHaxe(haxeBody, this.ctx) + ';'];
+        this.haxeCode = this.haxeCode.concat(['return ' + meth.ret.glueToHaxe(haxeBody, this.ctx) + ';']);
       } else {
-        this.haxeCode = [haxeBody + ';'];
+        this.haxeCode = this.haxeCode.concat([haxeBody + ';']);
       }
+
       if (body != null) {
         this.haxeCode.unshift(body);
       }
@@ -258,7 +289,7 @@ class GlueMethod {
   }
 
   private function shouldCheckPointer() {
-    return !this.meth.flags.hasAny(Static) && !this.thisConv.data.match(CUObject(_));
+    return !this.meth.flags.hasAny(Static);
   }
 
   private function genCppCall(body:String, prefix:String, outVars:HelperBuf) {
@@ -303,8 +334,21 @@ class GlueMethod {
     } else {
       body += '(' + cppArgTypes.join(', ') + ')';
     }
+    var gcFree = this.meth.meta.hasMeta(':gcFree');
+    if (gcFree) {
+      cppIncludes.add('<unreal/helpers/HxcppRuntime.h>');
+      outVars << '::unreal::helpers::HxcppRuntime::enterGCFreeZone();';
+    }
     if (!this.glueRet.haxeType.isVoid()) {
-      body = 'return ' + this.glueRet.ueToGlue(body, this.ctx);
+      if (gcFree) {
+        outVars << meth.ret.ueType.getCppType() + ' hx_gc_free_ret = $body;';
+        outVars << '::unreal::helpers::HxcppRuntime::exitGCFreeZone();';
+        body = 'return ' + this.glueRet.ueToGlue('hx_gc_free_ret', this.ctx);
+      } else {
+        body = 'return ' + this.glueRet.ueToGlue(body, this.ctx);
+      }
+    } else if (gcFree) {
+      body = '($body, ::unreal::helpers::HxcppRuntime::exitGCFreeZone())';
     }
     return body;
   }
@@ -365,7 +409,7 @@ class GlueMethod {
           var thisType = this.thisConv.withModifiers(null);
           this.cppArgs = [{ name:'this', t:thisType}, { name:'other', t:thisType }];
           if (this.meth.meta == null) this.meth.meta = [];
-          this.meth.meta.push({ name:':op', params:[macro A+B], pos:meth.pos});
+          // this.meth.meta.push({ name:':op', params:[macro A == B], pos:meth.pos});
           'uhx::TypeTraits::Equals<${thisType.ueType.getCppType()}>::isEq';
         case 'op_Dereference':
           this.op = '*';
@@ -484,7 +528,12 @@ class GlueMethod {
     var block = this.haxeCode;
 
     var args = this.getArgs();
-    var expr = block != null ? Context.parse('{' + this.haxeCode.join('\n') + '}', meth.pos) : null;
+    var code = this.haxeCode.join('\n');
+    if (shouldCheckPointer()) {
+      var checkCompl = this.thisConv.data.match(CUObject(_)) ? 'Object' : '';
+      code = 'unreal.helpers.HaxeHelpers.check${checkCompl}Pointer(this, "${meth.name}");\n' + code;
+    }
+    var expr = block != null ? Context.parse('{' + code + '}', meth.pos) : null;
     var field:Field = {
       name: meth.name,
       doc: meth.doc,
@@ -572,6 +621,13 @@ class GlueMethod {
       buf << ';';
     } else {
       buf << new Begin(' {');
+        if (shouldCheckPointer()) {
+          var checkCompl = this.thisConv.data.match(CUObject(_)) ? 'Object' : '';
+          buf << '#if (debug || UHX_CHECK_POINTER)' << new Newline();
+          buf << 'unreal.helpers.HaxeHelpers.check${checkCompl}Pointer(this, "${meth.name}");' << new Newline();
+          buf << '#end' << new Newline();
+        }
+
         for (expr in this.haxeCode) {
           buf << expr << new Newline();
         }

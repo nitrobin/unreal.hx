@@ -8,8 +8,12 @@
 #include "uhx/TypeTraits.h"
 
 // unreal includes
+#include "Core.h"
+
+#ifndef UHX_NO_UOBJECT
 #include "Engine.h"
 #include "UObject/Class.h"
+#endif
 
 #ifdef _MSC_VER
 #define UHX_ALIGNOF(TYPE) _alignof(TYPE)
@@ -82,10 +86,21 @@ struct TTemplatedData {
   static const StructInfo *getInfo();
 };
 
+#ifndef UHX_NO_UOBJECT
+
 template<class T, bool isObject = TIsCastable<T>::Value>
 struct TAnyData {
   FORCEINLINE static const StructInfo *getInfo();
 };
+
+#else
+
+template<class T, bool isObject = false>
+struct TAnyData {
+  FORCEINLINE static const StructInfo *getInfo();
+};
+
+#endif
 
 template<class T, bool destructible = uhx::TypeTraits::TDestructExists<T>::Value>
 struct TDestruct {
@@ -114,8 +129,15 @@ enum EEqualKind {
   NoEquals,
 };
 
+#ifdef UHX_NO_UOBJECT
+template<typename T>
+struct TEqualsKind { enum { Value = uhx::NoEquals }; };
+
+#else
 template<typename T>
 struct TEqualsKind { enum { Value = TStructOpsTypeTraits<T>::WithIdentical || TStructOpsTypeTraits<T>::WithIdenticalViaEquality ? uhx::StructEquals : uhx::NoEquals }; };
+
+#endif
 
 #define SET_CPP_EQ(TYPE) \
   template<> struct TEqualsKind<TYPE> { enum { Value = uhx::CppEquals }; }; 
@@ -160,7 +182,6 @@ struct TUnrealEquals<T, uhx::CppEquals> {
 // POD types
 template<class T>
 struct TStructData<T, true> {
-  typedef TStructOpsTypeTraits<T> TTraits;
   typedef TStructData<T, true> TSelf;
 
   FORCEINLINE static const StructInfo *getInfo() {
@@ -185,7 +206,11 @@ struct TStructData<T, true> {
 // Normal types
 template<class T>
 struct TStructData<T, false> {
-  typedef TStructOpsTypeTraits<T> TTraits;
+#ifdef UHX_NO_UOBJECT
+  #define CHECK_DESTRUCTOR(T) (std::is_trivially_destructible<T>::value)
+#else
+  #define CHECK_DESTRUCTOR(T) (TStructOpsTypeTraits<T>::WithNoDestructor || std::is_trivially_destructible<T>::value)
+#endif
   typedef TStructData<T, false> TSelf;
 
   FORCEINLINE static const StructInfo *getInfo() {
@@ -194,7 +219,7 @@ struct TStructData<T, false> {
       /* .flags = */ UHX_None,
       /* .size = */ (unreal::UIntPtr) sizeof(T),
       /* .alignment = */ (unreal::UIntPtr) Alignment<T>::get(),
-      /* .destruct = */ (TTraits::WithNoDestructor || std::is_trivially_destructible<T>::value ? nullptr : &TSelf::destruct),
+      /* .destruct = */ (CHECK_DESTRUCTOR(T) ? nullptr : &TSelf::destruct),
       /* .equals = */ (uhx::TEqualsKind<T>::Value != uhx::NoEquals) ? &doEquals : nullptr,
       /* .genericParams = */ nullptr,
       /* .genericImplementation = */ nullptr
@@ -210,6 +235,8 @@ private:
   static bool doEquals(unreal::UIntPtr t1, unreal::UIntPtr t2) {
     return t1 == t2 || uhx::TUnrealEquals<T>::isEq( *(reinterpret_cast<T*>(t1)), *(reinterpret_cast<T*>(t2)));
   }
+
+#undef CHECK_DESTRUCTOR
 };
 
 template<class T>

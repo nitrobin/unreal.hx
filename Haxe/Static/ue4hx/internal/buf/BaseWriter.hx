@@ -32,6 +32,9 @@ class BaseWriter {
   }
 
   public function include(inc:String) {
+    if (inc == 'Engine.h' && haxe.macro.Context.defined('UHX_NO_UOBJECT')) {
+      inc = 'Core.h'; // don't include the engine if compiling without UObject support
+    }
     if (!includeMap.exists(inc)) {
       this.includes.push(inc);
       this.includeMap[inc] = true;

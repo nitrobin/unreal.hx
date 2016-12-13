@@ -1,6 +1,9 @@
 package unreal;
 
 extern class AActor_Extra {
+  /** Dormancy setting for actor to take itself off of the replication list without being destroyed on clients. */
+  public var NetDormancy:ENetDormancy;
+
   public function Tick(DeltaSeconds:Float32) : Void;
 
   public function Reset() : Void;
@@ -47,6 +50,9 @@ extern class AActor_Extra {
   @:thisConst
   public function GetActorRotation() : FRotator;
 
+  @:thisConst
+  public function GetActorQuat() : FQuat;
+
   /** Called immediately before gameplay begins. */
   public function PreInitializeComponents() : Void;
 
@@ -58,7 +64,18 @@ extern class AActor_Extra {
 	@:thisConst
   public function GetWorldTimerManager() : PRef<FTimerManager>;
 
+	/**
+	 *	Event when this actor overlaps another actor, for example a player walking into a trigger.
+	 *	For events when objects have a blocking collision, for example a player hitting a wall, see 'Hit' events.
+	 *	@note Components on both this and the other Actor must have bGenerateOverlapEvents set to true to generate overlap events.
+	 */
   public function NotifyActorBeginOverlap(OtherActor:AActor) : Void;
+
+	/**
+	 *	Event when an actor no longer overlaps another actor, and they have separated.
+	 *	@note Components on both this and the other Actor must have bGenerateOverlapEvents set to true to generate overlap events.
+	 */
+	public function NotifyActorEndOverlap(OtherActor:AActor) : Void;
 
   public function TornOff() : Void;
 
@@ -110,4 +127,23 @@ extern class AActor_Extra {
   #end
 
   function TeleportTo(destLocation:Const<PRef<FVector>>, destRotation:Const<PRef<FRotator>>, bIsATest:Bool /* = false */, bNoCheck:Bool /* = false */):Bool;
+
+	/** Returns true if this actor has begun the destruction process.
+	 *  This is set to true in UWorld::DestroyActor, after the network connection has been closed but before any other shutdown has been performed.
+	 *	@return true if this actor has begun destruction, or if this actor has been destroyed already.
+	 **/
+  @:thisConst
+  function IsPendingKillPending() : Bool;
+
+	/* Called when this actor becomes the given PlayerController's ViewTarget. Triggers the Blueprint event K2_OnBecomeViewTarget. */
+	function BecomeViewTarget( PC:APlayerController ) : Void;
+
+	/* Called when this actor is no longer the given PlayerController's ViewTarget. Also triggers the Blueprint event K2_OnEndViewTarget. */
+	function EndViewTarget( PC:APlayerController ) : Void;
+
+  /** Removes a component from the OwnedComponents array of the Actor.
+   *  In general this should not need to be called directly by anything other than UActorComponent functions
+   */
+  public function RemoveOwnedComponent(Component:UActorComponent) : Void;
+
 }

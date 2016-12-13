@@ -20,11 +20,12 @@ Unreal.hx is a plugin for Unreal Engine 4 that allows you to write code in the [
 * Port your main `Build.cs` module to `Build.hx` and make sure it extends `HaxeModuleRules`
 * On the `Plugins/UE4Haxe` directory, run `haxe init-plugin.hxml` to make sure your `Build.hx` file was built
 * A new directory, `Haxe`, will be created at the root of your project. Add any class to be compiled to `Haxe/Static`, and you may add new compiler arguments to the `arguments.hxml` file
+* For the latest master, you will need Haxe 3.3 and Unreal 4.11 
 
 ### Examples
 
 ```haxe
-package;
+package mygame;
 import unreal.*;
 
 @:uclass
@@ -34,20 +35,29 @@ class AMyActor extends AActor {
   var items:TArray<AActor>;
   
   // make a function that is callable from C++/Blueprints
-  @:ufunction(BlueprintCallable)
+  @:ufunction(BlueprintCallable, Category=Inventory)
   public function addToInventory(item:AActor) {
     items.push(item);
   }
   
   // override native C++ function
   override function Tick(deltaTime:Float32) : Void {
+    super.Tick(deltaTime); // call super functions
+    trace('Hello, World!'); // all traces are redirected to Unreal's Log
+    trace('Warning', 'Some Warning'); // and it supports Warning, Error and Fatal as well
+  }
+  
+  // tell Unreal to call our Tick function
+  public function new(wrapped) {
+    super(wrapped);
+    this.PrimaryActorTick.bCanEverTick = true;
   }
 }
 ```
 
 
 ```haxe
-package;
+package mygame;
 import unreal.*;
 
 @:uclass
@@ -79,5 +89,7 @@ class AMyGameMode extends AGameMode {
   }
 }
 ```
+
+For a complete example project, check out https://github.com/waneck/HaxePlatformerGame , which is a port of Unreal's Platformer Game demo to Haxe 3.3/Unreal 4.11
 
 More information is available on the [Wiki](https://github.com/proletariatgames/ue4hx/wiki)

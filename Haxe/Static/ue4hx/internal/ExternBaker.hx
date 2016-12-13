@@ -173,6 +173,15 @@ class ExternBaker {
       }
     }
 
+    var cwd = Sys.getCwd();
+    var hxml = '$cwd/baker-arguments.hxml';
+    if (FileSystem.exists(hxml)) {
+      var time = FileSystem.stat(hxml).mtime.getTime();
+      if (time > latest) {
+        latest = time;
+      }
+    }
+
     return latest;
   }
 
@@ -664,14 +673,24 @@ class ExternBaker {
         if (this.thisConv.data.match(CUObject(_))) {
           this.add('private var serialNumber:Int = -1;');
           this.newline();
+          this.add('private var internalIndex:Int = -1;');
+          this.newline();
           this.add('inline private function invalidate():Void');
           this.begin(' {');
             this.add('this.wrapped = 0;');
           this.end('}');
 
-          this.add('public function isValid():Bool');
+          this.add('inline public function isValid(threadSafe:Bool=false):Bool');
           this.begin(' {');
-            this.add('return this.wrapped != 0;');
+            // make an inline version that checks if `this` is null as well
+            this.add('return this != null && this.wrapped != 0 && this.pvtIsValid(threadSafe);');
+          this.end('}');
+
+          this.add('#if (!cppia && !debug) inline #end private function pvtIsValid(threadSafe:Bool):Bool');
+          this.begin(' {');
+            this.add('return this.wrapped != 0 '
+                +' && unreal.helpers.ObjectArrayHelper_Glue.objectToIndex(this.wrapped) == internalIndex '
+                +' && (!threadSafe || unreal.helpers.ObjectArrayHelper_Glue.isValid(internalIndex, serialNumber, false));');
           this.end('}');
         }
 
