@@ -6,7 +6,7 @@ extern class UBodySetup_Extra {
    *
    * @param BuildScale	The scale to apply to the geometry
   */
-  function RescaleSimpleCollision( BuildScale:FVector ) : Void;
+  //function RescaleSimpleCollision( BuildScale:FVector ) : Void;
 
   /** Create Physics meshes (ConvexMeshes, TriMesh & TriMeshNegX) from cooked data */
   function CreatePhysicsMeshes() : Void;
