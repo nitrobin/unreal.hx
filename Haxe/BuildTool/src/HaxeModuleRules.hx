@@ -73,7 +73,7 @@ class HaxeModuleRules extends BaseModuleRules
     var folder:Dynamic = cs.Lib.array(UProjectInfo.FilterGameProjects(false, null).ToArray())[0].Folder;
     var gameDir = folder.ToString();
     var libName = switch(target.Platform) {
-      case WinRT | Win64 | Win32 | XboxOne: // TODO: see if XboxOne follows windows' path names
+      case /*WinRT |*/ Win64 | Win32 | XboxOne: // TODO: see if XboxOne follows windows' path names
         'haxeruntime.lib';
       case _:
         'libhaxeruntime.a';
@@ -140,7 +140,7 @@ class HaxeModuleRules extends BaseModuleRules
     if (cppiaEnabled) {
       this.config.dce = DceNo;
     } else if (config.noStatic) {
-      Log.TraceWarning('`config.noStatic` is set to true, but cppia is disabled. Everything will still be compiled as static');
+      Log.TraceWarning('`config.noStatic` is set to true, but cppia is disabled. Everything will still be compiled as static', null);
     }
     // try to compile haxe if we have Haxe installed
     if (firstRun) {
@@ -326,9 +326,9 @@ class HaxeModuleRules extends BaseModuleRules
               args.push('-D HXCPP_DEBUG_LINK');
           case Win64:
             args.push('-D HXCPP_M64');
-          case WinRT:
+          /*case WinRT:
             args.push('-D HXCPP_M64');
-            args.push('-D winrt');
+            args.push('-D winrt');*/
           case Android:
             //
           case _:{
@@ -338,7 +338,7 @@ class HaxeModuleRules extends BaseModuleRules
 
           // set correct ABI
           switch (target.Platform) {
-          case WinRT | Win64 | Win32 | XboxOne: // TODO: see if XboxOne follows windows' path names
+          case /*WinRT |*/ Win64 | Win32 | XboxOne: // TODO: see if XboxOne follows windows' path names
             args.push('-D ABI=-MD');
           case _:
           }
@@ -356,7 +356,7 @@ class HaxeModuleRules extends BaseModuleRules
             isCrossCompiling = true;
             var crossPath = Sys.getEnv("LINUX_ROOT");
             if (crossPath != null) {
-              Log.TraceInformation('Cross compiling using $crossPath');
+              Log.TraceInformation('Cross compiling using $crossPath', null);
               extraArgs = [
                 '-D toolchain=linux',
                 '-D linux',
@@ -378,12 +378,12 @@ class HaxeModuleRules extends BaseModuleRules
                 'HXCPP_STRIP' => 'x86_64-unknown-linux-gnu-strip'
               ]);
             } else {
-              Log.TraceWarning('Cross-compilation was detected but no LINUX_ROOT environment variable was set');
+              Log.TraceWarning('Cross-compilation was detected but no LINUX_ROOT environment variable was set', null);
             }
             case "Android":
 //              // cross compiling
               isCrossCompiling = true;
-              Log.TraceInformation('Cross compiling using Android NDK');
+              Log.TraceInformation('Cross compiling using Android NDK', null);
 
 //              Log.TraceInformation('Sys.environment: ');
 //              var e = Sys.environment();
@@ -479,7 +479,7 @@ class HaxeModuleRules extends BaseModuleRules
         }
         if (ret != 0)
         {
-          Log.TraceError('Haxe compilation failed');
+          Log.TraceError('Haxe compilation failed', null);
           Sys.exit(10);
         }
         // compile cppia
@@ -520,9 +520,9 @@ class HaxeModuleRules extends BaseModuleRules
           var complArgs = ['--cwd $gameDir/Haxe', '--no-output'].concat(args);
           this.createHxml('compl-script', complArgs.filter(function(v) return !v.startsWith('--macro')));
           if (cppiaRet != 0) {
-            Log.TraceError('=============================');
-            Log.TraceError('Cppia compilation failed');
-            Log.TraceError('=============================');
+            Log.TraceError('=============================', null);
+            Log.TraceError('Cppia compilation failed', null);
+            Log.TraceError('=============================', null);
           }
         }
       }
@@ -546,9 +546,9 @@ class HaxeModuleRules extends BaseModuleRules
     // add the output static linked library
     if (this.config.disabled || !exists(outputStatic))
     {
-      Log.TraceWarning('No Haxe compiled sources found in $outputStatic: Compiling without Haxe support');
+      Log.TraceWarning('No Haxe compiled sources found in $outputStatic: Compiling without Haxe support', null);
     } else {
-      Log.TraceVerbose('Using Haxe');
+      Log.TraceVerbose('Using Haxe', null);
 
       // get haxe module dependencies
       var targetPath = Path.GetFullPath('$outputDir/Static/Built/Data/modules.txt');
@@ -586,10 +586,10 @@ class HaxeModuleRules extends BaseModuleRules
 
       switch(target.Platform)
       {
-        case WinRT | Win64 | Win32:
+        case /*WinRT |*/ Win64 | Win32:
           this.Definitions.Add('HX_WINDOWS');
-          if (target.Platform == WinRT)
-            this.Definitions.Add('HX_WINRT');
+          /*if (target.Platform == WinRT)
+            this.Definitions.Add('HX_WINRT');*/
         case Mac:
           this.Definitions.Add('HX_MACOS');
         case Linux:
@@ -693,7 +693,7 @@ class HaxeModuleRules extends BaseModuleRules
 
   private function call(program:String, args:Array<String>, showErrors:Bool)
   {
-    Log.TraceInformation('$program ${args.join(' ')}');
+    Log.TraceInformation('$program ${args.join(' ')}', null);
     var proc:Process = null;
     try
     {
@@ -705,7 +705,7 @@ class HaxeModuleRules extends BaseModuleRules
           while(true)
           {
             // !!HACK!! Unreal seems to fail for no reason if the log line is too long on OSX
-            Log.TraceInformation(stdout.readLine().substr(0,1024));
+            Log.TraceInformation(stdout.readLine().substr(0,1024), null);
           }
         }
         catch(e:Eof) {}
@@ -720,11 +720,11 @@ class HaxeModuleRules extends BaseModuleRules
           var ln = stderr.readLine();
           if (ln.indexOf(': Warning :') >= 0)
           {
-            Log.TraceWarning('HaxeCompiler: $ln');
+            Log.TraceWarning('HaxeCompiler: $ln', null);
           } else if (showErrors) {
-            Log.TraceError('HaxeCompiler: $ln');
+            Log.TraceError('HaxeCompiler: $ln', null);
           } else {
-            Log.TraceInformation('HaxeCompiler: $ln');
+            Log.TraceInformation('HaxeCompiler: $ln', null);
           }
         }
       }
@@ -737,7 +737,7 @@ class HaxeModuleRules extends BaseModuleRules
     }
     catch(e:Dynamic)
     {
-      Log.TraceError('ERROR: failed to launch `haxe ${args.join(' ')}` : $e');
+      Log.TraceError('ERROR: failed to launch `haxe ${args.join(' ')}` : $e', null);
       if (proc != null)
       {
         try proc.close() catch(e:Dynamic) {};
@@ -763,16 +763,16 @@ class HaxeModuleRules extends BaseModuleRules
           }
         }
         if (found == null)
-          Log.TraceError('Cannot find a valid path for haxelib path $name');
+          Log.TraceError('Cannot find a valid path for haxelib path $name', null);
       } else {
-        Log.TraceError('Error while calling haxelib path $name: ${haxelib.stderr.readAll()}');
+        Log.TraceError('Error while calling haxelib path $name: ${haxelib.stderr.readAll()}', null);
       }
       haxelib.close();
       return found;
     }
     catch(e:Dynamic)
     {
-      Log.TraceError('Error while calling haxelib path $name: $e');
+      Log.TraceError('Error while calling haxelib path $name: $e', null);
       return null;
     }
   }
@@ -788,7 +788,7 @@ class HaxeModuleRules extends BaseModuleRules
     sw.Start();
     return function() {
       sw.Stop();
-      Log.TraceInformation(' -> $name executed in ${sw.Elapsed}');
+      Log.TraceInformation(' -> $name executed in ${sw.Elapsed}', null);
     }
   }
 }

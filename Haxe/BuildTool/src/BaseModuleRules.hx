@@ -49,7 +49,7 @@ class BaseModuleRules extends ModuleRules
 
     if (FileSystem.exists(modulePath.substr(0,-2) + 'hx')) {
       if (FileSystem.stat(modulePath).mtime.getTime() < FileSystem.stat(modulePath.substr(0,-2) + 'hx').mtime.getTime()) {
-        Log.TraceError('Your Build.cs file is outdated. Please run `haxe init-plugin.hxml` in the unreal.hx plugin directory');
+        Log.TraceError('Your Build.cs file is outdated. Please run `haxe init-plugin.hxml` in the unreal.hx plugin directory', null);
         Sys.exit(11);
       }
     }
