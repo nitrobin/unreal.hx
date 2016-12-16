@@ -21,9 +21,9 @@ class GlueModuleRules extends BaseModuleRules
     var haxeModules = this.getHaxeModules(target);
     if (haxeModules.length != 1) {
       if (haxeModules.length == 0) {
-        Log.TraceError('GlueModuleRules was found but no Haxe module was found!', null);
+        Log.TraceError('GlueModuleRules was found but no Haxe module was found!');
       } else {
-        Log.TraceError('More than one Haxe module was found on this project!', null);
+        Log.TraceError('More than one Haxe module was found on this project!');
       }
       Sys.exit(11);
     }
