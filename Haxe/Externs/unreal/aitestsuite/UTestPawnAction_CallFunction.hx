@@ -19,7 +19,6 @@ package unreal.aitestsuite;
   
   
 **/
-@:umodule("AITestSuite")
 @:glueCppIncludes("Actions/TestPawnAction_CallFunction.h")
 @:noClass @:uextern extern class UTestPawnAction_CallFunction extends unreal.aitestsuite.UTestPawnAction_Log {
   

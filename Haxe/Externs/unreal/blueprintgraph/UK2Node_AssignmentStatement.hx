@@ -19,7 +19,6 @@ package unreal.blueprintgraph;
   
   
 **/
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_AssignmentStatement.h")
 @:uextern extern class UK2Node_AssignmentStatement extends unreal.blueprintgraph.UK2Node {
   

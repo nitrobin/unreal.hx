@@ -19,13 +19,7 @@ package unreal.mediaplayereditor;
   
   Implements a factory for UMediaTexture objects.
 **/
-@:umodule("MediaPlayerEditor")
 @:glueCppIncludes("Private/Factories/MediaTextureFactoryNew.h")
 @:uextern extern class UMediaTextureFactoryNew extends unreal.editor.UFactory {
-  
-  /**
-    An initial media player asset to place in the newly created texture.
-  **/
-  public var InitialMediaPlayer : unreal.mediaassets.UMediaPlayer;
   
 }

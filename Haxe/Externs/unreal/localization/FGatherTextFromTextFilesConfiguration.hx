@@ -19,9 +19,13 @@ package unreal.localization;
   
   
 **/
-@:umodule("Localization")
 @:glueCppIncludes("LocalizationSettings.h")
 @:noCopy @:noEquals @:uextern extern class FGatherTextFromTextFilesConfiguration {
+  
+  /**
+    If enabled, data that is specified as editor-only may be processed for gathering.
+  **/
+  public var ShouldGatherFromEditorOnlyData : Bool;
   
   /**
     Text files whose names match these wildcard patterns may be parsed for text to gather.

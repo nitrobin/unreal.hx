@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Blackboard/BlackboardKeyType_Enum.h")
 @:uextern extern class UBlackboardKeyType_Enum extends unreal.aimodule.UBlackboardKeyType {
   

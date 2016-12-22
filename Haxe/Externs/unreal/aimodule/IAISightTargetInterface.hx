@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("Perception/AISightTargetInterface.h")
 @:uextern extern interface IAISightTargetInterface {
   

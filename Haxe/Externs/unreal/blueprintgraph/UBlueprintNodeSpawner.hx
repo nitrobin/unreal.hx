@@ -20,7 +20,6 @@ package unreal.blueprintgraph;
   different node types). That way, we get the type inference that comes with
   UObjects (and we don't have to continuously compare identification strings).
 **/
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("BlueprintNodeSpawner.h")
 @:uextern extern class UBlueprintNodeSpawner extends unreal.UObject {
   

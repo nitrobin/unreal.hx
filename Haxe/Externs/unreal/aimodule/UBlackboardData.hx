@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/BlackboardData.h")
 @:uextern extern class UBlackboardData extends unreal.UDataAsset {
   

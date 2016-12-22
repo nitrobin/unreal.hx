@@ -19,7 +19,6 @@ package unreal.gameplayabilities;
   
   
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("AbilitySystemComponent.h")
 @:noCopy @:noEquals @:uextern extern class FActiveGameplayCue extends unreal.FFastArraySerializerItem {
   
@@ -27,6 +26,7 @@ package unreal.gameplayabilities;
     Has this been predictively removed on the client?
   **/
   public var bPredictivelyRemoved : Bool;
+  public var Parameters : unreal.gameplayabilities.FGameplayCueParameters;
   public var PredictionKey : unreal.gameplayabilities.FPredictionKey;
   public var GameplayCueTag : unreal.gameplaytags.FGameplayTag;
   

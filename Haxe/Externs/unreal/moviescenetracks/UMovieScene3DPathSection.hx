@@ -19,7 +19,6 @@ package unreal.moviescenetracks;
   
   A 3D Path section
 **/
-@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Sections/MovieScene3DPathSection.h")
 @:uextern extern class UMovieScene3DPathSection extends unreal.moviescenetracks.UMovieScene3DConstraintSection {
   

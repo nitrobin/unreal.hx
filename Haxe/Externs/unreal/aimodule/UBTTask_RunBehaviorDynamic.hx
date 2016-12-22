@@ -20,7 +20,6 @@ package unreal.aimodule;
   
   Does NOT support subtree's root level decorators!
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Tasks/BTTask_RunBehaviorDynamic.h")
 @:uextern extern class UBTTask_RunBehaviorDynamic extends unreal.aimodule.UBTTaskNode {
   

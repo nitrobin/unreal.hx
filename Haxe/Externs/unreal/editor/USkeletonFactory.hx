@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/SkeletonFactory.h")
 @:uextern extern class USkeletonFactory extends unreal.editor.UFactory {
   

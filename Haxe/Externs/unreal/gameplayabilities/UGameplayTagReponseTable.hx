@@ -21,7 +21,6 @@ package unreal.gameplayabilities;
   For example, "for every count of "Status.Haste" I get 1 level of GE_Response_Haste. This class facilitates
   building this table and automatically registering and responding to tag events on the ability system component.
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("GameplayTagResponseTable.h")
 @:uextern extern class UGameplayTagReponseTable extends unreal.UDataAsset {
   public var Entries : unreal.TArray<unreal.gameplayabilities.FGameplayTagResponseTableEntry>;

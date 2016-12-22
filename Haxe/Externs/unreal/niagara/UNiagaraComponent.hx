@@ -19,7 +19,6 @@ package unreal.niagara;
   @see ANiagaraActor
   @see UNiagaraEffect
 **/
-@:umodule("Niagara")
 @:glueCppIncludes("NiagaraComponent.h")
 @:uextern extern class UNiagaraComponent extends unreal.UPrimitiveComponent {
   

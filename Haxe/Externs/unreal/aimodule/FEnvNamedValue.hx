@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/EQSTestingPawn.h")
 @:uextern extern class FEnvNamedValue {
   public var Value : unreal.Float32;

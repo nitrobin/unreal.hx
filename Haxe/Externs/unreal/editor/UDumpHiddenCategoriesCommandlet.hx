@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Commandlets/DumpHiddenCategoriesCommandlet.h")
 @:noClass @:uextern extern class UDumpHiddenCategoriesCommandlet extends unreal.UCommandlet {
   

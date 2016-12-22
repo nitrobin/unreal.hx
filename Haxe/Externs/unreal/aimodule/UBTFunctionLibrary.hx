@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/BTFunctionLibrary.h")
 @:uextern extern class UBTFunctionLibrary extends unreal.UBlueprintFunctionLibrary {
   static public function GetOwnersBlackboard(NodeOwner : unreal.aimodule.UBTNode) : unreal.aimodule.UBlackboardComponent;

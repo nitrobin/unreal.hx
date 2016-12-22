@@ -19,7 +19,6 @@ package unreal.lightpropagationvolumeeditor;
   
   
 **/
-@:umodule("LightPropagationVolumeEditor")
 @:glueCppIncludes("LightPropagationVolumeBlendableFactory.h")
 @:noClass @:uextern extern class ULightPropagationVolumeBlendableFactory extends unreal.editor.UFactory {
   

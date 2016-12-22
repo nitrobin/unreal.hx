@@ -17,7 +17,6 @@ package unreal.gameplayabilities;
 /**
   Wait for targeting actor (spawned from parameter) to provide data. Can be set not to end upon outputting data. Can be ended by task name.
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/Tasks/AbilityTask_WaitTargetData.h")
 @:uextern extern class UAbilityTask_WaitTargetData extends unreal.gameplayabilities.UAbilityTask {
   
@@ -25,10 +24,10 @@ package unreal.gameplayabilities;
     The TargetActor that we spawned
   **/
   private var TargetActor : unreal.gameplayabilities.AGameplayAbilityTargetActor;
-  @:final public function OnTargetDataReplicatedCallback(Data : unreal.gameplayabilities.FGameplayAbilityTargetDataHandle, ActivationTag : unreal.gameplaytags.FGameplayTag) : Void;
+  @:final public function OnTargetDataReplicatedCallback(Data : unreal.Const<unreal.PRef<unreal.gameplayabilities.FGameplayAbilityTargetDataHandle>>, ActivationTag : unreal.gameplaytags.FGameplayTag) : Void;
   @:final public function OnTargetDataReplicatedCancelledCallback() : Void;
-  @:final public function OnTargetDataReadyCallback(Data : unreal.gameplayabilities.FGameplayAbilityTargetDataHandle) : Void;
-  @:final public function OnTargetDataCancelledCallback(Data : unreal.gameplayabilities.FGameplayAbilityTargetDataHandle) : Void;
+  @:final public function OnTargetDataReadyCallback(Data : unreal.Const<unreal.PRef<unreal.gameplayabilities.FGameplayAbilityTargetDataHandle>>) : Void;
+  @:final public function OnTargetDataCancelledCallback(Data : unreal.Const<unreal.PRef<unreal.gameplayabilities.FGameplayAbilityTargetDataHandle>>) : Void;
   
   /**
     Spawns target actor and waits for it to return valid data or to be canceled.

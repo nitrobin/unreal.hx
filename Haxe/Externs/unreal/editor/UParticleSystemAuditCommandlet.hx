@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Commandlets/ParticleSystemAuditCommandlet.h")
 @:noClass @:uextern extern class UParticleSystemAuditCommandlet extends unreal.UCommandlet {
   

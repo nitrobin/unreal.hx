@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/ReimportFbxAnimSequenceFactory.h")
 @:noClass @:uextern extern class UReimportFbxAnimSequenceFactory extends unreal.editor.UFbxFactory {
   

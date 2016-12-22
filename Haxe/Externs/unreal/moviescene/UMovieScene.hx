@@ -17,7 +17,6 @@ package unreal.moviescene;
 /**
   Implements a movie scene asset.
 **/
-@:umodule("MovieScene")
 @:glueCppIncludes("MovieScene.h")
 @:uextern extern class UMovieScene extends unreal.UObject {
   

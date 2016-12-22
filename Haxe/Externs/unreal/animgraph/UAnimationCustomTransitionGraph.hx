@@ -19,7 +19,6 @@ package unreal.animgraph;
   
   
 **/
-@:umodule("AnimGraph")
 @:glueCppIncludes("AnimationCustomTransitionGraph.h")
 @:uextern extern class UAnimationCustomTransitionGraph extends unreal.animgraph.UAnimationGraph {
   

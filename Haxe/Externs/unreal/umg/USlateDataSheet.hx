@@ -19,7 +19,6 @@ package unreal.umg;
   Used in combination with SlateVectorArtData and SlateVectorArtInstanceData to
   pass data to UI materials.
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class USlateDataSheet extends unreal.UObject {
   private var DataTexture : unreal.UTexture2D;

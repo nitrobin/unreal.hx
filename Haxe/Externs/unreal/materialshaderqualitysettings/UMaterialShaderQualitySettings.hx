@@ -17,7 +17,6 @@ package unreal.materialshaderqualitysettings;
 /**
   UCLASS(config = Engine, defaultconfig)
 **/
-@:umodule("MaterialShaderQualitySettings")
 @:glueCppIncludes("MaterialShaderQualitySettings.h")
 @:uextern extern class UMaterialShaderQualitySettings extends unreal.UObject {
   

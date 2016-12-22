@@ -20,7 +20,6 @@ package unreal.slatecore;
   FAnalogEvent describes a analog key value.
   It is passed to event handlers dealing with analog keys.
 **/
-@:umodule("SlateCore")
 @:glueCppIncludes("Fonts/FontBulkData.h", "Fonts/FontProviderInterface.h", "Styling/SlateTypes.h", "Styling/SlateWidgetStyleAsset.h", "Styling/SlateWidgetStyleContainerBase.h", "Styling/SlateWidgetStyleContainerInterface.h")
 @:noCopy @:noEquals @:uextern extern class FAnalogInputEvent extends unreal.slatecore.FKeyEvent {
   

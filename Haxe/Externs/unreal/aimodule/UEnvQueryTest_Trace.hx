@@ -19,7 +19,6 @@ package unreal.aimodule;
   
   
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/Tests/EnvQueryTest_Trace.h")
 @:uextern extern class UEnvQueryTest_Trace extends unreal.aimodule.UEnvQueryTest {
   

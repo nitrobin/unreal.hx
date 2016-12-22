@@ -30,7 +30,6 @@ package unreal.gameplayabilities;
   'OnStateInterrupted' will be called if:
   - The ability itself is cancelled via AGameplayAbility::CancelAbility
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/Tasks/AbilityTask_StartAbilityState.h")
 @:uextern extern class UAbilityTask_StartAbilityState extends unreal.gameplayabilities.UAbilityTask {
   

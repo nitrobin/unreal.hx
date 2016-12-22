@@ -19,7 +19,6 @@ package unreal.landscape;
   
   
 **/
-@:umodule("Landscape")
 @:glueCppIncludes("LandscapeMeshCollisionComponent.h")
 @:noClass @:uextern extern class ULandscapeMeshCollisionComponent extends unreal.landscape.ULandscapeHeightfieldCollisionComponent {
   

@@ -19,7 +19,6 @@ package unreal.levelsequence;
   
   Settings for the level sequence player actor.
 **/
-@:umodule("LevelSequence")
 @:glueCppIncludes("LevelSequenceActor.h")
 @:noCopy @:noEquals @:uextern extern class FLevelSequencePlaybackSettings {
   

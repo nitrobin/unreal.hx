@@ -19,9 +19,13 @@ package unreal.blueprintgraph;
   
   
 **/
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_Timeline.h")
 @:uextern extern class UK2Node_Timeline extends unreal.blueprintgraph.UK2Node {
+  
+  /**
+    If the timeline should ignore global time dilation
+  **/
+  public var bIgnoreTimeDilation : Bool;
   
   /**
     If the timeline is set to loop

@@ -19,7 +19,6 @@ package unreal.umg;
   * Single Child
   * Caching / Performance
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UInvalidationBox extends unreal.umg.UContentWidget {
   @:final public function InvalidateCache() : Void;

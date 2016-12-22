@@ -18,12 +18,12 @@ package unreal.proceduralmeshcomponent;
   Component that allows you to specify custom triangle mesh geometry
   Beware! This feature is experimental and may be substantially changed in future releases.
 **/
-@:umodule("ProceduralMeshComponent")
 @:glueCppIncludes("ProceduralMeshComponent.h")
 @:uextern extern class UProceduralMeshComponent extends unreal.UMeshComponent implements unreal.IInterface_CollisionDataProvider {
   
   /**
     Create/replace a section for this procedural mesh component.
+    This function is deprecated for Blueprints because it uses the unsupported 'Color' type. Use new 'Create Mesh Section' function which uses LinearColor instead.
     @param  SectionIndex            Index of the section to create or replace.
     @param  Vertices                        Vertex buffer of all vertex positions to use for this mesh section.
     @param  Triangles                       Index buffer indicating which vertices make up each triangle. Length must be a multiple of 3.
@@ -36,7 +36,21 @@ package unreal.proceduralmeshcomponent;
   @:final public function CreateMeshSection(SectionIndex : unreal.Int32, Vertices : unreal.Const<unreal.PRef<unreal.TArray<unreal.FVector>>>, Triangles : unreal.Const<unreal.PRef<unreal.TArray<unreal.Int32>>>, Normals : unreal.Const<unreal.PRef<unreal.TArray<unreal.FVector>>>, UV0 : unreal.Const<unreal.PRef<unreal.TArray<unreal.FVector2D>>>, VertexColors : unreal.Const<unreal.PRef<unreal.TArray<unreal.FColor>>>, Tangents : unreal.Const<unreal.PRef<unreal.TArray<unreal.proceduralmeshcomponent.FProcMeshTangent>>>, bCreateCollision : Bool) : Void;
   
   /**
+    Create/replace a section for this procedural mesh component.
+    @param  SectionIndex            Index of the section to create or replace.
+    @param  Vertices                        Vertex buffer of all vertex positions to use for this mesh section.
+    @param  Triangles                       Index buffer indicating which vertices make up each triangle. Length must be a multiple of 3.
+    @param  Normals                         Optional array of normal vectors for each vertex. If supplied, must be same length as Vertices array.
+    @param  UV0                                     Optional array of texture co-ordinates for each vertex. If supplied, must be same length as Vertices array.
+    @param  VertexColors            Optional array of colors for each vertex. If supplied, must be same length as Vertices array.
+    @param  Tangents                        Optional array of tangent vector for each vertex. If supplied, must be same length as Vertices array.
+    @param  bCreateCollision        Indicates whether collision should be created for this section. This adds significant cost.
+  **/
+  @:final public function CreateMeshSection_LinearColor(SectionIndex : unreal.Int32, Vertices : unreal.Const<unreal.PRef<unreal.TArray<unreal.FVector>>>, Triangles : unreal.Const<unreal.PRef<unreal.TArray<unreal.Int32>>>, Normals : unreal.Const<unreal.PRef<unreal.TArray<unreal.FVector>>>, UV0 : unreal.Const<unreal.PRef<unreal.TArray<unreal.FVector2D>>>, VertexColors : unreal.Const<unreal.PRef<unreal.TArray<unreal.FLinearColor>>>, Tangents : unreal.Const<unreal.PRef<unreal.TArray<unreal.proceduralmeshcomponent.FProcMeshTangent>>>, bCreateCollision : Bool) : Void;
+  
+  /**
     Updates a section of this procedural mesh component. This is faster than CreateMeshSection, but does not let you change topology. Collision info is also updated.
+    This function is deprecated for Blueprints because it uses the unsupported 'Color' type. Use new 'Create Mesh Section' function which uses LinearColor instead.
     @param  Vertices                        Vertex buffer of all vertex positions to use for this mesh section.
     @param  Normals                         Optional array of normal vectors for each vertex. If supplied, must be same length as Vertices array.
     @param  UV0                                     Optional array of texture co-ordinates for each vertex. If supplied, must be same length as Vertices array.
@@ -44,6 +58,16 @@ package unreal.proceduralmeshcomponent;
     @param  Tangents                        Optional array of tangent vector for each vertex. If supplied, must be same length as Vertices array.
   **/
   @:final public function UpdateMeshSection(SectionIndex : unreal.Int32, Vertices : unreal.Const<unreal.PRef<unreal.TArray<unreal.FVector>>>, Normals : unreal.Const<unreal.PRef<unreal.TArray<unreal.FVector>>>, UV0 : unreal.Const<unreal.PRef<unreal.TArray<unreal.FVector2D>>>, VertexColors : unreal.Const<unreal.PRef<unreal.TArray<unreal.FColor>>>, Tangents : unreal.Const<unreal.PRef<unreal.TArray<unreal.proceduralmeshcomponent.FProcMeshTangent>>>) : Void;
+  
+  /**
+    Updates a section of this procedural mesh component. This is faster than CreateMeshSection, but does not let you change topology. Collision info is also updated.
+    @param  Vertices                        Vertex buffer of all vertex positions to use for this mesh section.
+    @param  Normals                         Optional array of normal vectors for each vertex. If supplied, must be same length as Vertices array.
+    @param  UV0                                     Optional array of texture co-ordinates for each vertex. If supplied, must be same length as Vertices array.
+    @param  VertexColors            Optional array of colors for each vertex. If supplied, must be same length as Vertices array.
+    @param  Tangents                        Optional array of tangent vector for each vertex. If supplied, must be same length as Vertices array.
+  **/
+  @:final public function UpdateMeshSection_LinearColor(SectionIndex : unreal.Int32, Vertices : unreal.Const<unreal.PRef<unreal.TArray<unreal.FVector>>>, Normals : unreal.Const<unreal.PRef<unreal.TArray<unreal.FVector>>>, UV0 : unreal.Const<unreal.PRef<unreal.TArray<unreal.FVector2D>>>, VertexColors : unreal.Const<unreal.PRef<unreal.TArray<unreal.FLinearColor>>>, Tangents : unreal.Const<unreal.PRef<unreal.TArray<unreal.proceduralmeshcomponent.FProcMeshTangent>>>) : Void;
   
   /**
     Clear a section of the procedural mesh. Other sections do not change index.
@@ -66,9 +90,30 @@ package unreal.proceduralmeshcomponent;
   @:thisConst @:final public function IsMeshSectionVisible(SectionIndex : unreal.Int32) : Bool;
   
   /**
+    Returns number of sections currently created for this component
+  **/
+  @:thisConst @:final public function GetNumSections() : unreal.Int32;
+  
+  /**
+    Add simple collision convex to this component
+  **/
+  @:final public function AddCollisionConvexMesh(ConvexVerts : unreal.TArray<unreal.FVector>) : Void;
+  
+  /**
+    Add simple collision convex to this component
+  **/
+  @:final public function ClearCollisionConvexMeshes() : Void;
+  
+  /**
     Collision data
   **/
   public var ProcMeshBodySetup : unreal.UBodySetup;
+  
+  /**
+    Controls whether the complex (Per poly) geometry should be treated as 'simple' collision.
+    Should be set to false if this component is going to be given simple collision and simulated.
+  **/
+  public var bUseComplexAsSimpleCollision : Bool;
   // Interface_CollisionDataProvider interface implementation
   
 }

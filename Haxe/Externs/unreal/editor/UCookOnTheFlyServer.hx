@@ -13,7 +13,6 @@
 **/
 package unreal.editor;
 
-@:umodule("UnrealEd")
 @:glueCppIncludes("CookOnTheSide/CookOnTheFlyServer.h")
 @:uextern extern class UCookOnTheFlyServer extends unreal.UObject {
   

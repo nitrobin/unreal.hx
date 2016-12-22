@@ -17,9 +17,13 @@ package unreal.slatecore;
 /**
   Represents the appearance of an STextBlock
 **/
-@:umodule("SlateCore")
 @:glueCppIncludes("Framework/Styling/TextBlockWidgetStyle.h")
 @:uextern extern class FTextBlockStyle extends unreal.slatecore.FSlateWidgetStyle {
+  
+  /**
+    The brush used to draw an underline under the text (if any)
+  **/
+  public var UnderlineBrush : unreal.slatecore.FSlateBrush;
   
   /**
     The shape of highlighted text

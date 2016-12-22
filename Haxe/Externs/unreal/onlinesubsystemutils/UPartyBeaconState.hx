@@ -17,7 +17,6 @@ package unreal.onlinesubsystemutils;
 /**
   A beacon host used for taking reservations for an existing game session
 **/
-@:umodule("OnlineSubsystemUtils")
 @:glueCppIncludes("PartyBeaconState.h")
 @:uextern extern class UPartyBeaconState extends unreal.UObject {
   
@@ -35,6 +34,11 @@ package unreal.onlinesubsystemutils;
     Team that the host has been assigned to
   **/
   private var ReservedHostTeamNum : unreal.Int32;
+  
+  /**
+    Team assignment method
+  **/
+  private var TeamAssignmentMethod : unreal.FName;
   
   /**
     Number of players on each team for balancing

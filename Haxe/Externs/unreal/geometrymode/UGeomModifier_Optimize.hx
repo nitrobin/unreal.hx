@@ -19,7 +19,6 @@ package unreal.geometrymode;
   
   
 **/
-@:umodule("GeometryMode")
 @:glueCppIncludes("GeomModifier_Optimize.h")
 @:noClass @:uextern extern class UGeomModifier_Optimize extends unreal.geometrymode.UGeomModifier_Triangulate {
   

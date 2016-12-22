@@ -17,7 +17,6 @@ package unreal.umg;
 /**
   Editable text box widget
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UMultiLineEditableText extends unreal.umg.UTextLayoutWidget {
   

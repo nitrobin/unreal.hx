@@ -13,7 +13,6 @@
 **/
 package unreal.editor;
 
-@:umodule("UnrealEd")
 @:glueCppIncludes("UserDefinedStructure/UserDefinedStructEditorData.h")
 @:uextern extern class UUserDefinedStructEditorData extends unreal.UObject {
   

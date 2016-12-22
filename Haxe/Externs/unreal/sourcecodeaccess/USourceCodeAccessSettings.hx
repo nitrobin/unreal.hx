@@ -19,7 +19,6 @@ package unreal.sourcecodeaccess;
   
   
 **/
-@:umodule("SourceCodeAccess")
 @:glueCppIncludes("Private/SourceCodeAccessSettings.h")
 @:noClass @:uextern extern class USourceCodeAccessSettings extends unreal.UObject {
   

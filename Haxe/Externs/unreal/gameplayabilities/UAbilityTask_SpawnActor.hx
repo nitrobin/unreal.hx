@@ -27,7 +27,6 @@ package unreal.gameplayabilities;
   Long term we can also use this task as a sync point. If the executing client could wait execution until the server creates and replicate sthe
   actor down to him. We could potentially also use this to do predictive actor spawning / reconciliation.
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/Tasks/AbilityTask_SpawnActor.h")
 @:uextern extern class UAbilityTask_SpawnActor extends unreal.gameplayabilities.UAbilityTask {
   

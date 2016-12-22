@@ -19,7 +19,6 @@ package unreal.moviescenetracks;
   
   Implements a movie scene track that controls a movie scene's playback speed.
 **/
-@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Tracks/MovieSceneSlomoTrack.h")
 @:uextern extern class UMovieSceneSlomoTrack extends unreal.moviescenetracks.UMovieSceneFloatTrack {
   

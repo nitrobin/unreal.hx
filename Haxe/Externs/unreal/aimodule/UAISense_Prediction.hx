@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("Perception/AISense_Prediction.h")
 @:uextern extern class UAISense_Prediction extends unreal.aimodule.UAISense {
   public var RegisteredEvents : unreal.TArray<unreal.aimodule.FAIPredictionEvent>;

@@ -19,7 +19,6 @@ package unreal.gameplayabilities;
   
   
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("GameplayTagResponseTable.h")
 @:noCopy @:noEquals @:uextern extern class FGameplayTagReponsePair {
   
@@ -29,7 +28,12 @@ package unreal.gameplayabilities;
   public var SoftCountCap : unreal.Int32;
   
   /**
-    The GameplayEffect to apply in reponse to the tag
+    The GameplayEffects to apply in reponse to the tag
+  **/
+  public var ResponseGameplayEffects : unreal.TArray<unreal.TSubclassOf<unreal.gameplayabilities.UGameplayEffect>>;
+  
+  /**
+    Deprecated. Replaced with ResponseGameplayEffects
   **/
   public var ResponseGameplayEffect : unreal.TSubclassOf<unreal.gameplayabilities.UGameplayEffect>;
   

@@ -13,7 +13,6 @@
 **/
 package unreal.headmounteddisplay;
 
-@:umodule("HeadMountedDisplay")
 @:glueCppIncludes("MotionControllerComponent.h")
 @:uextern extern class UMotionControllerComponent extends unreal.UPrimitiveComponent {
   

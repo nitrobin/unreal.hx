@@ -19,7 +19,6 @@ package unreal.gameplayabilities;
   
   Holds evaluated magnitude from a GameplayEffect modifier
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("AbilitySystemComponent.h")
 @:noCopy @:noEquals @:uextern extern class FModifierSpec {
   

@@ -17,7 +17,6 @@ package unreal.movieplayer;
 /**
   Implements the settings for the Windows target platform.
 **/
-@:umodule("MoviePlayer")
 @:glueCppIncludes("MoviePlayerSettings.h")
 @:uextern extern class UMoviePlayerSettings extends unreal.UObject {
   

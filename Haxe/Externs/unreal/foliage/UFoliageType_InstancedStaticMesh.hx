@@ -19,7 +19,6 @@ package unreal.foliage;
   
   
 **/
-@:umodule("Foliage")
 @:glueCppIncludes("FoliageType_InstancedStaticMesh.h")
 @:uextern extern class UFoliageType_InstancedStaticMesh extends unreal.foliage.UFoliageType {
   

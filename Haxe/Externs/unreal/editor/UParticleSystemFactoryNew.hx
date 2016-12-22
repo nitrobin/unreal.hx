@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/ParticleSystemFactoryNew.h")
 @:uextern extern class UParticleSystemFactoryNew extends unreal.editor.UFactory {
   

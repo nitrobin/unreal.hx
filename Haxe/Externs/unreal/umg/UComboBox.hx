@@ -17,7 +17,6 @@ package unreal.umg;
 /**
   The combobox allows you to display a list of options to the user in a dropdown menu for them to select one.
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UComboBox extends unreal.umg.UWidget {
   

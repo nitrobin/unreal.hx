@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/Generators/EnvQueryGenerator_OnCircle.h")
 @:uextern extern class UEnvQueryGenerator_OnCircle extends unreal.aimodule.UEnvQueryGenerator_ProjectedPoints {
   public var bDefineArc : Bool;

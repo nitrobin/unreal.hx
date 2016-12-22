@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("ActorFactories/ActorFactoryTextRender.h")
 @:uextern extern class UActorFactoryTextRender extends unreal.editor.UActorFactory {
   

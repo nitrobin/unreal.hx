@@ -27,8 +27,12 @@ package unreal.aimodule;
   Template nodes are shared across all behavior tree components using the same tree asset and must store
   their runtime properties in provided NodeMemory block (allocation size determined by GetInstanceMemorySize() )
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/BTTaskNode.h")
 @:uextern extern class UBTTaskNode extends unreal.aimodule.UBTNode {
+  
+  /**
+    service nodes
+  **/
+  public var Services : unreal.TArray<unreal.aimodule.UBTService>;
   
 }

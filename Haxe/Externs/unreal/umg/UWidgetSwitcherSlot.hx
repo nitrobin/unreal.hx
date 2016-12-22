@@ -17,7 +17,6 @@ package unreal.umg;
 /**
   The Slot for the UWidgetSwitcher, contains the widget that is flowed vertically
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UWidgetSwitcherSlot extends unreal.umg.UPanelSlot {
   

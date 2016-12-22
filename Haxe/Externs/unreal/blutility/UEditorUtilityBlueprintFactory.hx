@@ -19,7 +19,6 @@ package unreal.blutility;
   
   
 **/
-@:umodule("Blutility")
 @:glueCppIncludes("EditorUtilityBlueprintFactory.h")
 @:noClass @:uextern extern class UEditorUtilityBlueprintFactory extends unreal.editor.UFactory {
   

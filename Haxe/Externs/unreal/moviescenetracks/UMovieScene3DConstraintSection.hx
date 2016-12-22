@@ -19,7 +19,6 @@ package unreal.moviescenetracks;
   
   Base class for 3D constraint section
 **/
-@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Sections/MovieScene3DConstraintSection.h")
 @:uextern extern class UMovieScene3DConstraintSection extends unreal.moviescene.UMovieSceneSection {
   

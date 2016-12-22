@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("Perception/AISenseConfig_Sight.h")
 @:uextern extern class UAISenseConfig_Sight extends unreal.aimodule.UAISenseConfig {
   

@@ -13,8 +13,7 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
-@:glueCppIncludes("EnvironmentQuery/EnvQueryTest.h")
+@:glueCppIncludes("BehaviorTree/Decorators/BTDecorator_IsAtLocation.h")
 @:uextern extern class FAIDataProviderTypedValue extends unreal.aimodule.FAIDataProviderValue {
   
   /**

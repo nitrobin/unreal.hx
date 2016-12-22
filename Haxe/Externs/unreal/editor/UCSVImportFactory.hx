@@ -13,7 +13,6 @@
 **/
 package unreal.editor;
 
-@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/CSVImportFactory.h")
 @:uextern extern class UCSVImportFactory extends unreal.editor.UFactory {
   

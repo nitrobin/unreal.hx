@@ -17,7 +17,6 @@ package unreal.animgraphruntime;
 /**
   RefPose pose nodes - ref pose or additive RefPose pose
 **/
-@:umodule("AnimGraphRuntime")
 @:glueCppIncludes("AnimGraphNode_RefPoseBase.h")
 @:uextern extern class FAnimNode_RefPose extends unreal.FAnimNode_Base {
   public var RefPoseType : unreal.animgraphruntime.ERefPoseType;

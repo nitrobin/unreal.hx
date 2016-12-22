@@ -19,7 +19,6 @@ package unreal.gameplayabilities;
   
   
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/GameplayAbilityTargetActor.h")
 @:noCopy @:noEquals @:uextern extern class FWorldReticleParameters {
   public var AOEScale : unreal.FVector;

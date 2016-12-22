@@ -19,8 +19,7 @@ package unreal.onlinesubsystemutils;
   
   
 **/
-@:umodule("OnlineSubsystemUtils")
 @:glueCppIncludes("FindTurnBasedMatchCallbackProxy.h")
-@:uextern extern class UFindTurnBasedMatchCallbackProxy extends unreal.onlinesubsystemutils.UOnlineBlueprintCallProxyBase {
+@:uextern extern class UFindTurnBasedMatchCallbackProxy extends unreal.UOnlineBlueprintCallProxyBase {
   
 }

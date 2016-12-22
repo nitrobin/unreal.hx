@@ -19,9 +19,43 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/FbxSceneImportOptionsSkeletalMesh.h")
 @:uextern extern class UFbxSceneImportOptionsSkeletalMesh extends unreal.UObject {
+  
+  /**
+    Type of asset to import from the FBX file
+  **/
+  public var bDeleteExistingMorphTargetCurves : Bool;
+  
+  /**
+    Type of asset to import from the FBX file
+  **/
+  public var bPreserveLocalTransform : Bool;
+  
+  /**
+    Import if custom attribute as a curve within the animation *
+  **/
+  public var bImportCustomAttribute : Bool;
+  
+  /**
+    If enabled, samples all animation curves to 30 FPS
+  **/
+  public var bUseDefaultSampleRate : Bool;
+  
+  /**
+    Frame range used when Set Range is used in Animation Length
+  **/
+  public var FrameImportRange : unreal.FInt32Interval;
+  
+  /**
+    Type of asset to import from the FBX file
+  **/
+  public var AnimationLength : unreal.editor.EFBXAnimationLengthImportType;
+  
+  /**
+    True to import animations from the FBX File
+  **/
+  public var bImportAnimations : Bool;
   
   /**
     If checked, do not filter same vertices. Keep all vertices even if they have exact same properties
@@ -44,7 +78,7 @@ package unreal.editor;
   public var bPreserveSmoothingGroups : Bool;
   
   /**
-    Enable this option to use frame 0 as reference pose
+    TODO support T0AsRefPose Enable this option to use frame 0 as reference pose
   **/
   public var bUseT0AsRefPose : Bool;
   

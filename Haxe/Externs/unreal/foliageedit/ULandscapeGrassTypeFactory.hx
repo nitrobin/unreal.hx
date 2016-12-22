@@ -19,7 +19,6 @@ package unreal.foliageedit;
   
   
 **/
-@:umodule("FoliageEdit")
 @:glueCppIncludes("Private/LandscapeGrassTypeFactory.h")
 @:noClass @:uextern extern class ULandscapeGrassTypeFactory extends unreal.editor.UFactory {
   

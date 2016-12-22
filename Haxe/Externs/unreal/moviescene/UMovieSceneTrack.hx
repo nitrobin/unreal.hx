@@ -19,8 +19,14 @@ package unreal.moviescene;
   
   Base class for a track in a Movie Scene
 **/
-@:umodule("MovieScene")
 @:glueCppIncludes("MovieSceneTrack.h")
 @:uextern extern class UMovieSceneTrack extends unreal.UObject {
+  #if WITH_EDITORONLY_DATA
+  
+  /**
+    This track's tint color
+  **/
+  private var TrackTint : unreal.FColor;
+  #end // WITH_EDITORONLY_DATA
   
 }

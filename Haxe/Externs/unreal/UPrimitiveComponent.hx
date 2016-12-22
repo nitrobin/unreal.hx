@@ -28,11 +28,30 @@ package unreal;
   public var PostPhysicsComponentTick : unreal.FPrimitiveComponentPostPhysicsTickFunction;
   
   /**
+    Set of components to ignore during component sweeps in MoveComponent().
+    These components will be ignored when this component moves or updates overlaps.
+    The other components may also need to be told to do the same when they move.
+    Does not affect movement of this component when simulating physics.
+    @see IgnoreComponentWhenMoving()
+  **/
+  public var MoveIgnoreComponents : unreal.TArray<unreal.UPrimitiveComponent>;
+  
+  /**
+    Set of actors to ignore during component sweeps in MoveComponent().
+    All components owned by these actors will be ignored when this component moves or updates overlaps.
+    Components on the other Actor may also need to be told to do the same when they move.
+    Does not affect movement of this component when simulating physics.
+    @see IgnoreActorWhenMoving()
+  **/
+  public var MoveIgnoreActors : unreal.TArray<unreal.AActor>;
+  
+  /**
     Determine whether a Character can step up onto this component.
     This controls whether they can try to step up on it when they bump in to it, not whether they can walk on it after landing on it.
     @see FWalkableSlopeOverride
   **/
   public var CanCharacterStepUpOn : unreal.ECanBeCharacterBase;
+  public var LastRenderTimeOnScreen : unreal.Float32;
   
   /**
     The value of WorldSettings->TimeSeconds for the frame when this component was last rendered.  This is written
@@ -122,12 +141,6 @@ package unreal;
   public var bIgnoreRadialImpulse : Bool;
   
   /**
-    If true, asynchronous static build lighting will be enqueued to be applied to this
-  **/
-  public var bStaticLightingBuildEnqueued : Bool;
-  public var bHasCachedStaticLighting : Bool;
-  
-  /**
     Channels that this component should be in.  Lights with matching channels will affect the component.
     These channels only apply to opaque materials, direct lighting, and dynamic lighting and shadowing.
   **/
@@ -139,6 +152,13 @@ package unreal;
     This is currently only used on stationary directional lights.
   **/
   public var bSingleSampleShadowFromStationaryLights : Bool;
+  
+  /**
+    Mobile only:
+    If enabled this component can receive combined static and CSM shadows from a stationary light. (Enabling will increase shading cost.)
+    If disabled this component will only receive static shadows from stationary lights.
+  **/
+  public var bReceiveCombinedCSMAndStaticShadowsFromStationaryLights : Bool;
   
   /**
     Quality of indirect lighting for Movable primitives.  This has a large effect on Indirect Lighting Cache update time.
@@ -276,6 +296,11 @@ package unreal;
   public var bRenderInMainPass : Bool;
   
   /**
+    If true, this component will be visible in reflection captures.
+  **/
+  public var bVisibleInReflectionCaptures : Bool;
+  
+  /**
     true if the primitive has motion blur velocity meshes
   **/
   public var bHasMotionBlurVelocityMeshes : Bool;
@@ -378,6 +403,23 @@ package unreal;
   @:final public function ClearMoveIgnoreActors() : Void;
   
   /**
+    Tells this component whether to ignore collision with another component when this component is moved.
+    The other components may also need to be told to do the same when they move.
+    Does not affect movement of this component when simulating physics.
+  **/
+  @:final public function IgnoreComponentWhenMoving(Component : unreal.UPrimitiveComponent, bShouldIgnore : Bool) : Void;
+  
+  /**
+    Returns the list of actors we currently ignore when moving.
+  **/
+  @:final public function CopyArrayOfMoveIgnoreComponents() : unreal.TArray<unreal.UPrimitiveComponent>;
+  
+  /**
+    Clear the list of components we ignore when moving.
+  **/
+  @:final public function ClearMoveIgnoreComponents() : Void;
+  
+  /**
     Check whether this component is overlapping another component.
     @param OtherComp Component to test this component against.
     @return Whether this component is overlapping another component.
@@ -396,7 +438,7 @@ package unreal;
     @param OverlappingActors             [out] Returned list of overlapping actors
     @param ClassFilter                   [optional] If set, only returns actors of this class or subclasses
   **/
-  @:thisConst @:final public function GetOverlappingActors(OverlappingActors : unreal.PRef<unreal.TArray<unreal.AActor>>, ClassFilter : unreal.UClass) : Void;
+  @:thisConst @:final public function GetOverlappingActors(OverlappingActors : unreal.PRef<unreal.TArray<unreal.AActor>>, ClassFilter : unreal.TSubclassOf<unreal.AActor>) : Void;
   
   /**
     Returns list of components this component is overlapping.
@@ -426,6 +468,13 @@ package unreal;
     @return the material used by the indexed element of this mesh.
   **/
   public function SetMaterial(ElementIndex : unreal.Int32, Material : unreal.UMaterialInterface) : Void;
+  
+  /**
+    Changes the material applied to an element of the mesh.
+    @param MaterialSlotName - The slot name to access the material of.
+    @return the material used by the indexed element of this mesh.
+  **/
+  public function SetMaterialByName(MaterialSlotName : unreal.FName, Material : unreal.UMaterialInterface) : Void;
   
   /**
     Creates a Dynamic Material Instance for the specified element index.  The parent of the instance is set to the material being replaced.
@@ -719,6 +768,26 @@ package unreal;
   @:thisConst @:final public function GetClosestPointOnCollision(Point : unreal.Const<unreal.PRef<unreal.FVector>>, OutPointOnBody : unreal.PRef<unreal.FVector>, BoneName : unreal.FName) : unreal.Float32;
   
   /**
+    Returns the form of collision for this component
+  **/
+  @:thisConst public function GetCollisionEnabled() : unreal.ECollisionEnabled;
+  
+  /**
+    Utility to see if there is any form of collision (query or physics) enabled on this component.
+  **/
+  @:thisConst @:final public function K2_IsCollisionEnabled() : Bool;
+  
+  /**
+    Utility to see if there is any query collision enabled on this component.
+  **/
+  @:thisConst @:final public function K2_IsQueryCollisionEnabled() : Bool;
+  
+  /**
+    Utility to see if there is any physics collision enabled on this component.
+  **/
+  @:thisConst @:final public function K2_IsPhysicsCollisionEnabled() : Bool;
+  
+  /**
     Gets the response type given a specific channel
   **/
   @:thisConst public function GetCollisionResponseToChannel(Channel : unreal.ECollisionChannel) : unreal.ECollisionResponse;
@@ -801,19 +870,24 @@ package unreal;
   @:thisConst public function ScaleByMomentOfInertia(InputVector : unreal.FVector, BoneName : unreal.FName) : unreal.FVector;
   
   /**
+    Returns if any body in this component is currently awake and simulating.
+  **/
+  public function IsAnyRigidBodyAwake() : Bool;
+  
+  /**
     Changes a member of the ResponseToChannels container for this PrimitiveComponent.
     
     @param       Channel      The channel to change the response of
     @param       NewResponse  What the new response should be to the supplied Channel
   **/
-  @:final public function SetCollisionResponseToChannel(Channel : unreal.ECollisionChannel, NewResponse : unreal.ECollisionResponse) : Void;
+  public function SetCollisionResponseToChannel(Channel : unreal.ECollisionChannel, NewResponse : unreal.ECollisionResponse) : Void;
   
   /**
     Changes all ResponseToChannels container for this PrimitiveComponent. to be NewResponse
     
     @param       NewResponse  What the new response should be to the supplied Channel
   **/
-  @:final public function SetCollisionResponseToAllChannels(NewResponse : unreal.ECollisionResponse) : Void;
+  public function SetCollisionResponseToAllChannels(NewResponse : unreal.ECollisionResponse) : Void;
   
   /**
     Changes the current PhysMaterialOverride for this component.

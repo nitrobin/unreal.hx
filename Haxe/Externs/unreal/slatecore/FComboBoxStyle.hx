@@ -17,7 +17,6 @@ package unreal.slatecore;
 /**
   Represents the appearance of an SComboBox
 **/
-@:umodule("SlateCore")
 @:glueCppIncludes("Framework/Styling/ComboBoxWidgetStyle.h")
 @:uextern extern class FComboBoxStyle extends unreal.slatecore.FSlateWidgetStyle {
   @:deprecated public var SelectionChangeSound_DEPRECATED : unreal.FName;

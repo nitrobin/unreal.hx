@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Commandlets/FixupRedirectsCommandlet.h")
 @:noClass @:uextern extern class UFixupRedirectsCommandlet extends unreal.UCommandlet {
   

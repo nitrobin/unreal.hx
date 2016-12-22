@@ -17,7 +17,6 @@ package unreal.onlinesubsystemutils;
 /**
   A beacon client used for making reservations with an existing game session
 **/
-@:umodule("OnlineSubsystemUtils")
 @:glueCppIncludes("PartyBeaconClient.h")
 @:uextern extern class APartyBeaconClient extends unreal.onlinesubsystemutils.AOnlineBeaconClient {
   
@@ -27,6 +26,13 @@ package unreal.onlinesubsystemutils;
     @param ReservationResponse response from server
   **/
   public function ClientReservationResponse(ReservationResponse : unreal.onlinesubsystemutils.EPartyReservationResult) : Void;
+  
+  /**
+    Response from the host session after making a cancellation request
+    
+    @param ReservationResponse response from server
+  **/
+  public function ClientCancelReservationResponse(ReservationResponse : unreal.onlinesubsystemutils.EPartyReservationResult) : Void;
   
   /**
     Response from the host session that the reservation count has changed

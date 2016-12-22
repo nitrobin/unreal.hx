@@ -13,7 +13,6 @@
 **/
 package unreal.blutility;
 
-@:umodule("Blutility")
 @:glueCppIncludes("GlobalEditorUtilityBase.h")
 @:uextern extern class UGlobalEditorUtilityBase extends unreal.UObject {
   

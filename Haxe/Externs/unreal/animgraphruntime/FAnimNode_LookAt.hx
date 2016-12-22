@@ -17,7 +17,6 @@ package unreal.animgraphruntime;
 /**
   Simple controller that make a bone to look at the point or another bone
 **/
-@:umodule("AnimGraphRuntime")
 @:glueCppIncludes("AnimGraphNode_LookAt.h")
 @:uextern extern class FAnimNode_LookAt extends unreal.animgraphruntime.FAnimNode_SkeletalControlBase {
   public var bEnableDebug : Bool;
@@ -49,6 +48,7 @@ package unreal.animgraphruntime;
     Target Location in world space if LookAtBone is empty
   **/
   public var LookAtLocation : unreal.FVector;
+  public var LookAtSocket : unreal.FName;
   
   /**
     Target Bone to look at - you can't use LookAtLocation as alternative as you'll get a delay on bone location if you query directly *

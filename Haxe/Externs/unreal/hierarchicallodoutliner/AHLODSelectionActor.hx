@@ -19,7 +19,6 @@ package unreal.hierarchicallodoutliner;
   
   
 **/
-@:umodule("HierarchicalLODOutliner")
 @:glueCppIncludes("Private/HLODSelectionActor.h")
 @:noClass @:uextern extern class AHLODSelectionActor extends unreal.AActor {
   #if WITH_EDITORONLY_DATA

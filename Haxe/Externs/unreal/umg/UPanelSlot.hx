@@ -17,7 +17,6 @@ package unreal.umg;
 /**
   The base class for all Slots in UMG.
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UPanelSlot extends unreal.umg.UVisual {
   public var Content : unreal.umg.UWidget;

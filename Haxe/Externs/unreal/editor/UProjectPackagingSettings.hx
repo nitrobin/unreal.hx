@@ -17,7 +17,6 @@ package unreal.editor;
 /**
   Implements the Editor's user settings.
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Settings/ProjectPackagingSettings.h")
 @:uextern extern class UProjectPackagingSettings extends unreal.UObject {
   
@@ -58,6 +57,11 @@ package unreal.editor;
   public var bSkipEditorContent : Bool;
   
   /**
+    Encrypt ini files inside of the pak file
+  **/
+  public var bEncryptIniFiles : Bool;
+  
+  /**
     Create compressed cooked packages (decreased deployment size)
   **/
   public var bCompressed : Bool;
@@ -92,6 +96,11 @@ package unreal.editor;
     This is included by default for Blueprint based projects, but can optionally be disabled.
   **/
   public var IncludeCrashReporter : Bool;
+  
+  /**
+    A directory containing prerequisite packages that should be staged in the executable directory. Can be relative to $(EngineDir) or $(ProjectDir)
+  **/
+  public var ApplocalPrerequisitesDirectory : unreal.FDirectoryPath;
   
   /**
     Specifies whether to include prerequisites of packaged games, such as redistributable operating system components, whenever possible.

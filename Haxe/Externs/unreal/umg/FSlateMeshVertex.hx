@@ -19,7 +19,6 @@ package unreal.umg;
   
   
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:noCopy @:noEquals @:uextern extern class FSlateMeshVertex {
   public var UV5 : unreal.FVector2D;

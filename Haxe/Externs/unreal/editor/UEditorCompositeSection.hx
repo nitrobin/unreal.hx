@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Animation/EditorCompositeSection.h")
 @:uextern extern class UEditorCompositeSection extends unreal.editor.UEditorAnimBaseObj {
   

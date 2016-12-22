@@ -19,7 +19,6 @@ package unreal.paper2deditor;
   
   
 **/
-@:umodule("Paper2DEditor")
 @:glueCppIncludes("PaperTileSetFactory.h")
 @:noClass @:uextern extern class UPaperTileSetFactory extends unreal.editor.UFactory {
   

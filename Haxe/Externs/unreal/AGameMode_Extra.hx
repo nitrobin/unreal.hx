@@ -32,8 +32,6 @@ extern class AGameMode_Extra {
 
   function Logout(Exiting:AController) : Void;
   function SetPlayerDefaults(PlayerPawn:APawn) : Void;
-  /** Does end of game handling for the online layer */
-  function RestartPlayer(newPlayer:APlayerController) : Void;
   function PostSeamlessTravel() : Void;
   function GetSeamlessTravelActorList(bToEntry:Bool, actorList:PRef<TArray<AActor>>) : Void;
 

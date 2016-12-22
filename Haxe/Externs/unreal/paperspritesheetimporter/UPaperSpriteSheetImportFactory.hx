@@ -19,7 +19,6 @@ package unreal.paperspritesheetimporter;
   
   Imports a sprite sheet (and associated paper sprites and textures) from a JSON file exported from Adobe Flash CS6, Texture Packer, or other compatible tool
 **/
-@:umodule("PaperSpriteSheetImporter")
 @:glueCppIncludes("Private/PaperSpriteSheetImportFactory.h")
 @:noClass @:uextern extern class UPaperSpriteSheetImportFactory extends unreal.editor.UFactory {
   

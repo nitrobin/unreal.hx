@@ -19,9 +19,14 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Editor/PropertyEditorTestObject.h")
 @:noClass @:uextern extern class UPropertyEditorTestObject extends unreal.UObject {
+  
+  /**
+    Allows either an object that's derived from UTexture or IBlendableInterface, to ensure that Object Property handles know how to
+    filter for AllowedClasses correctly.
+  **/
+  public var TextureOrBlendableInterface : unreal.UObject;
   public var OnlyActorsAllowed : unreal.AActor;
   public var AnyMaterialInterface : unreal.UMaterialInterface;
   public var StaticMeshProp : unreal.UStaticMesh;

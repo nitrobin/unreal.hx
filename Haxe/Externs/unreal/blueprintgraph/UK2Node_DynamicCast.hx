@@ -19,7 +19,6 @@ package unreal.blueprintgraph;
   
   
 **/
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_DynamicCast.h")
 @:uextern extern class UK2Node_DynamicCast extends unreal.blueprintgraph.UK2Node {
   

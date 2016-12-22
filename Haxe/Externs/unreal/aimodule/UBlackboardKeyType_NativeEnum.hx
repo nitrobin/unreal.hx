@@ -17,7 +17,6 @@ package unreal.aimodule;
 /**
   DEPRECATED, please use UBlackboardKeyType_Enum instead
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Blackboard/BlackboardKeyType_NativeEnum.h")
 @:uextern extern class UBlackboardKeyType_NativeEnum extends unreal.aimodule.UBlackboardKeyType {
   public var EnumType : unreal.UEnum;

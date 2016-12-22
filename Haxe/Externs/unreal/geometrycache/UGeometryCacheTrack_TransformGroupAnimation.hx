@@ -17,7 +17,6 @@ package unreal.geometrycache;
 /**
   Derived GeometryCacheTrack class, used for Transform animation.
 **/
-@:umodule("GeometryCache")
 @:glueCppIncludes("GeometryCacheTrackTransformGroupAnimation.h")
 @:uextern extern class UGeometryCacheTrack_TransformGroupAnimation extends unreal.geometrycache.UGeometryCacheTrack {
   

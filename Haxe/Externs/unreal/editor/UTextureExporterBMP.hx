@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Exporters/TextureExporterBMP.h")
 @:noClass @:uextern extern class UTextureExporterBMP extends unreal.UExporter {
   

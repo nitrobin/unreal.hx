@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("ThumbnailRendering/LevelThumbnailRenderer.h")
 @:noClass @:uextern extern class ULevelThumbnailRenderer extends unreal.editor.UDefaultSizedThumbnailRenderer {
   

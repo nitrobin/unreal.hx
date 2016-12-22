@@ -13,7 +13,6 @@
 **/
 package unreal.niagara;
 
-@:umodule("Niagara")
 @:glueCppIncludes("NiagaraEffect.h")
 @:uextern extern class UNiagaraEffect extends unreal.UObject {
   

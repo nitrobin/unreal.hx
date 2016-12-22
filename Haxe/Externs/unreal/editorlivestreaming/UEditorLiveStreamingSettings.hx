@@ -19,7 +19,6 @@ package unreal.editorlivestreaming;
   
   Holds preferences for the editor live streaming features
 **/
-@:umodule("EditorLiveStreaming")
 @:glueCppIncludes("EditorLiveStreamingSettings.h")
 @:noClass @:uextern extern class UEditorLiveStreamingSettings extends unreal.UObject {
   

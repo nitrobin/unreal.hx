@@ -17,7 +17,6 @@ package unreal.onlinesubsystemutils;
 /**
   Base class for beacon communication (Unreal Networking, but outside normal gameplay traffic)
 **/
-@:umodule("OnlineSubsystemUtils")
 @:glueCppIncludes("OnlineBeacon.h")
 @:uextern extern class AOnlineBeacon extends unreal.AActor {
   

@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("Perception/AISenseEvent_Damage.h")
 @:uextern extern class UAISenseEvent_Damage extends unreal.aimodule.UAISenseEvent {
   public var Event : unreal.aimodule.FAIDamageEvent;

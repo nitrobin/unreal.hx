@@ -19,7 +19,6 @@ package unreal.blueprintgraph;
   
   
 **/
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_CallMaterialParameterCollectionFunction.h")
 @:uextern extern class UK2Node_CallMaterialParameterCollectionFunction extends unreal.blueprintgraph.UK2Node_CallFunction {
   

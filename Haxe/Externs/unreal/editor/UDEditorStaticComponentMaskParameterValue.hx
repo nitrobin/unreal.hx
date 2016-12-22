@@ -13,7 +13,6 @@
 **/
 package unreal.editor;
 
-@:umodule("UnrealEd")
 @:glueCppIncludes("MaterialEditor/DEditorStaticComponentMaskParameterValue.h")
 @:uextern extern class UDEditorStaticComponentMaskParameterValue extends unreal.editor.UDEditorParameterValue {
   public var ParameterValue : unreal.editor.FDComponentMaskParameter;

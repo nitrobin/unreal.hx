@@ -19,7 +19,6 @@ package unreal.blueprintgraph;
   
   
 **/
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_ActorBoundEvent.h")
 @:uextern extern class UK2Node_ActorBoundEvent extends unreal.blueprintgraph.UK2Node_Event {
   

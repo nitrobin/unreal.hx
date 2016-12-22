@@ -17,7 +17,6 @@ package unreal.moviescenecapture;
 /**
   Class responsible for capturing scene data
 **/
-@:umodule("MovieSceneCapture")
 @:glueCppIncludes("MovieSceneCapture.h")
 @:uextern extern class UMovieSceneCapture extends unreal.UObject implements unreal.moviescenecapture.IMovieSceneCaptureInterface {
   
@@ -32,6 +31,11 @@ package unreal.moviescenecapture;
   public var AdditionalCommandLineArguments : unreal.FString;
   
   /**
+    When enabled, the editor will shutdown when the capture starts
+  **/
+  public var bCloseEditorWhenCaptureStarts : Bool;
+  
+  /**
     Whether to capture the movie in a separate process or not
   **/
   public var bUseSeparateProcess : Bool;
@@ -44,7 +48,7 @@ package unreal.moviescenecapture;
   /**
     Settings specific to the capture protocol
   **/
-  public var ProtocolSettings : unreal.UObject;
+  public var ProtocolSettings : unreal.moviescenecapture.UMovieSceneCaptureProtocolSettings;
   
   /**
     The type of capture protocol to use

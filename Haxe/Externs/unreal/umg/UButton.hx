@@ -22,7 +22,6 @@ package unreal.umg;
   * Single Child
   * Clickable
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UButton extends unreal.umg.UContentWidget {
   

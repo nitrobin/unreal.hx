@@ -18,7 +18,6 @@ package unreal.aimodule;
   Default Focus service node.
   A service node that automatically sets the AI controller's focus when it becomes active.
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Services/BTService_DefaultFocus.h")
 @:uextern extern class UBTService_DefaultFocus extends unreal.aimodule.UBTService_BlackboardBase {
   

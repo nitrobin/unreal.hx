@@ -13,7 +13,6 @@
 **/
 package unreal.gameplaydebugger;
 
-@:umodule("GameplayDebugger")
 @:glueCppIncludes("GameplayDebuggingControllerComponent.h")
 @:uextern extern class UGameplayDebuggingControllerComponent extends unreal.UActorComponent {
   public var GameHUDBind : unreal.slate.FInputChord;

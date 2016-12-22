@@ -18,14 +18,8 @@ package unreal.aimodule;
   Move To task node.
   Moves the AI pawn toward the specified Actor or Location blackboard entry using the navigation system.
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Tasks/BTTask_MoveTo.h")
 @:uextern extern class UBTTask_MoveTo extends unreal.aimodule.UBTTask_BlackboardBase {
-  
-  /**
-    if move goal in BB changes the move will be redirected to new location
-  **/
-  public var bObserveBlackboardValue : Bool;
   
   /**
     if set to true agent's radius will be added to AcceptableRadius for purposes of checking
@@ -34,10 +28,25 @@ package unreal.aimodule;
   public var bStopOnOverlap : Bool;
   
   /**
+    if set, goal location will be projected on navigation data (navmesh) before using
+  **/
+  public var bProjectGoalLocation : Bool;
+  
+  /**
+    if set, path to goal actor will update itself when actor moves
+  **/
+  public var bTrackMovingGoal : Bool;
+  
+  /**
     if set, use incomplete path when goal can't be reached
   **/
   public var bAllowPartialPath : Bool;
   public var bAllowStrafe : Bool;
+  
+  /**
+    if move goal in BB changes the move will be redirected to new location
+  **/
+  public var bObserveBlackboardValue : Bool;
   
   /**
     if task is expected to react to changes to location represented by BB key

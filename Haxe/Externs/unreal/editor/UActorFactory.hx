@@ -13,7 +13,6 @@
 **/
 package unreal.editor;
 
-@:umodule("UnrealEd")
 @:glueCppIncludes("ActorFactories/ActorFactory.h")
 @:uextern extern class UActorFactory extends unreal.UObject {
   

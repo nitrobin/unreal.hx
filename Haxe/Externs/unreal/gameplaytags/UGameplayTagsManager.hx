@@ -17,7 +17,6 @@ package unreal.gameplaytags;
 /**
   Holds global data loaded at startup, is in a singleton UObject so it works properly with hot reload
 **/
-@:umodule("GameplayTags")
 @:glueCppIncludes("GameplayTagsManager.h")
 @:uextern extern class UGameplayTagsManager extends unreal.UObject {
   

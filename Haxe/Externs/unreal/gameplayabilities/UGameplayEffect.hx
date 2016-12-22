@@ -19,7 +19,6 @@ package unreal.gameplayabilities;
       The GameplayEffect definition. This is the data asset defined in the editor that drives everything.
    This is only blueprintable to allow for templating gameplay effects. Gameplay effects should NOT contain blueprint graphs.
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("GameplayEffect.h")
 @:uextern extern class UGameplayEffect extends unreal.UObject implements unreal.gameplaytags.IGameplayTagAssetInterface {
   
@@ -52,6 +51,11 @@ package unreal.gameplayabilities;
     How this GameplayEffect stacks with other instances of this same GameplayEffect
   **/
   public var StackingType : unreal.gameplayabilities.EGameplayEffectStackingType;
+  
+  /**
+    Grants immunity to GameplayEffects that match this query. Queries are more powerful but slightly slower than GrantedApplicationImmunityTags.
+  **/
+  public var GrantedApplicationImmunityQuery : unreal.gameplayabilities.FGameplayEffectQuery;
   
   /**
     Grants the owner immunity from these source tags.
@@ -109,6 +113,11 @@ package unreal.gameplayabilities;
   public var GameplayCues : unreal.TArray<unreal.gameplayabilities.FGameplayEffectCue>;
   
   /**
+    If true, GameplayCues will only be triggered for the first instance in a stacking GameplayEffect.
+  **/
+  public var bSuppressStackingCues : Bool;
+  
+  /**
     If true, cues will only trigger when GE modifiers succeed being applied (whether through modifiers or executions)
   **/
   public var bRequireModifierSuccessToTriggerCues : Bool;
@@ -147,6 +156,7 @@ package unreal.gameplayabilities;
     other gameplay effects that will be applied to the target of this effect if this effect applies
   **/
   public var TargetEffectClasses : unreal.TArray<unreal.TSubclassOf<unreal.gameplayabilities.UGameplayEffect>>;
+  public var ApplicationRequirements : unreal.TArray<unreal.TSubclassOf<unreal.gameplayabilities.UGameplayEffectCustomApplicationRequirement>>;
   
   /**
     Probability that this gameplay effect will be applied to the target actor (0.0 for never, 1.0 for always)

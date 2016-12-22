@@ -19,7 +19,6 @@ package unreal.moviescenetracks;
   
   A 3D transform section
 **/
-@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Sections/MovieScene3DTransformSection.h")
 @:uextern extern class UMovieScene3DTransformSection extends unreal.moviescene.UMovieSceneSection {
   

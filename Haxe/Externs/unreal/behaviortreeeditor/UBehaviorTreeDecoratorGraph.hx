@@ -19,7 +19,6 @@ package unreal.behaviortreeeditor;
   
   
 **/
-@:umodule("BehaviorTreeEditor")
 @:glueCppIncludes("BehaviorTreeDecoratorGraph.h")
 @:noClass @:uextern extern class UBehaviorTreeDecoratorGraph extends unreal.UEdGraph {
   

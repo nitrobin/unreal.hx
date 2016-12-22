@@ -22,6 +22,18 @@ package unreal;
   static public function RandomBool() : Bool;
   
   /**
+    Get a random chance with the specified weight. Range of weight is 0.0 - 1.0 E.g.,
+                 Weight = .6 return value = True 60% of the time
+  **/
+  static public function RandomBoolWithWeight(Weight : unreal.Float32) : Bool;
+  
+  /**
+    Get a random chance with the specified weight. Range of weight is 0.0 - 1.0 E.g.,
+                  Weight = .6 return value = True 60% of the time
+  **/
+  static public function RandomBoolWithWeightFromStream(Weight : unreal.Float32, RandomStream : unreal.Const<unreal.PRef<unreal.FRandomStream>>) : Bool;
+  
+  /**
     Returns the logical complement of the Boolean value (NOT A)
   **/
   static public function Not_PreBool(A : Bool) : Bool;
@@ -197,6 +209,11 @@ package unreal;
   static public function Or_IntInt(A : unreal.Int32, B : unreal.Int32) : unreal.Int32;
   
   /**
+    Bitwise NOT (~A)
+  **/
+  static public function Not_Int(A : unreal.Int32) : unreal.Int32;
+  
+  /**
     Sign (integer, returns -1 if A < 0, 0 if A is zero, and +1 if A > 0)
   **/
   static public function SignOfInteger(A : unreal.Int32) : unreal.Int32;
@@ -277,7 +294,7 @@ package unreal;
   static public function Less_FloatFloat(A : unreal.Float32, B : unreal.Float32) : Bool;
   
   /**
-    Returns true if A is Greater than B (A > B)
+    Returns true if A is greater than B (A > B)
   **/
   static public function Greater_FloatFloat(A : unreal.Float32, B : unreal.Float32) : Bool;
   
@@ -287,7 +304,7 @@ package unreal;
   static public function LessEqual_FloatFloat(A : unreal.Float32, B : unreal.Float32) : Bool;
   
   /**
-    Returns true if A is Greater than or equal to B (A >= B)
+    Returns true if A is greater than or equal to B (A >= B)
   **/
   static public function GreaterEqual_FloatFloat(A : unreal.Float32, B : unreal.Float32) : Bool;
   
@@ -398,6 +415,11 @@ package unreal;
     Returns the value of PI
   **/
   static public function GetPI() : unreal.Float32;
+  
+  /**
+    Returns the value of TAU (= 2 * PI)
+  **/
+  static public function GetTAU() : unreal.Float32;
   
   /**
     Returns radians value based on the input degrees
@@ -783,6 +805,58 @@ package unreal;
   static public function ProjectVectorOnToVector(V : unreal.FVector, Target : unreal.FVector) : unreal.FVector;
   
   /**
+    Find closest points between 2 segments.
+    
+    @param       Segment1Start   Start of the 1st segment.
+    @param       Segment1End             End of the 1st segment.
+    @param       Segment2Start   Start of the 2nd segment.
+    @param       Segment2End             End of the 2nd segment.
+    @param       Segment1Point   Closest point on segment 1 to segment 2.
+    @param       Segment2Point   Closest point on segment 2 to segment 1.
+  **/
+  static public function FindNearestPointsOnLineSegments(Segment1Start : unreal.FVector, Segment1End : unreal.FVector, Segment2Start : unreal.FVector, Segment2End : unreal.FVector, Segment1Point : unreal.PRef<unreal.FVector>, Segment2Point : unreal.PRef<unreal.FVector>) : Void;
+  
+  /**
+    Find the closest point on a segment to a given point.
+    
+    @param Point                 Point for which we find the closest point on the segment.
+    @param SegmentStart  Start of the segment.
+    @param SegmentEnd    End of the segment.
+    @return The closest point on the segment to the given point.
+  **/
+  static public function FindClosestPointOnSegment(Point : unreal.FVector, SegmentStart : unreal.FVector, SegmentEnd : unreal.FVector) : unreal.FVector;
+  
+  /**
+    Find the closest point on an infinite line to a given point.
+    
+    @param Point                 Point for which we find the closest point on the line.
+    @param LineOrigin    Point of reference on the line.
+    @param LineDirection Direction of the line. Not required to be normalized.
+    @return The closest point on the line to the given point.
+  **/
+  static public function FindClosestPointOnLine(Point : unreal.FVector, LineOrigin : unreal.FVector, LineDirection : unreal.FVector) : unreal.FVector;
+  
+  /**
+    Find the distance from a point to the closest point on a segment.
+    
+    @param Point                  Point for which we find the distance to the closest point on the segment.
+    @param SegmentStart   Start of the segment.
+    @param SegmentEnd             End of the segment.
+    @return The distance from the given point to the closest point on the segment.
+  **/
+  static public function GetPointDistanceToSegment(Point : unreal.FVector, SegmentStart : unreal.FVector, SegmentEnd : unreal.FVector) : unreal.Float32;
+  
+  /**
+    Find the distance from a point to the closest point on an infinite line.
+    
+    @param Point                  Point for which we find the distance to the closest point on the line.
+    @param LineOrigin             Point of reference on the line.
+    @param LineDirection  Direction of the line. Not required to be normalized.
+    @return The distance from the given point to the closest point on the line.
+  **/
+  static public function GetPointDistanceToLine(Point : unreal.FVector, LineOrigin : unreal.FVector, LineDirection : unreal.FVector) : unreal.Float32;
+  
+  /**
     Projects a point onto a plane defined by a point on the plane and a plane normal.
     
     @param  Point Point to project onto the plane.
@@ -829,7 +903,7 @@ package unreal;
   /**
     Find the unit direction vector from one position to another.
   **/
-  static public function GetDirectionVector(From : unreal.FVector, To : unreal.FVector) : unreal.FVector;
+  static public function GetDirectionUnitVector(From : unreal.FVector, To : unreal.FVector) : unreal.FVector;
   
   /**
     Returns true if rotator A is equal to rotator B (A == B) within a specified error tolerance
@@ -934,6 +1008,15 @@ package unreal;
   static public function Multiply_LinearColorFloat(A : unreal.FLinearColor, B : unreal.Float32) : unreal.FLinearColor;
   
   /**
+    Creates a plane with a facing direction of Normal at the given Point
+    
+    @param Point  A point on the plane
+    @param Normal  The Normal of the plane at Point
+    @return Plane instance
+  **/
+  static public function MakePlaneFromPointAndNormal(Point : unreal.FVector, Normal : unreal.FVector) : unreal.FPlane;
+  
+  /**
     Makes a DateTime struct
   **/
   static public function MakeDateTime(Year : unreal.Int32, Month : unreal.Int32, Day : unreal.Int32, Hour : unreal.Int32, Minute : unreal.Int32, Second : unreal.Int32, Millisecond : unreal.Int32) : unreal.FDateTime;
@@ -969,22 +1052,22 @@ package unreal;
   static public function NotEqual_DateTimeDateTime(A : unreal.FDateTime, B : unreal.FDateTime) : Bool;
   
   /**
-    Returns true if A is Greater than B (A > B)
+    Returns true if A is greater than B (A > B)
   **/
   static public function Greater_DateTimeDateTime(A : unreal.FDateTime, B : unreal.FDateTime) : Bool;
   
   /**
-    Returns true if A is Greater than B (A >= B)
+    Returns true if A is greater than or equal to B (A >= B)
   **/
   static public function GreaterEqual_DateTimeDateTime(A : unreal.FDateTime, B : unreal.FDateTime) : Bool;
   
   /**
-    Returns true if A is Greater than B (A < B)
+    Returns true if A is less than B (A < B)
   **/
   static public function Less_DateTimeDateTime(A : unreal.FDateTime, B : unreal.FDateTime) : Bool;
   
   /**
-    Returns true if A is Greater than B (A <= B)
+    Returns true if A is less than or equal to B (A <= B)
   **/
   static public function LessEqual_DateTimeDateTime(A : unreal.FDateTime, B : unreal.FDateTime) : Bool;
   
@@ -1139,22 +1222,22 @@ package unreal;
   static public function NotEqual_TimespanTimespan(A : unreal.FTimespan, B : unreal.FTimespan) : Bool;
   
   /**
-    Returns true if A is Greater than B (A > B)
+    Returns true if A is greater than B (A > B)
   **/
   static public function Greater_TimespanTimespan(A : unreal.FTimespan, B : unreal.FTimespan) : Bool;
   
   /**
-    Returns true if A is Greater than B (A >= B)
+    Returns true if A is greater than or equal to B (A >= B)
   **/
   static public function GreaterEqual_TimespanTimespan(A : unreal.FTimespan, B : unreal.FTimespan) : Bool;
   
   /**
-    Returns true if A is Greater than B (A < B)
+    Returns true if A is less than B (A < B)
   **/
   static public function Less_TimespanTimespan(A : unreal.FTimespan, B : unreal.FTimespan) : Bool;
   
   /**
-    Returns true if A is Greater than B (A <= B)
+    Returns true if A is less than or equal to B (A <= B)
   **/
   static public function LessEqual_TimespanTimespan(A : unreal.FTimespan, B : unreal.FTimespan) : Bool;
   
@@ -1667,7 +1750,7 @@ package unreal;
   /**
     Linearly interpolates between A and B based on Alpha (100% of A when Alpha=0 and 100% of B when Alpha=1).
   **/
-  static public function TLerp(A : unreal.Const<unreal.PRef<unreal.FTransform>>, B : unreal.Const<unreal.PRef<unreal.FTransform>>, Alpha : unreal.Float32) : unreal.FTransform;
+  static public function TLerp(A : unreal.Const<unreal.PRef<unreal.FTransform>>, B : unreal.Const<unreal.PRef<unreal.FTransform>>, Alpha : unreal.Float32, InterpMode : unreal.ELerpInterpolationMode) : unreal.FTransform;
   
   /**
     Ease between A and B using a specified easing function.
@@ -1706,6 +1789,11 @@ package unreal;
     Returns Vector A scaled by B
   **/
   static public function Multiply_Vector2DFloat(A : unreal.FVector2D, B : unreal.Float32) : unreal.FVector2D;
+  
+  /**
+    Element-wise Vector multiplication (Result = {A.x*B.x, A.y*B.y})
+  **/
+  static public function Multiply_Vector2DVector2D(A : unreal.FVector2D, B : unreal.FVector2D) : unreal.FVector2D;
   
   /**
     Returns Vector A divided by B
@@ -1799,7 +1887,7 @@ package unreal;
   static public function Vector2DInterpTo_Constant(Current : unreal.FVector2D, Target : unreal.FVector2D, DeltaTime : unreal.Float32, InterpSpeed : unreal.Float32) : unreal.FVector2D;
   
   /**
-    Tries to reach Target based on distance from Current position, giving a nice smooth feeling when tracking a position.
+    Tries to reach Target rotation based on Current rotation, giving a nice smooth feeling when rotating to Target rotation.
     
     @param               Current                 Actual rotation
     @param               Target                  Target rotation
@@ -1810,7 +1898,7 @@ package unreal;
   static public function RInterpTo(Current : unreal.FRotator, Target : unreal.FRotator, DeltaTime : unreal.Float32, InterpSpeed : unreal.Float32) : unreal.FRotator;
   
   /**
-    Tries to reach Target at a constant rate.
+    Tries to reach Target rotation at a constant rate.
     
     @param               Current                 Actual rotation
     @param               Target                  Target rotation
@@ -1830,6 +1918,40 @@ package unreal;
     @return              New interpolated Color
   **/
   static public function CInterpTo(Current : unreal.FLinearColor, Target : unreal.FLinearColor, DeltaTime : unreal.Float32, InterpSpeed : unreal.Float32) : unreal.FLinearColor;
+  
+  /**
+    Uses a simple spring model to interpolate a float from Current to Target.
+    
+    @param Current                               Current value
+    @param Target                                Target value
+    @param SpringState                   Data related to spring model (velocity, error, etc..) - Create a unique variable per spring
+    @param Stiffness                             How stiff the spring model is (more stiffness means more oscillation around the target value)
+    @param CriticalDampingFactor How much damping to apply to the spring (0 means no damping, 1 means critically damped which means no oscillation)
+    @param Mass                                  Multiplier that acts like mass on a spring
+  **/
+  static public function FloatSpringInterp(Current : unreal.Float32, Target : unreal.Float32, SpringState : unreal.PRef<unreal.FFloatSpringState>, Stiffness : unreal.Float32, CriticalDampingFactor : unreal.Float32, DeltaTime : unreal.Float32, Mass : unreal.Float32) : unreal.Float32;
+  
+  /**
+    Uses a simple spring model to interpolate a vector from Current to Target.
+    
+    @param Current                                Current value
+    @param Target                                 Target value
+    @param SpringState                    Data related to spring model (velocity, error, etc..) - Create a unique variable per spring
+    @param Stiffness                              How stiff the spring model is (more stiffness means more oscillation around the target value)
+    @param CriticalDampingFactor  How much damping to apply to the spring (0 means no damping, 1 means critically damped which means no oscillation)
+    @param Mass                                   Multiplier that acts like mass on a spring
+  **/
+  static public function VectorSpringInterp(Current : unreal.FVector, Target : unreal.FVector, SpringState : unreal.PRef<unreal.FVectorSpringState>, Stiffness : unreal.Float32, CriticalDampingFactor : unreal.Float32, DeltaTime : unreal.Float32, Mass : unreal.Float32) : unreal.FVector;
+  
+  /**
+    Resets the state of a given spring
+  **/
+  static public function ResetFloatSpringState(SpringState : unreal.PRef<unreal.FFloatSpringState>) : Void;
+  
+  /**
+    Resets the state of a given spring
+  **/
+  static public function ResetVectorSpringState(SpringState : unreal.PRef<unreal.FVectorSpringState>) : Void;
   
   /**
     Returns a uniformly distributed random number between 0 and Max - 1

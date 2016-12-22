@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/BlendSpaceFactory1D.h")
 @:uextern extern class UBlendSpaceFactory1D extends unreal.editor.UFactory {
   public var TargetSkeleton : unreal.USkeleton;

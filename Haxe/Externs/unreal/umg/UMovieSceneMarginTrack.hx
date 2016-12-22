@@ -19,7 +19,6 @@ package unreal.umg;
   
   Handles manipulation of FMargins in a movie scene
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UMovieSceneMarginTrack extends unreal.moviescenetracks.UMovieScenePropertyTrack {
   

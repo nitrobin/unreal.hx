@@ -19,7 +19,6 @@ package unreal.gameplayabilities;
   
   
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/Tasks/AbilityTask_PlayMontageAndWait.h")
 @:uextern extern class UAbilityTask_PlayMontageAndWait extends unreal.gameplayabilities.UAbilityTask {
   

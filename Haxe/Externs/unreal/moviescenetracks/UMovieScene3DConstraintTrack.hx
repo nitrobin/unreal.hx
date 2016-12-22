@@ -19,7 +19,6 @@ package unreal.moviescenetracks;
   
   Base class for constraint tracks (tracks that are dependent upon other objects).
 **/
-@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Tracks/MovieScene3DConstraintTrack.h")
 @:uextern extern class UMovieScene3DConstraintTrack extends unreal.moviescene.UMovieSceneTrack {
   

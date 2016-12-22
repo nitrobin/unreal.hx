@@ -20,9 +20,13 @@ package unreal.umg;
   * No Children
   * Text Entry
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UEditableTextBox extends unreal.umg.UWidget {
+  
+  /**
+    Controls how the text within this widget should be shaped.
+  **/
+  public var ShapedTextOptions : unreal.umg.FShapedTextOptions;
   
   /**
     If we're on a platform that requires a virtual keyboard, what kind of keyboard should this widget use?
@@ -109,5 +113,6 @@ package unreal.umg;
   **/
   public var WidgetStyle : unreal.slatecore.FEditableTextBoxStyle;
   @:final public function ClearError() : Void;
+  @:thisConst @:final public function HasError() : Bool;
   
 }

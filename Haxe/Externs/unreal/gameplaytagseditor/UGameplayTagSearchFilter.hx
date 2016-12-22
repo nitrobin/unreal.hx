@@ -19,7 +19,6 @@ package unreal.gameplaytagseditor;
   
   
 **/
-@:umodule("GameplayTagsEditor")
 @:glueCppIncludes("Private/GameplayTagSearchFilter.h")
 @:noClass @:uextern extern class UGameplayTagSearchFilter extends unreal.contentbrowser.UContentBrowserFrontEndFilterExtension {
   

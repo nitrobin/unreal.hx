@@ -19,7 +19,6 @@ package unreal.animgraph;
   
   
 **/
-@:umodule("AnimGraph")
 @:glueCppIncludes("AnimStateTransitionNode.h")
 @:uextern extern class UAnimStateTransitionNode extends unreal.animgraph.UAnimStateNodeBase {
   public var SharedCrossfadeIdx : unreal.Int32;

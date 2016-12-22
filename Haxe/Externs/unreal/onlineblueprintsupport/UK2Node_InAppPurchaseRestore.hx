@@ -13,7 +13,6 @@
 **/
 package unreal.onlineblueprintsupport;
 
-@:umodule("OnlineBlueprintSupport")
 @:glueCppIncludes("K2Node_InAppPurchaseRestore.h")
 @:uextern extern class UK2Node_InAppPurchaseRestore extends unreal.blueprintgraph.UK2Node_BaseAsyncTask {
   

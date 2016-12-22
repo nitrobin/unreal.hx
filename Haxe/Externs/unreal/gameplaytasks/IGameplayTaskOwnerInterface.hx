@@ -19,7 +19,6 @@ package unreal.gameplaytasks;
   
   
 **/
-@:umodule("GameplayTasks")
 @:glueCppIncludes("GameplayTaskOwnerInterface.h")
 @:uextern extern interface IGameplayTaskOwnerInterface {
   

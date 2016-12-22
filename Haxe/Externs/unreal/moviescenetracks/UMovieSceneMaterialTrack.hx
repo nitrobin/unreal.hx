@@ -15,11 +15,8 @@ package unreal.moviescenetracks;
 
 
 /**
-  WARNING: This type was defined as MinimalAPI on its declaration. Because of that, its properties/methods are inaccessible
-  
   Handles manipulation of material parameters in a movie scene.
 **/
-@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Tracks/MovieSceneMaterialTrack.h")
 @:uextern extern class UMovieSceneMaterialTrack extends unreal.moviescene.UMovieSceneNameableTrack {
   

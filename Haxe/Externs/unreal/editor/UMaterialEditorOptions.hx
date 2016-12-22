@@ -13,7 +13,6 @@
 **/
 package unreal.editor;
 
-@:umodule("UnrealEd")
 @:glueCppIncludes("Preferences/MaterialEditorOptions.h")
 @:uextern extern class UMaterialEditorOptions extends unreal.UObject {
   

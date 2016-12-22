@@ -19,7 +19,6 @@ package unreal.onlinesubsystem;
   
   
 **/
-@:umodule("OnlineSubsystem")
 @:glueCppIncludes("Interfaces/TurnBasedMatchInterface.h")
 @:noClass @:uextern extern interface ITurnBasedMatchInterface {
   

@@ -17,7 +17,6 @@ package unreal.mactargetplatform;
 /**
   Implements the settings for the Mac target platform.
 **/
-@:umodule("MacTargetPlatform")
 @:glueCppIncludes("MacTargetSettings.h")
 @:uextern extern class UMacTargetSettings extends unreal.UObject {
   

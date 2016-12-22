@@ -19,7 +19,6 @@ package unreal.blueprintgraph;
   
   
 **/
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_MultiGate.h")
 @:uextern extern class UK2Node_MultiGate extends unreal.blueprintgraph.UK2Node_ExecutionSequence {
   

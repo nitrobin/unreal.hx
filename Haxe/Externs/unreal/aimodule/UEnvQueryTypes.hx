@@ -17,7 +17,6 @@ package unreal.aimodule;
 /**
   END DEPRECATED SUPPORT
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/EnvQueryTypes.h")
 @:uextern extern class UEnvQueryTypes extends unreal.UObject {
   

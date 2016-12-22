@@ -19,7 +19,6 @@ package unreal.gameplayabilities;
   
   Waits for the actor to activate another ability
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/Tasks/AbilityTask_WaitAbilityCommit.h")
 @:uextern extern class UAbilityTask_WaitAbilityCommit extends unreal.gameplayabilities.UAbilityTask {
   

@@ -24,7 +24,6 @@ package unreal.aimodule;
   
   Use RunBehaviorDynamic task for subtrees that need to be changed in runtime.
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Tasks/BTTask_RunBehavior.h")
 @:uextern extern class UBTTask_RunBehavior extends unreal.aimodule.UBTTaskNode {
   

@@ -34,7 +34,6 @@ package unreal.gameplayabilities;
   a string list. Properties whose name match strings in that list will be shown, the rest will be hidden. All properties can always be
   seen/edited by just checking "ShowAllProperties" on the GameplayEffect itself.
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("GameplayEffectTemplate.h")
 @:noClass @:uextern extern class UGameplayEffectTemplate extends unreal.gameplayabilities.UGameplayEffect {
   #if WITH_EDITORONLY_DATA

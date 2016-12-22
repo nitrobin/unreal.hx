@@ -21,7 +21,6 @@ package unreal.gameplayabilities;
   This will RESET your character's current movement mode! If you wish to maintain PHYS_Flying or PHYS_Custom, you must
   reset it on completion.!
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/Tasks/AbilityTask_MoveToLocation.h")
 @:uextern extern class UAbilityTask_MoveToLocation extends unreal.gameplayabilities.UAbilityTask {
   private var LerpCurveVector : unreal.UCurveVector;

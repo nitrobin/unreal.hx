@@ -19,7 +19,6 @@ package unreal.aimodule;
   
   
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/Tests/EnvQueryTest_Pathfinding.h")
 @:noClass @:uextern extern class UEnvQueryTest_Pathfinding extends unreal.aimodule.UEnvQueryTest {
   

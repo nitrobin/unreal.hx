@@ -17,7 +17,6 @@ package unreal.umgeditor;
 /**
   Implements the settings for the Widget Blueprint Designer.
 **/
-@:umodule("UMGEditor")
 @:glueCppIncludes("Settings/WidgetDesignerSettings.h")
 @:uextern extern class UWidgetDesignerSettings extends unreal.UObject {
   public var bShowOutlines : Bool;

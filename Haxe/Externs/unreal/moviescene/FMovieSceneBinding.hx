@@ -19,7 +19,6 @@ package unreal.moviescene;
   
   A set of tracks bound to runtime objects
 **/
-@:umodule("MovieScene")
 @:glueCppIncludes("MovieScene.h")
 @:noCopy @:noEquals @:uextern extern class FMovieSceneBinding {
   

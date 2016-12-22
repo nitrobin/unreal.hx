@@ -19,7 +19,6 @@ package unreal.editor;
   
   Scalar parameter value
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("MaterialEditor/MaterialEditorInstanceConstant.h")
 @:noCopy @:noEquals @:uextern extern class FLightmassScalarParameterValue extends unreal.editor.FLightmassParameterValue {
   

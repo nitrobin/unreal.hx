@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/FbxStaticMeshImportData.h")
 @:uextern extern class UFbxStaticMeshImportData extends unreal.editor.UFbxMeshImportData {
   
@@ -59,10 +58,5 @@ package unreal.editor;
     For static meshes, enabling this option will combine all meshes in the FBX into a single monolithic mesh in Unreal
   **/
   public var StaticMeshLODGroup : unreal.FName;
-  
-  /**
-    If this option is true the staticmesh absolute transform will be apply to the staticmesh vertices.
-  **/
-  public var bTransformVertexToAbsolute : Bool;
   
 }

@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("FunctionalAITest.h")
 @:uextern extern class FGenericTeamId {
   private var TeamID : unreal.UInt8;

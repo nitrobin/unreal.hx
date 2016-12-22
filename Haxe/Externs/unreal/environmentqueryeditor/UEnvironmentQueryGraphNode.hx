@@ -19,7 +19,6 @@ package unreal.environmentqueryeditor;
   
   
 **/
-@:umodule("EnvironmentQueryEditor")
 @:glueCppIncludes("EnvironmentQueryGraphNode.h")
 @:noClass @:uextern extern class UEnvironmentQueryGraphNode extends unreal.aigraph.UAIGraphNode {
   

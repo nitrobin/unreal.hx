@@ -17,9 +17,13 @@ package unreal.editor;
 /**
   Implements the Level Editor's per-instance view port settings.
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Settings/LevelEditorViewportSettings.h")
 @:uextern extern class FLevelEditorViewportInstanceSettings {
+  
+  /**
+    When enabled, the full viewport toolbar will be shown. When disabled, a compact toolbar is used.
+  **/
+  public var bShowFullToolbar : Bool;
   
   /**
     Whether viewport statistics should be enabled by default.

@@ -13,7 +13,6 @@
 **/
 package unreal.editor;
 
-@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/TextureFactory.h")
 @:uextern extern class UTextureFactory extends unreal.editor.UFactory {
   
@@ -31,6 +30,11 @@ package unreal.editor;
     If enabled, preserve the value of border pixels when creating mip-maps
   **/
   public var bPreserveBorder : Bool;
+  
+  /**
+    Channel values to compare to when preserving alpha coverage from a mask for mips
+  **/
+  public var AlphaCoverageThresholds : unreal.FVector4;
   
   /**
     If enabled, mip-map alpha values will be dithered for smooth transitions

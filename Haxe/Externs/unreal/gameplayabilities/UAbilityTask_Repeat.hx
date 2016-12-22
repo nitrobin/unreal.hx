@@ -17,7 +17,6 @@ package unreal.gameplayabilities;
 /**
   Repeat a task a certain number of times at a given interval.
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/Tasks/AbilityTask_Repeat.h")
 @:uextern extern class UAbilityTask_Repeat extends unreal.gameplayabilities.UAbilityTask {
   

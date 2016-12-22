@@ -17,7 +17,6 @@ package unreal.umg;
 /**
   The Slot for the UVerticalBox, contains the widget that is flowed vertically
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UVerticalBoxSlot extends unreal.umg.UPanelSlot {
   

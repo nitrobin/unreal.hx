@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Exporters/ModelExporterT3D.h")
 @:noClass @:uextern extern class UModelExporterT3D extends unreal.UExporter {
   

@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("ActorFactories/ActorFactoryDirectionalLight.h")
 @:uextern extern class UActorFactoryDirectionalLight extends unreal.editor.UActorFactory {
   

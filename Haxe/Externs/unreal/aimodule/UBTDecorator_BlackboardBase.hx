@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Decorators/BTDecorator_BlackboardBase.h")
 @:uextern extern class UBTDecorator_BlackboardBase extends unreal.aimodule.UBTDecorator {
   

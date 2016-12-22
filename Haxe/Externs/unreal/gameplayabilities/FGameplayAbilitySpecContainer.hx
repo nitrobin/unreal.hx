@@ -17,7 +17,6 @@ package unreal.gameplayabilities;
 /**
   Fast serializer wrapper for above struct
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("AbilitySystemComponent.h")
 @:uextern extern class FGameplayAbilitySpecContainer extends unreal.FFastArraySerializer {
   

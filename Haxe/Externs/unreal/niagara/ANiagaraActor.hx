@@ -19,7 +19,6 @@ package unreal.niagara;
   
   
 **/
-@:umodule("Niagara")
 @:glueCppIncludes("NiagaraActor.h")
 @:uextern extern class ANiagaraActor extends unreal.AActor {
   #if WITH_EDITORONLY_DATA

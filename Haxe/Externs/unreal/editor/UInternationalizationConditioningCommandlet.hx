@@ -20,7 +20,6 @@ package unreal.editor;
   UInternationalizationConditioningCommandlet: Commandlet that contains various misc functionality to prepare, modify, and condition Internationalization manifest
   and archive data.
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Commandlets/InternationalizationConditioningCommandlet.h")
 @:noClass @:uextern extern class UInternationalizationConditioningCommandlet extends unreal.editor.UGatherTextCommandletBase {
   

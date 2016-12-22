@@ -13,7 +13,6 @@
 **/
 package unreal.editor;
 
-@:umodule("UnrealEd")
 @:glueCppIncludes("Preferences/PhATSimOptions.h")
 @:uextern extern class UPhATSimOptions extends unreal.UObject {
   
@@ -91,6 +90,11 @@ package unreal.editor;
     Time between poking ragdoll and starting to blend back.
   **/
   public var PokePauseTime : unreal.Float32;
+  
+  /**
+    Determines whether simulation of root body updates component transform
+  **/
+  public var PhysicsUpdateMode : unreal.EPhysicsTransformUpdateMode;
   
   /**
     Lets you manually control the physics/animation

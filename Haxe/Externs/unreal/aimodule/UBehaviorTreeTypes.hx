@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/BehaviorTreeTypes.h")
 @:uextern extern class UBehaviorTreeTypes extends unreal.UObject {
   

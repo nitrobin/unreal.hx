@@ -19,10 +19,10 @@ package unreal.gameplayabilities;
   
   Applies force to character's movement
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/Tasks/AbilityTask_ApplyRootMotionRadialForce.h")
 @:uextern extern class UAbilityTask_ApplyRootMotionRadialForce extends unreal.gameplayabilities.UAbilityTask {
   private var MovementComponent : unreal.UCharacterMovementComponent;
+  private var FixedWorldDirection : unreal.FRotator;
   
   /**
     Strength of the force over time

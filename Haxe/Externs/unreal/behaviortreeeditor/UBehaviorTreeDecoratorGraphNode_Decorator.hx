@@ -19,7 +19,6 @@ package unreal.behaviortreeeditor;
   
   
 **/
-@:umodule("BehaviorTreeEditor")
 @:glueCppIncludes("BehaviorTreeDecoratorGraphNode_Decorator.h")
 @:noClass @:uextern extern class UBehaviorTreeDecoratorGraphNode_Decorator extends unreal.behaviortreeeditor.UBehaviorTreeDecoratorGraphNode {
   public var ClassData : unreal.aigraph.FGraphNodeClassData;

@@ -19,7 +19,6 @@ package unreal.geometrymode;
   
   
 **/
-@:umodule("GeometryMode")
 @:glueCppIncludes("GeomModifier_Turn.h")
 @:noClass @:uextern extern class UGeomModifier_Turn extends unreal.geometrymode.UGeomModifier_Edit {
   

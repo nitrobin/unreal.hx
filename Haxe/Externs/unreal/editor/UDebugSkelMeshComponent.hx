@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Animation/DebugSkelMeshComponent.h")
 @:uextern extern class UDebugSkelMeshComponent extends unreal.USkeletalMeshComponent {
   
@@ -36,11 +35,9 @@ package unreal.editor;
   public var SkelMaterials : unreal.TArray<unreal.UMaterialInterface>;
   
   /**
-    Array of sockets to render manipulation widgets for
-          /       Storing a pointer to the actual socket rather than a name, as we don't care here
-          /       whether the socket is on the skeleton or the mesh!
+    Array of morphtargets to render verts for
   **/
-  public var SocketsOfInterest : unreal.TArray<unreal.editor.FSelectedSocketInfo>;
+  public var MorphTargetOfInterests : unreal.TArray<unreal.UMorphTarget>;
   
   /**
     Array of bones to render bone weights for
@@ -107,6 +104,11 @@ package unreal.editor;
     Vertex normal viewing
   **/
   public var bDrawNormals : Bool;
+  
+  /**
+    Morphtarget viewing
+  **/
+  public var bDrawMorphTargetVerts : Bool;
   
   /**
     Bone influences viewing

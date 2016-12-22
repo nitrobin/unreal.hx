@@ -19,7 +19,6 @@ package unreal.landscape;
   
   
 **/
-@:umodule("Landscape")
 @:glueCppIncludes("LandscapeGizmoRenderComponent.h")
 @:noClass @:uextern extern class ULandscapeGizmoRenderComponent extends unreal.UPrimitiveComponent {
   

@@ -13,7 +13,6 @@
 **/
 package unreal.gameplaydebugger;
 
-@:umodule("GameplayDebugger")
 @:glueCppIncludes("GameplayDebuggerSettings.h")
 @:uextern extern class UGameplayDebuggerSettings extends unreal.UObject {
   private var ActiveEQSIndex : unreal.Int32;

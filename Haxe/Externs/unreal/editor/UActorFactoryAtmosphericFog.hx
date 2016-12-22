@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("ActorFactories/ActorFactoryAtmosphericFog.h")
 @:uextern extern class UActorFactoryAtmosphericFog extends unreal.editor.UActorFactory {
   

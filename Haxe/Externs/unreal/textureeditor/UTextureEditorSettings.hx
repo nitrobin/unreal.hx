@@ -17,7 +17,6 @@ package unreal.textureeditor;
 /**
   Implements the Editor's user settings.
 **/
-@:umodule("TextureEditor")
 @:glueCppIncludes("TextureEditorSettings.h")
 @:uextern extern class UTextureEditorSettings extends unreal.UObject {
   

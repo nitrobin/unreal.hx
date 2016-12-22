@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("ActorFactories/ActorFactoryDestructible.h")
 @:uextern extern class UActorFactoryDestructible extends unreal.editor.UActorFactory {
   

@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("ThumbnailRendering/DestructibleMeshThumbnailRenderer.h")
 @:uextern extern class UDestructibleMeshThumbnailRenderer extends unreal.editor.UDefaultSizedThumbnailRenderer {
   

@@ -19,7 +19,6 @@ package unreal.geometrycacheed;
   
   
 **/
-@:umodule("GeometryCacheEd")
 @:glueCppIncludes("GeometryCacheThumbnailRenderer.h")
 @:uextern extern class UGeometryCacheThumbnailRenderer extends unreal.editor.UDefaultSizedThumbnailRenderer {
   

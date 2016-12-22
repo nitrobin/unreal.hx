@@ -17,7 +17,6 @@ package unreal.editor;
 /**
   Implements per-project cooker settings exposed to the editor
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("CrashReporterSettings.h")
 @:uextern extern class UCrashReporterSettings extends unreal.UObject {
   

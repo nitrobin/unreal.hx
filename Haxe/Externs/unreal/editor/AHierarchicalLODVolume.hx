@@ -19,7 +19,6 @@ package unreal.editor;
   
   An invisible volume used to manually define/create a HLOD cluster.
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("HierarchicalLODVolume.h")
 @:uextern extern class AHierarchicalLODVolume extends unreal.AVolume {
   

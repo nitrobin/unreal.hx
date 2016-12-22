@@ -19,7 +19,6 @@ package unreal.animgraph;
   
   
 **/
-@:umodule("AnimGraph")
 @:glueCppIncludes("AnimGraphNode_RotationOffsetBlendSpace.h")
 @:uextern extern class UAnimGraphNode_RotationOffsetBlendSpace extends unreal.animgraph.UAnimGraphNode_BlendSpaceBase {
   public var Node : unreal.animgraphruntime.FAnimNode_RotationOffsetBlendSpace;

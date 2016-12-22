@@ -17,9 +17,9 @@ package unreal.slatecore;
 /**
   Represents the appearance of an SSlider
 **/
-@:umodule("SlateCore")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class FSliderStyle extends unreal.slatecore.FSlateWidgetStyle {
+  public var BarThickness : unreal.Float32;
   
   /**
     Image to use when the slider thumb is in its disabled state

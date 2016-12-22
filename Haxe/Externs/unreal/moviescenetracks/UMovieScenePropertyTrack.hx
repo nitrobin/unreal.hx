@@ -17,9 +17,8 @@ package unreal.moviescenetracks;
 /**
   Base class for tracks that animate an object property
 **/
-@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Tracks/MovieScenePropertyTrack.h")
-@:uextern extern class UMovieScenePropertyTrack extends unreal.moviescene.UMovieSceneTrack {
+@:uextern extern class UMovieScenePropertyTrack extends unreal.moviescene.UMovieSceneNameableTrack {
   
   /**
     All the sections in this list

@@ -13,7 +13,6 @@
 **/
 package unreal.gameplaydebugger;
 
-@:umodule("GameplayDebugger")
 @:glueCppIncludes("GameplayDebuggingComponent.h")
 @:uextern extern class UGameplayDebuggingComponent extends unreal.UPrimitiveComponent implements unreal.aimodule.IEQSQueryResultSourceInterface {
   private var ActivationCounter : unreal.UInt8;
@@ -22,7 +21,7 @@ package unreal.gameplaydebugger;
     controller related stuff
   **/
   public var TargetActor : unreal.AActor;
-  public var PerceptionShapeElements : unreal.TArray<unreal.FGameplayDebuggerShapeElement>;
+  public var PerceptionShapeElements : unreal.TArray<unreal.gameplaydebugger.FGameplayDebuggerShapeElement>;
   public var SensingComponentLocation : unreal.FVector;
   public var DistanceFromSensor : unreal.Float32;
   public var DistanceFromPlayer : unreal.Float32;

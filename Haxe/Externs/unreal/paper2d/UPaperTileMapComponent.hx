@@ -30,7 +30,6 @@ package unreal.paper2d;
   
   @see UPrimitiveComponent, UPaperTileMap
 **/
-@:umodule("Paper2D")
 @:glueCppIncludes("PaperTileMapComponent.h")
 @:uextern extern class UPaperTileMapComponent extends unreal.UMeshComponent {
   #if WITH_EDITORONLY_DATA

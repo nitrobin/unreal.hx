@@ -19,7 +19,6 @@ package unreal.foliageedit;
   
   
 **/
-@:umodule("FoliageEdit")
 @:glueCppIncludes("Private/ActorFactoryProceduralFoliage.h")
 @:uextern extern class UActorFactoryProceduralFoliage extends unreal.editor.UActorFactoryBoxVolume {
   

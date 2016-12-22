@@ -19,7 +19,6 @@ package unreal.moviescenetracks;
   
   A material track which is specialized for animation materials which are owned by actor components.
 **/
-@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Tracks/MovieSceneMaterialTrack.h")
 @:uextern extern class UMovieSceneComponentMaterialTrack extends unreal.moviescenetracks.UMovieSceneMaterialTrack {
   

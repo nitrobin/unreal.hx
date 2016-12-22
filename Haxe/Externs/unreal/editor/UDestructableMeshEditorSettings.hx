@@ -17,7 +17,6 @@ package unreal.editor;
 /**
   Implements the settings for the destructable mesh editor.
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Settings/DestructableMeshEditorSettings.h")
 @:uextern extern class UDestructableMeshEditorSettings extends unreal.UObject {
   public var AnimPreviewDirectionalColor : unreal.FColor;

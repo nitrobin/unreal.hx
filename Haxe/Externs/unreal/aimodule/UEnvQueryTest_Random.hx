@@ -19,7 +19,6 @@ package unreal.aimodule;
   
   
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/Tests/EnvQueryTest_Random.h")
 @:uextern extern class UEnvQueryTest_Random extends unreal.aimodule.UEnvQueryTest {
   

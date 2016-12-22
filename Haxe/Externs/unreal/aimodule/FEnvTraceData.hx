@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/Generators/EnvQueryGenerator_ProjectedPoints.h")
 @:uextern extern class FEnvTraceData {
   

@@ -13,9 +13,13 @@
 **/
 package unreal.foliage;
 
-@:umodule("Foliage")
 @:glueCppIncludes("ProceduralFoliageSpawner.h")
 @:uextern extern class UProceduralFoliageSpawner extends unreal.UObject {
+  
+  /**
+    Minimum size of the quad tree used during the simulation. Reduce if too many instances are in splittable leaf quads (as warned in the log).
+  **/
+  public var MinimumQuadTreeSize : unreal.Float32;
   
   /**
     The number of unique tiles to generate. The final simulation is a procedurally determined combination of the various unique tiles.

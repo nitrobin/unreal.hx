@@ -17,9 +17,30 @@ package unreal.moviescenetracks;
 /**
   Implements a section in sub-sequence tracks.
 **/
-@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Sections/MovieSceneSubSection.h")
 @:uextern extern class UMovieSceneSubSection extends unreal.moviescene.UMovieSceneSection {
+  
+  /**
+    Target path of sequence to record to
+  **/
+  private var TargetPathToRecordTo : unreal.FDirectoryPath;
+  
+  /**
+    Target name of sequence to try to record to (will record automatically to another if this already exists)
+  **/
+  private var TargetSequenceName : unreal.FString;
+  
+  /**
+    Movie scene being played by this section.
+    
+    @todo Sequencer: Should this be lazy loaded?
+  **/
+  private var SubSequence : unreal.moviescene.UMovieSceneSequence;
+  
+  /**
+    Preroll time.
+  **/
+  public var PrerollTime : unreal.Float32;
   
   /**
     Playback time scaling factor.

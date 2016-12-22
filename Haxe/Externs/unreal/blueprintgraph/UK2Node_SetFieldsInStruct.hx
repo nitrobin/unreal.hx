@@ -19,14 +19,7 @@ package unreal.blueprintgraph;
   
   Pure kismet node that creates a struct with specified values for each member
 **/
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_SetFieldsInStruct.h")
 @:uextern extern class UK2Node_SetFieldsInStruct extends unreal.blueprintgraph.UK2Node_MakeStruct {
-  
-  /**
-    Helper property to handle upgrades from an old system of displaying pins for
-        the override values that properties referenced as a conditional of being set in a struct
-  **/
-  public var bMadeAfterOverridePinRemoval : Bool;
   
 }

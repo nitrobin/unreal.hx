@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Commandlets/CookCommandlet.h")
 @:noClass @:uextern extern class UCookCommandlet extends unreal.UCommandlet {
   

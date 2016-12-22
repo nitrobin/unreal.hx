@@ -19,7 +19,6 @@ package unreal.behaviortreeeditor;
   
   
 **/
-@:umodule("BehaviorTreeEditor")
 @:glueCppIncludes("BehaviorTreeGraphNode.h")
 @:noClass @:uextern extern class UBehaviorTreeGraphNode extends unreal.aigraph.UAIGraphNode {
   

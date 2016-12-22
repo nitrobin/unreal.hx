@@ -20,8 +20,7 @@ package unreal.umg;
   * No Children
   * Text
 **/
-@:umodule("UMG")
-@:glueCppIncludes("UMG.h", "Components/Widget.h")
+@:glueCppIncludes("UMG.h")
 @:uextern extern class UTextBlock extends unreal.umg.UTextLayoutWidget {
   
   /**

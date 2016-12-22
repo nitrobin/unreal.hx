@@ -19,7 +19,6 @@ package unreal.blueprintgraph;
   
   *     FOR INTERNAL USAGE ONLY!
 **/
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_SetVariableOnPersistentFrame.h")
 @:uextern extern class UK2Node_SetVariableOnPersistentFrame extends unreal.blueprintgraph.UK2Node {
   

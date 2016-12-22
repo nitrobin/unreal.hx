@@ -20,7 +20,6 @@ package unreal.niagara;
   UNiagaraEmitterProperties stores the attributes of an FNiagaraSimulation
   that need to be serialized and are used for its initialization
 **/
-@:umodule("Niagara")
 @:glueCppIncludes("NiagaraEmitterProperties.h")
 @:uextern extern class UNiagaraEmitterProperties extends unreal.UObject {
   public var SpawnScriptProps : unreal.niagara.FNiagaraEmitterScriptProperties;
@@ -30,7 +29,7 @@ package unreal.niagara;
   /**
     Can get rid of the enum and just have users select a class for this directly in the UI?
   **/
-  public var RendererProperties : unreal.UNiagaraEffectRendererProperties;
+  public var RendererProperties : unreal.niagara.UNiagaraEffectRendererProperties;
   public var EndTime : unreal.Float32;
   public var StartTime : unreal.Float32;
   public var RenderModuleType : unreal.niagara.EEmitterRenderModuleType;

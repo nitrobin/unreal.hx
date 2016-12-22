@@ -17,7 +17,6 @@ package unreal.slatecore;
 /**
   Represents the appearance of an SButton
 **/
-@:umodule("SlateCore")
 @:glueCppIncludes("Framework/Styling/ButtonWidgetStyle.h")
 @:uextern extern class FButtonStyle extends unreal.slatecore.FSlateWidgetStyle {
   @:deprecated public var HoveredSound_DEPRECATED : unreal.FName;

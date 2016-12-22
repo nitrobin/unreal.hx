@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Editor/GroupActor.h")
 @:uextern extern class AGroupActor extends unreal.AActor {
   #if WITH_EDITORONLY_DATA

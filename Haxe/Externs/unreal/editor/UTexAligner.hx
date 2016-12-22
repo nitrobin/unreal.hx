@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("TexAligner/TexAligner.h")
 @:noClass @:uextern extern class UTexAligner extends unreal.UObject {
   

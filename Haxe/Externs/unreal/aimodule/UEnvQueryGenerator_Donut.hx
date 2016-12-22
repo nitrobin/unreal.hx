@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/Generators/EnvQueryGenerator_Donut.h")
 @:uextern extern class UEnvQueryGenerator_Donut extends unreal.aimodule.UEnvQueryGenerator_ProjectedPoints {
   public var bDefineArc : Bool;
@@ -22,6 +21,12 @@ package unreal.aimodule;
     context
   **/
   public var Center : unreal.TSubclassOf<unreal.aimodule.UEnvQueryContext>;
+  
+  /**
+    If true, the rings of the wheel will be rotated in a spiral pattern.  If false, they will all be at a zero
+    rotation, looking more like the spokes on a wheel.
+  **/
+  public var bUseSpiralPattern : Bool;
   
   /**
     If you generate items on a piece of circle you define angle of Arc cut here

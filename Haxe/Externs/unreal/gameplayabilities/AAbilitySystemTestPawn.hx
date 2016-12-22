@@ -13,7 +13,6 @@
 **/
 package unreal.gameplayabilities;
 
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("AbilitySystemTestPawn.h")
 @:uextern extern class AAbilitySystemTestPawn extends unreal.ADefaultPawn implements unreal.gameplayabilities.IGameplayCueInterface implements unreal.gameplayabilities.IAbilitySystemInterface {
   public var AbilitySystemComponent : unreal.gameplayabilities.UAbilitySystemComponent;

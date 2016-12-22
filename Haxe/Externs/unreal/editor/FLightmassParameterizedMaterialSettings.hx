@@ -19,7 +19,6 @@ package unreal.editor;
   
   Structure for 'parameterized' Lightmass settings
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("MaterialEditor/MaterialEditorInstanceConstant.h")
 @:noCopy @:noEquals @:uextern extern class FLightmassParameterizedMaterialSettings {
   

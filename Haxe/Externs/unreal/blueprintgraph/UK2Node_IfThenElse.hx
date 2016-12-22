@@ -19,7 +19,6 @@ package unreal.blueprintgraph;
   
   
 **/
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_IfThenElse.h")
 @:uextern extern class UK2Node_IfThenElse extends unreal.blueprintgraph.UK2Node {
   

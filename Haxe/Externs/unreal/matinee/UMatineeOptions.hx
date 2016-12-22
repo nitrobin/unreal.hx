@@ -19,7 +19,6 @@ package unreal.matinee;
   
   
 **/
-@:umodule("Matinee")
 @:glueCppIncludes("MatineeOptions.h")
 @:noClass @:uextern extern class UMatineeOptions extends unreal.UObject {
   

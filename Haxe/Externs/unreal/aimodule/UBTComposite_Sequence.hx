@@ -19,7 +19,6 @@ package unreal.aimodule;
   Sequence Nodes execute their children from left to right, and will stop executing its children when one of their children fails.
   If a child fails, then the Sequence fails. If all the Sequence's children succeed, then the Sequence succeeds.
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Composites/BTComposite_Sequence.h")
 @:uextern extern class UBTComposite_Sequence extends unreal.aimodule.UBTCompositeNode {
   

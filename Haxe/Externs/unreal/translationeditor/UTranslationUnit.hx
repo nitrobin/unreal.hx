@@ -19,7 +19,6 @@ package unreal.translationeditor;
   
   
 **/
-@:umodule("TranslationEditor")
 @:glueCppIncludes("Private/TranslationUnit.h")
 @:uextern extern class UTranslationUnit extends unreal.UObject {
   
@@ -52,6 +51,11 @@ package unreal.translationeditor;
     Original text from the source language
   **/
   public var Source : unreal.FString;
+  
+  /**
+    The localization key for this translation
+  **/
+  public var Key : unreal.FString;
   
   /**
     The localization namespace for this translation

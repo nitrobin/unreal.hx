@@ -24,7 +24,6 @@ package unreal.umg;
   * Absolute Layout
   * Anchors
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UCanvasPanel extends unreal.umg.UPanelWidget {
   @:final public function AddChildToCanvas(Content : unreal.umg.UWidget) : unreal.umg.UCanvasPanelSlot;

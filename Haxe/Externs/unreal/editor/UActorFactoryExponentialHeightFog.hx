@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("ActorFactories/ActorFactoryExponentialHeightFog.h")
 @:uextern extern class UActorFactoryExponentialHeightFog extends unreal.editor.UActorFactory {
   

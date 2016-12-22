@@ -19,7 +19,6 @@ package unreal.foliageedit;
   
   
 **/
-@:umodule("FoliageEdit")
 @:glueCppIncludes("Private/FoliageTypeFactory.h")
 @:noClass @:uextern extern class UFoliageTypeFactory extends unreal.editor.UFactory {
   

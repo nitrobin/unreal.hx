@@ -21,7 +21,6 @@ package unreal.aimodule;
   which are not tied to any specific pawn, but defined
   for every query execution.
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("DataProviders/AIDataProvider_QueryParams.h")
 @:uextern extern class UAIDataProvider_QueryParams extends unreal.aimodule.UAIDataProvider {
   public var BoolValue : Bool;

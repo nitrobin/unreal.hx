@@ -19,7 +19,6 @@ package unreal.gameplayabilitieseditor;
   
   
 **/
-@:umodule("GameplayAbilitiesEditor")
 @:glueCppIncludes("K2Node_GameplayCueEvent.h")
 @:noClass @:uextern extern class UK2Node_GameplayCueEvent extends unreal.blueprintgraph.UK2Node_Event {
   

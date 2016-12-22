@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("ThumbnailRendering/ThumbnailRenderer.h")
 @:uextern extern class UThumbnailRenderer extends unreal.UObject {
   

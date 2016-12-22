@@ -19,8 +19,7 @@ package unreal.sequencer;
   
   Empty class used to house multiple named USequencerSettings
 **/
-@:umodule("Sequencer")
-@:glueCppIncludes("Private/SequencerSettings.h")
+@:glueCppIncludes("SequencerSettings.h")
 @:noClass @:uextern extern class USequencerSettingsContainer extends unreal.UObject {
   
 }

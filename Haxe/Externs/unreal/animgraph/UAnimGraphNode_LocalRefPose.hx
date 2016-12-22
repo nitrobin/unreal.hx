@@ -19,7 +19,6 @@ package unreal.animgraph;
   
   
 **/
-@:umodule("AnimGraph")
 @:glueCppIncludes("AnimGraphNode_LocalRefPose.h")
 @:uextern extern class UAnimGraphNode_LocalRefPose extends unreal.animgraph.UAnimGraphNode_RefPoseBase {
   

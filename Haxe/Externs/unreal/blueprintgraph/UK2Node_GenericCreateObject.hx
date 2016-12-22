@@ -13,7 +13,6 @@
 **/
 package unreal.blueprintgraph;
 
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_GenericCreateObject.h")
 @:uextern extern class UK2Node_GenericCreateObject extends unreal.blueprintgraph.UK2Node_ConstructObjectFromClass {
   

@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("Actions/PawnAction_Repeat.h")
 @:uextern extern class UPawnAction_Repeat extends unreal.aimodule.UPawnAction {
   public var ChildFailureHandlingMode : unreal.aimodule.EPawnActionFailHandling;

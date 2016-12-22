@@ -19,7 +19,6 @@ package unreal.onlinesubsystemutils;
   
   
 **/
-@:umodule("OnlineSubsystemUtils")
 @:glueCppIncludes("LeaderboardFlushCallbackProxy.h")
 @:uextern extern class ULeaderboardFlushCallbackProxy extends unreal.UObject {
   

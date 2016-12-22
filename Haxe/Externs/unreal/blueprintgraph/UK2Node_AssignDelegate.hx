@@ -21,7 +21,6 @@ package unreal.blueprintgraph;
   menu system. Acts simply as a UK2Node_AddDelegate with an attached custom-
   event node (spawned in PostPlacedNewNode).
 **/
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_AssignDelegate.h")
 @:uextern extern class UK2Node_AssignDelegate extends unreal.blueprintgraph.UK2Node_AddDelegate {
   

@@ -13,9 +13,8 @@
 **/
 package unreal.gameplaytasks;
 
-@:umodule("GameplayTasks")
 @:glueCppIncludes("GameplayTask.h")
-@:uextern extern class UGameplayTask extends unreal.UObject {
+@:uextern extern class UGameplayTask extends unreal.UObject implements unreal.gameplaytasks.IGameplayTaskOwnerInterface {
   
   /**
     Called to trigger the actual task once the delegates have been set up
@@ -31,8 +30,14 @@ package unreal.gameplaytasks;
   @:final public function EndTask() : Void;
   
   /**
+    child task instance
+  **/
+  private var ChildTask : unreal.gameplaytasks.UGameplayTask;
+  
+  /**
     This name allows us to find the task later so that we can end it.
   **/
   private var InstanceName : unreal.FName;
+  // GameplayTaskOwnerInterface interface implementation
   
 }

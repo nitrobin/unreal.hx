@@ -19,7 +19,6 @@ package unreal.gameplayabilities;
   
   
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("AbilitySystemComponent.h")
 @:noCopy @:noEquals @:uextern extern class FActiveGameplayCueContainer extends unreal.FFastArraySerializer {
   public var Owner : unreal.gameplayabilities.UAbilitySystemComponent;

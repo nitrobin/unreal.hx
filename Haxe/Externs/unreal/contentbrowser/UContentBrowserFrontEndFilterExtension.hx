@@ -17,7 +17,6 @@ package unreal.contentbrowser;
 /**
   Override this class in order to make an additional front-end filter available in the Content Browser
 **/
-@:umodule("ContentBrowser")
 @:glueCppIncludes("ContentBrowserFrontEndFilterExtension.h")
 @:uextern extern class UContentBrowserFrontEndFilterExtension extends unreal.UObject {
   

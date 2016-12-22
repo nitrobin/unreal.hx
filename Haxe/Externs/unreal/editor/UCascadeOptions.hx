@@ -13,7 +13,6 @@
 **/
 package unreal.editor;
 
-@:umodule("UnrealEd")
 @:glueCppIncludes("Preferences/CascadeOptions.h")
 @:uextern extern class UCascadeOptions extends unreal.UObject {
   
@@ -62,6 +61,8 @@ package unreal.editor;
   public var ModuleColor_Event_Unselected : unreal.FColor;
   public var ModuleColor_Required_Selected : unreal.FColor;
   public var ModuleColor_Required_Unselected : unreal.FColor;
+  public var ModuleColor_SubUV_Selected : unreal.FColor;
+  public var ModuleColor_SubUV_Unselected : unreal.FColor;
   public var ModuleColor_Light_Selected : unreal.FColor;
   public var ModuleColor_Light_Unselected : unreal.FColor;
   public var ModuleColor_Spawn_Selected : unreal.FColor;

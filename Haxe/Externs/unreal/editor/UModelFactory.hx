@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/ModelFactory.h")
 @:noClass @:uextern extern class UModelFactory extends unreal.editor.UFactory {
   

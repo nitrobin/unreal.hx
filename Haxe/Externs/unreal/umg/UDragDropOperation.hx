@@ -17,7 +17,6 @@ package unreal.umg;
 /**
   This class is the base drag drop operation for UMG, extend it to add additional data and add new functionality.
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UDragDropOperation extends unreal.UObject {
   

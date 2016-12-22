@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/Items/EnvQueryItemType_Actor.h")
 @:uextern extern class UEnvQueryItemType_Actor extends unreal.aimodule.UEnvQueryItemType_ActorBase {
   

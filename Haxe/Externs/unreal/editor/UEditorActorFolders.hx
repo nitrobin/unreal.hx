@@ -19,7 +19,6 @@ package unreal.editor;
   
   Actor Folder UObject. This is used to support undo/redo reliably
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("EditorActorFolders.h")
 @:noClass @:uextern extern class UEditorActorFolders extends unreal.UObject {
   

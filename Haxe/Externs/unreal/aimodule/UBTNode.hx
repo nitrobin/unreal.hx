@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/BTNode.h")
 @:uextern extern class UBTNode extends unreal.UObject implements unreal.gameplaytasks.IGameplayTaskOwnerInterface {
   

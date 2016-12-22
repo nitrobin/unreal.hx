@@ -17,7 +17,6 @@ package unreal.slatecore;
 /**
   Just a wrapper for the struct with real data in it.
 **/
-@:umodule("SlateCore")
 @:glueCppIncludes("Styling/SlateWidgetStyleContainerBase.h")
 @:uextern extern class USlateWidgetStyleContainerBase extends unreal.UObject implements unreal.slatecore.ISlateWidgetStyleContainerInterface {
   // SlateWidgetStyleContainerInterface interface implementation

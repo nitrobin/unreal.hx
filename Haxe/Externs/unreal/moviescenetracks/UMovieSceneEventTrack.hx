@@ -19,7 +19,6 @@ package unreal.moviescenetracks;
   
   Implements a movie scene track that triggers discrete events during playback.
 **/
-@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Tracks/MovieSceneEventTrack.h")
 @:uextern extern class UMovieSceneEventTrack extends unreal.moviescene.UMovieSceneNameableTrack {
   

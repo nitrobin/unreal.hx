@@ -19,10 +19,19 @@ package unreal.gameplayabilities;
   
   Applies force to character's movement
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/Tasks/AbilityTask_ApplyRootMotionMoveToForce.h")
 @:uextern extern class UAbilityTask_ApplyRootMotionMoveToForce extends unreal.gameplayabilities.UAbilityTask {
   private var MovementComponent : unreal.UCharacterMovementComponent;
+  
+  /**
+    If VelocityOnFinish mode is "SetVelocity", character velocity is set to this value when root motion finishes
+  **/
+  private var SetVelocityOnFinish : unreal.FVector;
+  
+  /**
+    What to do with character's Velocity when root motion finishes
+  **/
+  private var VelocityOnFinishMode : unreal.ERootMotionFinishVelocityMode;
   private var PathOffsetCurve : unreal.UCurveVector;
   private var NewMovementMode : unreal.EMovementMode;
   private var Duration : unreal.Float32;

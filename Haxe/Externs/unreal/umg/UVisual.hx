@@ -17,7 +17,6 @@ package unreal.umg;
 /**
   The base class for elements in UMG: slots and widgets.
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UVisual extends unreal.UObject {
   

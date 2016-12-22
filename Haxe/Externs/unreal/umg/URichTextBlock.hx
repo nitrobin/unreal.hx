@@ -20,7 +20,6 @@ package unreal.umg;
   * Fancy Text
   * No Children
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class URichTextBlock extends unreal.umg.UTextLayoutWidget {
   private var Decorators : unreal.TArray<unreal.umg.URichTextBlockDecorator>;

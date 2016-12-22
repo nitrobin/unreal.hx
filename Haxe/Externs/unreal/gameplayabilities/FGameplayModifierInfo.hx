@@ -19,11 +19,15 @@ package unreal.gameplayabilities;
       Tells us "Who/What we" modify
       Does not tell us how exactly
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("GameplayEffect.h")
 @:uextern extern class FGameplayModifierInfo {
   public var TargetTags : unreal.gameplayabilities.FGameplayTagRequirements;
   public var SourceTags : unreal.gameplayabilities.FGameplayTagRequirements;
+  
+  /**
+    Evaluation channel settings of the modifier
+  **/
+  public var EvaluationChannelSettings : unreal.gameplayabilities.FGameplayModEvaluationChannelSettings;
   
   /**
     Magnitude of the modifier

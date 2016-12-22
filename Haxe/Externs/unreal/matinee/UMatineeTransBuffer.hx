@@ -20,7 +20,6 @@ package unreal.matinee;
   Special transaction buffer for Matinee undo/redo.
   Will be capped at InMaxMemory.
 **/
-@:umodule("Matinee")
 @:glueCppIncludes("MatineeTransBuffer.h")
 @:noClass @:uextern extern class UMatineeTransBuffer extends unreal.editor.UTransBuffer {
   

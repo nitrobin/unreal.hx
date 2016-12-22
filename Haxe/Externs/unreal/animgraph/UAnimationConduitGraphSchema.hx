@@ -19,7 +19,6 @@ package unreal.animgraph;
   
   @TODO: Should this derive from AnimationTransitionSchema (with appropriate suppression of state-based queries)
 **/
-@:umodule("AnimGraph")
 @:glueCppIncludes("AnimationConduitGraphSchema.h")
 @:uextern extern class UAnimationConduitGraphSchema extends unreal.blueprintgraph.UEdGraphSchema_K2 {
   

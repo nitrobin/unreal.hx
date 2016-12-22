@@ -17,7 +17,6 @@ package unreal.editor;
 /**
   Serializable options for curve editor.
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("CurveEditorSettings.h")
 @:uextern extern class UCurveEditorSettings extends unreal.UObject {
   private var TangentVisibility : unreal.editor.ECurveEditorTangentVisibility;

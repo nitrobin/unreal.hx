@@ -19,8 +19,12 @@ package unreal.moviescenetracks;
   
   A track that holds sub-sequences within a larger sequence.
 **/
-@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Tracks/MovieSceneSubTrack.h")
 @:uextern extern class UMovieSceneSubTrack extends unreal.moviescene.UMovieSceneNameableTrack {
+  
+  /**
+    All movie scene sections.
+  **/
+  private var Sections : unreal.TArray<unreal.moviescene.UMovieSceneSection>;
   
 }

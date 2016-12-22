@@ -22,7 +22,6 @@ package unreal.moviescenetracks;
   The property that's being tracked by this section is bHiddenInGame.
   This custom bool track stores the inverse keys to display visibility (A green section bar means visible).
 **/
-@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Sections/MovieSceneVisibilitySection.h")
 @:uextern extern class UMovieSceneVisibilitySection extends unreal.moviescenetracks.UMovieSceneBoolSection {
   

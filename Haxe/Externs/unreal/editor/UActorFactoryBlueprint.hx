@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("ActorFactories/ActorFactoryBlueprint.h")
 @:uextern extern class UActorFactoryBlueprint extends unreal.editor.UActorFactory {
   

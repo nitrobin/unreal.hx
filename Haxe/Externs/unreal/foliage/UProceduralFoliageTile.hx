@@ -25,7 +25,6 @@ package unreal.foliage;
   Note also that, barring any core changes to the ordering of TSet, foliage generation is deterministic
   (i.e. given the same inputs, the result of the simulation will always be the same).
 **/
-@:umodule("Foliage")
 @:glueCppIncludes("ProceduralFoliageTile.h")
 @:uextern extern class UProceduralFoliageTile extends unreal.UObject {
   

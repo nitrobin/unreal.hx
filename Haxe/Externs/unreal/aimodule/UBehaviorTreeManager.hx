@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/BehaviorTreeManager.h")
 @:uextern extern class UBehaviorTreeManager extends unreal.UObject {
   private var ActiveComponents : unreal.TArray<unreal.aimodule.UBehaviorTreeComponent>;

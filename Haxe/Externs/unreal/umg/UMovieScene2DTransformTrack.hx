@@ -19,7 +19,6 @@ package unreal.umg;
   
   Handles manipulation of 2D transforms in a movie scene
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UMovieScene2DTransformTrack extends unreal.moviescenetracks.UMovieScenePropertyTrack {
   

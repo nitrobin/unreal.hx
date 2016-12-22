@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("ActorFactories/ActorFactorySpotLight.h")
 @:uextern extern class UActorFactorySpotLight extends unreal.editor.UActorFactory {
   

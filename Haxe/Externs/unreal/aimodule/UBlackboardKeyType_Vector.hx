@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Blackboard/BlackboardKeyType_Vector.h")
 @:uextern extern class UBlackboardKeyType_Vector extends unreal.aimodule.UBlackboardKeyType {
   

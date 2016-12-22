@@ -13,7 +13,6 @@
 **/
 package unreal.editor;
 
-@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/FontFactory.h")
 @:uextern extern class UFontFactory extends unreal.editor.UFactory {
   

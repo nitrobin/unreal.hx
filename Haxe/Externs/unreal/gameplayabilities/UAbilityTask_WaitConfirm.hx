@@ -19,7 +19,6 @@ package unreal.gameplayabilities;
   
   
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/Tasks/AbilityTask_WaitConfirm.h")
 @:uextern extern class UAbilityTask_WaitConfirm extends unreal.gameplayabilities.UAbilityTask {
   

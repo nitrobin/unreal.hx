@@ -19,7 +19,6 @@ package unreal.aimodule;
   
   
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/Tests/EnvQueryTest_Dot.h")
 @:uextern extern class UEnvQueryTest_Dot extends unreal.aimodule.UEnvQueryTest {
   private var TestMode : unreal.aimodule.EEnvTestDot;

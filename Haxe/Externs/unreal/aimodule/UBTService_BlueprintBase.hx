@@ -21,7 +21,6 @@ package unreal.aimodule;
   This prevents from resuming activity started by Activation, but does not handle external events.
   Please use them safely (unregister at abort) and call IsServiceActive() when in doubt.
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Services/BTService_BlueprintBase.h")
 @:uextern extern class UBTService_BlueprintBase extends unreal.aimodule.UBTService {
   

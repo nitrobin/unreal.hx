@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/AnimCompositeFactory.h")
 @:uextern extern class UAnimCompositeFactory extends unreal.editor.UFactory {
   

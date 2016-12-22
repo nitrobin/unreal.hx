@@ -13,7 +13,6 @@
 **/
 package unreal.umg;
 
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class URichTextBlockDecorator extends unreal.UObject {
   public var RevealedIndex : unreal.Int32;

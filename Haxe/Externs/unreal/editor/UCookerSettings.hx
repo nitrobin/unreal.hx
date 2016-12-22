@@ -17,7 +17,6 @@ package unreal.editor;
 /**
   Various cooker settings.
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("CookerSettings.h")
 @:uextern extern class UCookerSettings extends unreal.UDeveloperSettings {
   
@@ -35,6 +34,21 @@ package unreal.editor;
     Quality of 0 means fastest, 4 means best quality
   **/
   public var DefaultPVRTCQuality : unreal.Int32;
+  
+  /**
+    List of class names to exclude when cooking for dedicated client
+  **/
+  public var ClassesExcludedOnDedicatedClient : unreal.TArray<unreal.FString>;
+  
+  /**
+    List of class names to exclude when cooking for dedicated server
+  **/
+  public var ClassesExcludedOnDedicatedServer : unreal.TArray<unreal.FString>;
+  
+  /**
+    Whether or not to cook Blueprint Component data for faster instancing at runtime. This assumes that the Component templates do not get modified at runtime.
+  **/
+  public var bCookBlueprintComponentTemplateData : Bool;
   
   /**
     Whether or not to compile Blueprints in development mode when cooking.

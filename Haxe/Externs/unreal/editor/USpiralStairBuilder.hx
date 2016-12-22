@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Builders/SpiralStairBuilder.h")
 @:uextern extern class USpiralStairBuilder extends unreal.editor.UEditorBrushBuilder {
   

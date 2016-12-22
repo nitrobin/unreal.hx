@@ -18,7 +18,6 @@ package unreal.aimodule;
   SensingComponent encapsulates sensory (ie sight and hearing) settings and functionality for an Actor,
   allowing the actor to see/hear Pawns in the world. It does nothing on network clients.
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("Perception/PawnSensingComponent.h")
 @:uextern extern class UPawnSensingComponent extends unreal.UActorComponent {
   

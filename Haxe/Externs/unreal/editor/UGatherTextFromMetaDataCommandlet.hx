@@ -19,7 +19,6 @@ package unreal.editor;
   
   UGatherTextFromMetaDataCommandlet: Localization commandlet that collects all text to be localized from generated metadata.
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Commandlets/GatherTextFromMetadataCommandlet.h")
 @:noClass @:uextern extern class UGatherTextFromMetaDataCommandlet extends unreal.editor.UGatherTextCommandletBase {
   

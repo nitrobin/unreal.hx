@@ -17,7 +17,6 @@ package unreal.editor;
 /**
   Implements the Level Editor's view port settings.
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Settings/LevelEditorViewportSettings.h")
 @:uextern extern class ULevelEditorViewportSettings extends unreal.UObject {
   
@@ -209,6 +208,21 @@ package unreal.editor;
   public var bUsePowerOf2SnapSize : Bool;
   
   /**
+    Enables joystick-based camera movement in 3D level editing viewports
+  **/
+  public var bLevelEditorJoystickControls : Bool;
+  
+  /**
+    Direction of the scroll gesture for orthographic viewports
+  **/
+  public var ScrollGestureDirectionForOrthoViewports : unreal.editor.EScrollGestureDirection;
+  
+  /**
+    Direction of the scroll gesture for 3D viewports
+  **/
+  public var ScrollGestureDirectionFor3DViewports : unreal.editor.EScrollGestureDirection;
+  
+  /**
     When checked, orbit the camera by using the L or U keys when unchecked, Alt and Left Mouse Drag will orbit around the look at point
   **/
   public var bUseUE3OrbitControls : Bool;
@@ -227,6 +241,16 @@ package unreal.editor;
     Whether or not to invert the direction of middle mouse panning in viewports
   **/
   public var bInvertMiddleMousePan : Bool;
+  
+  /**
+    Whether or not to invert mouse on y axis in orbit mode
+  **/
+  public var bInvertOrbitYAxis : Bool;
+  
+  /**
+    Whether or not to invert mouse on the y axis in free look mode
+  **/
+  public var bInvertMouseLookYAxis : Bool;
   
   /**
     The sensitivity of mouse movement when rotating the camera.

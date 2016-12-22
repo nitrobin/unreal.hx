@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("ThumbnailRendering/AnimSequenceThumbnailRenderer.h")
 @:uextern extern class UAnimSequenceThumbnailRenderer extends unreal.editor.UDefaultSizedThumbnailRenderer {
   

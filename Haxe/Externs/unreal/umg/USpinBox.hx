@@ -17,7 +17,6 @@ package unreal.umg;
 /**
   A numerical entry box that allows for direct entry of the number or allows the user to click and slide the number.
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class USpinBox extends unreal.umg.UWidget {
   

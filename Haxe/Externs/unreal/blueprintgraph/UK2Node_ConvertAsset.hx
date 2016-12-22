@@ -19,7 +19,6 @@ package unreal.blueprintgraph;
   
   
 **/
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_ConvertAsset.h")
 @:uextern extern class UK2Node_ConvertAsset extends unreal.blueprintgraph.UK2Node {
   

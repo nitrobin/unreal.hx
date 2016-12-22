@@ -19,7 +19,6 @@ package unreal.aitestsuite;
   
   
 **/
-@:umodule("AITestSuite")
 @:glueCppIncludes("MockAI.h")
 @:noClass @:uextern extern class UMockAI extends unreal.UObject {
   public var PawnActionComp : unreal.aimodule.UPawnActionsComponent;

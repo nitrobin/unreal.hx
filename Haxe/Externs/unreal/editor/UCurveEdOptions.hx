@@ -13,7 +13,6 @@
 **/
 package unreal.editor;
 
-@:umodule("UnrealEd")
 @:glueCppIncludes("Preferences/CurveEdOptions.h")
 @:uextern extern class UCurveEdOptions extends unreal.UObject {
   public var SelectedKeyColor : unreal.FLinearColor;

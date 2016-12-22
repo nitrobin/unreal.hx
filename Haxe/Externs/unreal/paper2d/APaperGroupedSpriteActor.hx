@@ -20,7 +20,6 @@ package unreal.paper2d;
   This actor is created when you Merge several sprite components together.
   it is just a thin wrapper around a UPaperGroupedSpriteComponent.
 **/
-@:umodule("Paper2D")
 @:glueCppIncludes("PaperGroupedSpriteActor.h")
 @:uextern extern class APaperGroupedSpriteActor extends unreal.AActor {
   

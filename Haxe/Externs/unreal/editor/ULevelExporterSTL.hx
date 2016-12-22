@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Exporters/LevelExporterSTL.h")
 @:noClass @:uextern extern class ULevelExporterSTL extends unreal.UExporter {
   

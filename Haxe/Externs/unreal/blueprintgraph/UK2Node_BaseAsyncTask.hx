@@ -17,7 +17,6 @@ package unreal.blueprintgraph;
 /**
   !!! The proxy object should have RF_StrongRefOnFrame flag. !!!
 **/
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_BaseAsyncTask.h")
 @:uextern extern class UK2Node_BaseAsyncTask extends unreal.blueprintgraph.UK2Node {
   

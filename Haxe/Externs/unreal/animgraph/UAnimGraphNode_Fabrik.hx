@@ -19,7 +19,6 @@ package unreal.animgraph;
   
   Editor node for FABRIK IK skeletal controller
 **/
-@:umodule("AnimGraph")
 @:glueCppIncludes("AnimGraphNode_Fabrik.h")
 @:uextern extern class UAnimGraphNode_Fabrik extends unreal.animgraph.UAnimGraphNode_SkeletalControlBase {
   public var Node : unreal.animgraphruntime.FAnimNode_Fabrik;

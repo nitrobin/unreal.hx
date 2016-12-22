@@ -17,7 +17,6 @@ package unreal.custommeshcomponent;
 /**
   Component that allows you to specify custom triangle mesh geometry
 **/
-@:umodule("CustomMeshComponent")
 @:glueCppIncludes("CustomMeshComponent.h")
 @:uextern extern class UCustomMeshComponent extends unreal.UMeshComponent {
   

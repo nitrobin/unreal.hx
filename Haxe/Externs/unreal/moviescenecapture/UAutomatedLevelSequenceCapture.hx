@@ -13,10 +13,15 @@
 **/
 package unreal.moviescenecapture;
 
-@:umodule("MovieSceneCapture")
 @:glueCppIncludes("AutomatedLevelSequenceCapture.h")
 @:uextern extern class UAutomatedLevelSequenceCapture extends unreal.moviescenecapture.UMovieSceneCapture {
   #if WITH_EDITORONLY_DATA
+  
+  /**
+    Whether to write edit decision lists (EDLs) if the sequence contains shots
+  **/
+  public var bWriteEditDecisionList : Bool;
+  public var BurnInOptions : unreal.levelsequence.ULevelSequenceBurnInOptions;
   
   /**
     The number of seconds to wait (in real-time) before we start playing back the warm up frames.  Useful for allowing post processing effects to settle down before capturing the animation.

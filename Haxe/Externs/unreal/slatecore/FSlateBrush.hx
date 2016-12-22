@@ -17,7 +17,6 @@ package unreal.slatecore;
 /**
   An brush which contains information about how to draw a Slate element
 **/
-@:umodule("SlateCore")
 @:glueCppIncludes("Framework/Styling/ButtonWidgetStyle.h")
 @:uextern extern class FSlateBrush {
   
@@ -33,7 +32,8 @@ package unreal.slatecore;
   private var ResourceName : unreal.FName;
   
   /**
-    The image to render for this brush, can be a UTexture2D or Material.
+    The image to render for this brush, can be a UTexture or UMaterialInterface or an object implementing
+    the AtlasedTextureInterface.
   **/
   private var ResourceObject : unreal.UObject;
   

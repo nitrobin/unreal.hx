@@ -17,7 +17,6 @@ package unreal.animgraphruntime;
 /**
   This is the runtime version of a bone driven controller, which maps part of the state from one bone to another (e.g., 2 * source.x -> target.z)
 **/
-@:umodule("AnimGraphRuntime")
 @:glueCppIncludes("AnimGraphNode_BoneDrivenController.h")
 @:uextern extern class FAnimNode_BoneDrivenController extends unreal.animgraphruntime.FAnimNode_SkeletalControlBase {
   
@@ -75,6 +74,16 @@ package unreal.animgraphruntime;
     Bone to drive using controller input
   **/
   public var TargetBone : unreal.FBoneReference;
+  
+  /**
+    Name of Morph Target to drive using the source attribute
+  **/
+  public var ParameterName : unreal.FName;
+  
+  /**
+    Type of destination to drive, currently either bone or morph target
+  **/
+  public var DestinationMode : unreal.animgraphruntime.EDrivenDestinationMode;
   
   /**
     Maximum value to apply to the destination (remapped from the input range)

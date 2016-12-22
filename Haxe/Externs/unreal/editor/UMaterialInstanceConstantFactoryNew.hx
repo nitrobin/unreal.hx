@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/MaterialInstanceConstantFactoryNew.h")
 @:uextern extern class UMaterialInstanceConstantFactoryNew extends unreal.editor.UFactory {
   public var InitialParent : unreal.UMaterialInterface;

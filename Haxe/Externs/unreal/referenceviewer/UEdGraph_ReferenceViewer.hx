@@ -19,7 +19,6 @@ package unreal.referenceviewer;
   
   
 **/
-@:umodule("ReferenceViewer")
 @:glueCppIncludes("EdGraph_ReferenceViewer.h")
 @:noClass @:uextern extern class UEdGraph_ReferenceViewer extends unreal.UEdGraph {
   

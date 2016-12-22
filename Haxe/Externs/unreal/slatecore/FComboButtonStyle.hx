@@ -17,7 +17,6 @@ package unreal.slatecore;
 /**
   Represents the appearance of an SComboButton
 **/
-@:umodule("SlateCore")
 @:glueCppIncludes("Framework/Styling/ComboBoxWidgetStyle.h")
 @:uextern extern class FComboButtonStyle extends unreal.slatecore.FSlateWidgetStyle {
   

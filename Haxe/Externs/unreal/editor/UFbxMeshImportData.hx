@@ -19,7 +19,6 @@ package unreal.editor;
   
   Import data and options used when importing any mesh from FBX
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/FbxMeshImportData.h")
 @:noClass @:uextern extern class UFbxMeshImportData extends unreal.editor.UFbxAssetImportData {
   
@@ -37,5 +36,15 @@ package unreal.editor;
     If enabled, creates LOD models for Unreal meshes from LODs in the import file; If not enabled, only the base mesh from the LOD group is imported
   **/
   public var bImportMeshLODs : Bool;
+  
+  /**
+    - Experimental - If this option is true the inverse node rotation pivot will be apply to the mesh vertices. The pivot from the DCC will then be the origin of the mesh. Note: "TransformVertexToAbsolute" must be false.
+  **/
+  public var bBakePivotInVertex : Bool;
+  
+  /**
+    If this option is true the node absolute transform (transform, offset and pivot) will be apply to the mesh vertices.
+  **/
+  public var bTransformVertexToAbsolute : Bool;
   
 }

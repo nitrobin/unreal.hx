@@ -17,7 +17,6 @@ package unreal.slatecore;
 /**
   A representation of a font in Slate.
 **/
-@:umodule("SlateCore")
 @:glueCppIncludes("Framework/Styling/EditableTextBoxWidgetStyle.h")
 @:uextern extern class FSlateFontInfo {
   
@@ -30,6 +29,11 @@ package unreal.slatecore;
     The name of the font to use from the default typeface (None will use the first entry)
   **/
   public var TypefaceFontName : unreal.FName;
+  
+  /**
+    Settings for applying an outline to a font
+  **/
+  public var OutlineSettings : unreal.slatecore.FFontOutlineSettings;
   
   /**
     The material to use when rendering this font

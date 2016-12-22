@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("Perception/AISense.h")
 @:uextern extern class UAISense extends unreal.UObject {
   private var NotifyType : unreal.aimodule.EAISenseNotifyType;
@@ -22,11 +21,5 @@ package unreal.aimodule;
     age past which stimulus of this sense are "forgotten"
   **/
   private var DefaultExpirationAge : unreal.Float32;
-  
-  /**
-    Sense name used in debug drawing
-  **/
-  private var DebugName : unreal.FString;
-  private var DebugDrawColor : unreal.FColor;
   
 }

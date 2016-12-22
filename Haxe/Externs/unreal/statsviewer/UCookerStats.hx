@@ -21,7 +21,6 @@ package unreal.statsviewer;
   
   Note: We assume that asset files are not larger than 2GB, because the StatsViewer is still lacking int64 support.
 **/
-@:umodule("StatsViewer")
 @:glueCppIncludes("CookerStats.h")
 @:uextern extern class UCookerStats extends unreal.UObject {
   

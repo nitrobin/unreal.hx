@@ -19,7 +19,6 @@ package unreal.gameplaytags;
   
   
 **/
-@:umodule("GameplayTags")
 @:glueCppIncludes("GameplayTagContainer.h")
 @:noClass @:uextern extern class UEditableGameplayTagQueryExpression_AnyTagsMatch extends unreal.gameplaytags.UEditableGameplayTagQueryExpression {
   public var Tags : unreal.gameplaytags.FGameplayTagContainer;

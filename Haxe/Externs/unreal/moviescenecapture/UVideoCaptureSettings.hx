@@ -13,7 +13,6 @@
 **/
 package unreal.moviescenecapture;
 
-@:umodule("MovieSceneCapture")
 @:glueCppIncludes("Protocols/VideoCaptureProtocol.h")
 @:uextern extern class UVideoCaptureSettings extends unreal.moviescenecapture.UFrameGrabberProtocolSettings {
   public var VideoCodec : unreal.FString;

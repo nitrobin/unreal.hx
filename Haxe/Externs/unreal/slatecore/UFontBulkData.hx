@@ -13,7 +13,6 @@
 **/
 package unreal.slatecore;
 
-@:umodule("SlateCore")
 @:glueCppIncludes("Fonts/FontBulkData.h")
 @:uextern extern class UFontBulkData extends unreal.UObject {
   

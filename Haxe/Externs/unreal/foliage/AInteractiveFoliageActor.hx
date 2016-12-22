@@ -19,7 +19,6 @@ package unreal.foliage;
   
   
 **/
-@:umodule("Foliage")
 @:glueCppIncludes("InteractiveFoliageActor.h")
 @:uextern extern class AInteractiveFoliageActor extends unreal.AStaticMeshActor {
   

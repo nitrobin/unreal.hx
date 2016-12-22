@@ -18,7 +18,6 @@ package unreal.umg;
   A slot for UGridPanel, these slots all share the same size as the largest slot
   in the grid.
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UGridSlot extends unreal.umg.UPanelSlot {
   
@@ -53,6 +52,12 @@ package unreal.umg;
     The alignment of the object horizontally.
   **/
   public var HorizontalAlignment : unreal.slatecore.EHorizontalAlignment;
+  
+  /**
+    The padding area between the slot and the content it contains.
+  **/
+  public var Padding : unreal.slatecore.FMargin;
+  @:final public function SetPadding(InPadding : unreal.slatecore.FMargin) : Void;
   
   /**
     Sets the row index of the slot, this determines what cell the slot is in the panel

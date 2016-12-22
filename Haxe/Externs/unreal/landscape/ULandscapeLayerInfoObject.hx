@@ -19,7 +19,6 @@ package unreal.landscape;
   
   
 **/
-@:umodule("Landscape")
 @:glueCppIncludes("LandscapeLayerInfoObject.h")
 @:uextern extern class ULandscapeLayerInfoObject extends unreal.UObject {
   

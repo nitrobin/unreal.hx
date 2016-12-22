@@ -20,7 +20,6 @@ package unreal.onlinesubsystemutils;
   By defining a beacon type and implementing the ability to spawn unique AOnlineBeaconClients, any two instances of the engine
   can communicate with each other without officially connecting through normal Unreal networking
 **/
-@:umodule("OnlineSubsystemUtils")
 @:glueCppIncludes("OnlineBeaconHostObject.h")
 @:uextern extern class AOnlineBeaconHostObject extends unreal.AActor {
   

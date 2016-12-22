@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("Tasks/AITask.h")
 @:uextern extern class UAITask extends unreal.gameplaytasks.UGameplayTask {
   private var OwnerController : unreal.aimodule.AAIController;

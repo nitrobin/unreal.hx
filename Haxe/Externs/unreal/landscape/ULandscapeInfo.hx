@@ -19,12 +19,10 @@ package unreal.landscape;
   
   
 **/
-@:umodule("Landscape")
 @:glueCppIncludes("LandscapeInfo.h")
 @:noClass @:uextern extern class ULandscapeInfo extends unreal.UObject {
   #if WITH_EDITORONLY_DATA
   public var Layers : unreal.TArray<unreal.landscape.FLandscapeInfoLayerSettings>;
-  public var bIsValid : Bool;
   #end // WITH_EDITORONLY_DATA
   public var DrawScale : unreal.FVector;
   public var ComponentNumSubsections : unreal.Int32;

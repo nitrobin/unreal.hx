@@ -13,7 +13,6 @@
 **/
 package unreal.umg;
 
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UTextBinding extends unreal.umg.UPropertyBinding {
   @:thisConst @:final public function GetStringValue() : unreal.FString;

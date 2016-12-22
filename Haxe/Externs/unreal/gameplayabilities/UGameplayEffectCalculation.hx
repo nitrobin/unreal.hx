@@ -17,7 +17,6 @@ package unreal.gameplayabilities;
 /**
   Abstract base for specialized gameplay effect calculations; Capable of specifing attribute captures
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("GameplayEffectCalculation.h")
 @:uextern extern class UGameplayEffectCalculation extends unreal.UObject {
   

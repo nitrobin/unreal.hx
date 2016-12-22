@@ -19,7 +19,6 @@ package unreal.moviescenetracks;
   
   Particle section, for particle toggling and triggering.
 **/
-@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Sections/MovieSceneParticleSection.h")
 @:uextern extern class UMovieSceneParticleSection extends unreal.moviescene.UMovieSceneSection {
   

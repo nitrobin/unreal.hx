@@ -19,9 +19,13 @@ package unreal.functionaltesting;
   
   
 **/
-@:umodule("FunctionalTesting")
 @:glueCppIncludes("FunctionalAITest.h")
 @:noCopy @:noEquals @:uextern extern class FAITestSpawnInfo {
+  
+  /**
+    delay before attempting first spawn
+  **/
+  public var PreSpawnDelay : unreal.Float32;
   
   /**
     delay between consecutive spawn attempts

@@ -22,9 +22,13 @@ package unreal.umg;
   * Single Child
   * Toggle
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UCheckBox extends unreal.umg.UContentWidget {
+  
+  /**
+    Sometimes a button should only be mouse-clickable and never keyboard focusable.
+  **/
+  public var IsFocusable : Bool;
   
   /**
     The color of the background border

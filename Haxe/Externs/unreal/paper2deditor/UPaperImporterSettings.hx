@@ -17,7 +17,6 @@ package unreal.paper2deditor;
 /**
   Implements the settings for imported Paper2D assets, such as sprite sheet textures.
 **/
-@:umodule("Paper2DEditor")
 @:glueCppIncludes("PaperImporterSettings.h")
 @:uextern extern class UPaperImporterSettings extends unreal.UObject {
   

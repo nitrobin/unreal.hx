@@ -20,7 +20,6 @@ package unreal.functionaltesting;
   Automatic captures using external CPU and GPU profilers.
   Triggering and ending of writing full stats to a file.
 **/
-@:umodule("FunctionalTesting")
 @:glueCppIncludes("FunctionalTest.h")
 @:uextern extern class UAutomationPerformaceHelper extends unreal.UObject {
   
@@ -88,9 +87,9 @@ package unreal.functionaltesting;
   @:final public function StopCPUProfiling() : Void;
   
   /**
-    Communicates with an external GPU profiler to trigger a GPU trace.
+    Will trigger a GPU trace next time the current test falls below GPU budget.
   **/
-  @:final public function TriggerGPUTrace() : Void;
+  @:final public function TriggerGPUTraceIfRecordFallsBelowBudget() : Void;
   
   /**
     Begins recording stats to a file.

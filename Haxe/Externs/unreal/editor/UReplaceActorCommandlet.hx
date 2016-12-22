@@ -19,7 +19,6 @@ package unreal.editor;
   
   Commandlet for replacing one kind of actor with another kind of actor, copying changed properties from the most-derived common superclass
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Commandlets/ReplaceActorCommandlet.h")
 @:noClass @:uextern extern class UReplaceActorCommandlet extends unreal.UCommandlet {
   

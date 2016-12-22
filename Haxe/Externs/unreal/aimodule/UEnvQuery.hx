@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/EnvQuery.h")
 @:uextern extern class UEnvQuery extends unreal.UDataAsset {
   private var Options : unreal.TArray<unreal.aimodule.UEnvQueryOption>;

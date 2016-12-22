@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Commandlets/UpdateGameProjectCommandlet.h")
 @:noClass @:uextern extern class UUpdateGameProjectCommandlet extends unreal.UCommandlet {
   

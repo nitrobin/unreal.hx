@@ -19,7 +19,6 @@ package unreal.animgraph;
   
   
 **/
-@:umodule("AnimGraph")
 @:glueCppIncludes("AnimationStateGraphSchema.h")
 @:uextern extern class UAnimationStateGraphSchema extends unreal.animgraph.UAnimationGraphSchema {
   

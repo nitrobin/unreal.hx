@@ -18,7 +18,6 @@ package unreal.aimodule;
   Composite generator allows using multiple generators in single query option
   All child generators must produce exactly the same item type!
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/Generators/EnvQueryGenerator_Composite.h")
 @:uextern extern class UEnvQueryGenerator_Composite extends unreal.aimodule.UEnvQueryGenerator {
   public var bHasMatchingItemType : Bool;

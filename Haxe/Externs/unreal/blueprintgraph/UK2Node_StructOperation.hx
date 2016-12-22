@@ -19,7 +19,6 @@ package unreal.blueprintgraph;
   
   
 **/
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_StructOperation.h")
 @:uextern extern class UK2Node_StructOperation extends unreal.blueprintgraph.UK2Node_Variable {
   

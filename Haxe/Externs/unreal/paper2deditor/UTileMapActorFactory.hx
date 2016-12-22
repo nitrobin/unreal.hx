@@ -19,7 +19,6 @@ package unreal.paper2deditor;
   
   
 **/
-@:umodule("Paper2DEditor")
 @:glueCppIncludes("TileMapActorFactory.h")
 @:noClass @:uextern extern class UTileMapActorFactory extends unreal.editor.UActorFactory {
   

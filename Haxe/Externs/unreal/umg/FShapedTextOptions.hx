@@ -18,7 +18,6 @@ package unreal.umg;
   Common data for all widgets that use shaped text.
   Contains the common options that should be exposed for the underlying Slate widget.
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class FShapedTextOptions {
   

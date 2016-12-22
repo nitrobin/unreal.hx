@@ -13,7 +13,6 @@
 **/
 package unreal.gameplayabilities;
 
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/Tasks/AbilityTask.h")
 @:uextern extern class UAbilityTask extends unreal.gameplaytasks.UGameplayTask {
   public var AbilitySystemComponent : unreal.gameplayabilities.UAbilitySystemComponent;

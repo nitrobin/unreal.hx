@@ -20,7 +20,6 @@ package unreal.aimodule;
   Navigation grid, generates points on navmesh
   with paths to/from context no further than given limit
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/Generators/EnvQueryGenerator_PathingGrid.h")
 @:noClass @:uextern extern class UEnvQueryGenerator_PathingGrid extends unreal.aimodule.UEnvQueryGenerator_SimpleGrid {
   

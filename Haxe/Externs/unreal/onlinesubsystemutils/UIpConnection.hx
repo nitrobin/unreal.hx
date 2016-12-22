@@ -13,7 +13,6 @@
 **/
 package unreal.onlinesubsystemutils;
 
-@:umodule("OnlineSubsystemUtils")
 @:glueCppIncludes("IpConnection.h")
 @:uextern extern class UIpConnection extends unreal.UNetConnection {
   

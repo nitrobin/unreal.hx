@@ -13,7 +13,6 @@
 **/
 package unreal.gameplayabilitieseditor;
 
-@:umodule("GameplayAbilitiesEditor")
 @:glueCppIncludes("K2Node_GameplayEffectVariable.h")
 @:uextern extern class UK2Node_GameplayEffectVariable extends unreal.blueprintgraph.UK2Node_VariableGet {
   public var GameplayEffect : unreal.gameplayabilities.UGameplayEffect;

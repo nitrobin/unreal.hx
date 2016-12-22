@@ -13,7 +13,6 @@
 **/
 package unreal.archvischaracter;
 
-@:umodule("ArchVisCharacter")
 @:glueCppIncludes("ArchVisCharMovementComponent.h")
 @:uextern extern class UArchVisCharMovementComponent extends unreal.UCharacterMovementComponent {
   

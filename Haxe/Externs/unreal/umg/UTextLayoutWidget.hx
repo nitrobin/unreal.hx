@@ -18,7 +18,6 @@ package unreal.umg;
   Base class for all widgets that use a text layout.
   Contains the common options that should be exposed for the underlying Slate widget.
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UTextLayoutWidget extends unreal.umg.UWidget {
   
@@ -31,6 +30,11 @@ package unreal.umg;
     The amount of blank space left around the edges of text area.
   **/
   private var Margin : unreal.slatecore.FMargin;
+  
+  /**
+    The wrapping policy to use.
+  **/
+  private var WrappingPolicy : unreal.slate.ETextWrappingPolicy;
   
   /**
     Whether text wraps onto a new line when it's length exceeds this width; if this value is zero or negative, no wrapping occurs.

@@ -17,7 +17,6 @@ package unreal.paper2d;
 /**
   Implements the settings for the Paper2D plugin.
 **/
-@:umodule("Paper2D")
 @:glueCppIncludes("PaperRuntimeSettings.h")
 @:uextern extern class UPaperRuntimeSettings extends unreal.UObject {
   

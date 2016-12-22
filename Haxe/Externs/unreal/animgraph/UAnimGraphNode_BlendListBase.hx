@@ -19,7 +19,6 @@ package unreal.animgraph;
   
   
 **/
-@:umodule("AnimGraph")
 @:glueCppIncludes("AnimGraphNode_BlendListBase.h")
 @:uextern extern class UAnimGraphNode_BlendListBase extends unreal.animgraph.UAnimGraphNode_Base {
   

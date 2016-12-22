@@ -19,9 +19,13 @@ package unreal.umg;
   
   * No Children
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class USlider extends unreal.umg.UWidget {
+  
+  /**
+    Should the slider be focusable?
+  **/
+  public var IsFocusable : Bool;
   
   /**
     The amount to adjust the value by, when using a controller or keyboard

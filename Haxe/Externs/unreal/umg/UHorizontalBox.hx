@@ -20,7 +20,6 @@ package unreal.umg;
   * Many Children
   * Flow Horizontal
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UHorizontalBox extends unreal.umg.UPanelWidget {
   @:final public function AddChildToHorizontalBox(Content : unreal.umg.UWidget) : unreal.umg.UHorizontalBoxSlot;

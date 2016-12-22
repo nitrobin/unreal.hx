@@ -19,7 +19,6 @@ package unreal.slate;
   
   
 **/
-@:umodule("Slate")
 @:glueCppIncludes("Framework/Styling/EditableTextBoxWidgetStyle.h")
 @:uextern extern class UEditableTextBoxWidgetStyle extends unreal.slatecore.USlateWidgetStyleContainerBase {
   

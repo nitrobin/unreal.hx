@@ -19,7 +19,6 @@ package unreal.blueprintgraph;
   functions, enums, structs, properties, etc.). Acts as the "action" portion
   for certain FBlueprintActionMenuItems.
 **/
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("BlueprintFieldNodeSpawner.h")
 @:uextern extern class UBlueprintFieldNodeSpawner extends unreal.blueprintgraph.UBlueprintNodeSpawner {
   

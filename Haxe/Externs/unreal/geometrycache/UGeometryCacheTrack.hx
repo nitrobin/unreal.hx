@@ -19,7 +19,6 @@ package unreal.geometrycache;
   
   Base class for GeometryCache tracks, stores matrix animation data and implements functionality for it
 **/
-@:umodule("GeometryCache")
 @:glueCppIncludes("GeometryCacheTrack.h")
 @:uextern extern class UGeometryCacheTrack extends unreal.UObject {
   

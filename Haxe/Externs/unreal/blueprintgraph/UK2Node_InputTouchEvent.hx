@@ -19,7 +19,6 @@ package unreal.blueprintgraph;
   
   
 **/
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_InputTouchEvent.h")
 @:uextern extern class UK2Node_InputTouchEvent extends unreal.blueprintgraph.UK2Node_Event {
   public var bOverrideParentBinding : Bool;

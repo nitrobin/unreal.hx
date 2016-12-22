@@ -19,7 +19,6 @@ package unreal.animgraph;
   
   
 **/
-@:umodule("AnimGraph")
 @:glueCppIncludes("AnimGraphNode_Slot.h")
 @:uextern extern class UAnimGraphNode_Slot extends unreal.animgraph.UAnimGraphNode_Base {
   public var Node : unreal.animgraphruntime.FAnimNode_Slot;

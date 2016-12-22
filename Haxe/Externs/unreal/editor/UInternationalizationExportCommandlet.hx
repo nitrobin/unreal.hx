@@ -19,7 +19,6 @@ package unreal.editor;
   
   UInternationalizationExportCommandlet: Commandlet used to export internationalization data to various standard formats.
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Commandlets/InternationalizationExportCommandlet.h")
 @:noClass @:uextern extern class UInternationalizationExportCommandlet extends unreal.editor.UGatherTextCommandletBase {
   

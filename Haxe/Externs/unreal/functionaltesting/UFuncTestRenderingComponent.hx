@@ -19,7 +19,6 @@ package unreal.functionaltesting;
   
   
 **/
-@:umodule("FunctionalTesting")
 @:glueCppIncludes("FuncTestRenderingComponent.h")
 @:noClass @:uextern extern class UFuncTestRenderingComponent extends unreal.UPrimitiveComponent {
   

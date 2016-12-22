@@ -19,7 +19,6 @@ package unreal.umgeditor;
   
   
 **/
-@:umodule("UMGEditor")
 @:glueCppIncludes("SlateVectorArtDataFactory.h")
 @:uextern extern class USlateVectorArtDataFactory extends unreal.editor.UFactory {
   

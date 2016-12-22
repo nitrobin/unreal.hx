@@ -19,7 +19,6 @@ package unreal.blueprintgraph;
   
   
 **/
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_EnumInequality.h")
 @:uextern extern class UK2Node_EnumInequality extends unreal.blueprintgraph.UK2Node_EnumEquality {
   

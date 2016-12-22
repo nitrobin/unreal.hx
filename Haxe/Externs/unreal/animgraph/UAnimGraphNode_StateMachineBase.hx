@@ -13,7 +13,6 @@
 **/
 package unreal.animgraph;
 
-@:umodule("AnimGraph")
 @:glueCppIncludes("AnimGraphNode_StateMachineBase.h")
 @:uextern extern class UAnimGraphNode_StateMachineBase extends unreal.animgraph.UAnimGraphNode_Base {
   

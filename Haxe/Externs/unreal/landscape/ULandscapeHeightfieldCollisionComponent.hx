@@ -19,7 +19,6 @@ package unreal.landscape;
   
   
 **/
-@:umodule("Landscape")
 @:glueCppIncludes("LandscapeHeightfieldCollisionComponent.h")
 @:uextern extern class ULandscapeHeightfieldCollisionComponent extends unreal.UPrimitiveComponent {
   
@@ -42,6 +41,11 @@ package unreal.landscape;
     The flags for each collision quad. See ECollisionQuadFlags.
   **/
   public var CollisionQuadFlags : unreal.TArray<unreal.UInt8>;
+  
+  /**
+    Size of component's "simple collision" in collision quads
+  **/
+  public var SimpleCollisionSizeQuads : unreal.Int32;
   
   /**
     Collision scale: (ComponentSizeQuads) / (CollisionSizeQuads)

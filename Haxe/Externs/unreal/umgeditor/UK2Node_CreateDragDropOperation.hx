@@ -13,7 +13,6 @@
 **/
 package unreal.umgeditor;
 
-@:umodule("UMGEditor")
 @:glueCppIncludes("Private/Nodes/K2Node_CreateDragDropOperation.h")
 @:uextern extern class UK2Node_CreateDragDropOperation extends unreal.blueprintgraph.UK2Node_ConstructObjectFromClass {
   

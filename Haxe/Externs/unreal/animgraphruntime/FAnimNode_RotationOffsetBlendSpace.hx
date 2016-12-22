@@ -17,9 +17,9 @@ package unreal.animgraphruntime;
 /**
   @TODO: Comment
 **/
-@:umodule("AnimGraphRuntime")
 @:glueCppIncludes("AnimGraphNode_RotationOffsetBlendSpace.h")
 @:uextern extern class FAnimNode_RotationOffsetBlendSpace extends unreal.animgraphruntime.FAnimNode_BlendSpacePlayer {
+  public var bIsLODEnabled : Bool;
   
   /**
     * Max LOD that this node is allowed to run

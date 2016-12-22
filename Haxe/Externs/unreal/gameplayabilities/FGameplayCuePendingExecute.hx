@@ -19,7 +19,6 @@ package unreal.gameplayabilities;
   
   Structure to keep track of pending gameplay cues that haven't been applied yet.
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("GameplayCueManager.h")
 @:noCopy @:noEquals @:uextern extern class FGameplayCuePendingExecute {
   
@@ -47,6 +46,5 @@ package unreal.gameplayabilities;
     Prediction key that spawned this cue
   **/
   public var PredictionKey : unreal.gameplayabilities.FPredictionKey;
-  public var GameplayCueTag : unreal.gameplaytags.FGameplayTag;
   
 }

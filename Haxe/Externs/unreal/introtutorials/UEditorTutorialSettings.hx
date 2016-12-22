@@ -19,7 +19,6 @@ package unreal.introtutorials;
   
   Editor-wide tutorial settings
 **/
-@:umodule("IntroTutorials")
 @:glueCppIncludes("Private/EditorTutorialSettings.h")
 @:noClass @:uextern extern class UEditorTutorialSettings extends unreal.UObject {
   

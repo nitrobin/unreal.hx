@@ -19,7 +19,6 @@ package unreal.aimodule;
   
   
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/Contexts/EnvQueryContext_BlueprintBase.h")
 @:uextern extern class UEnvQueryContext_BlueprintBase extends unreal.aimodule.UEnvQueryContext {
   

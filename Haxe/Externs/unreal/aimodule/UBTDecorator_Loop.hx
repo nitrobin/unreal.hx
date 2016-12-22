@@ -18,7 +18,6 @@ package unreal.aimodule;
   Loop decorator node.
   A decorator node that bases its condition on whether its loop counter has been exceeded.
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Decorators/BTDecorator_Loop.h")
 @:uextern extern class UBTDecorator_Loop extends unreal.aimodule.UBTDecorator {
   

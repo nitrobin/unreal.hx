@@ -19,7 +19,6 @@ package unreal.editor;
   
   UGatherTextFromAssetsCommandlet: Localization commandlet that collects all text to be localized from the game assets.
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Commandlets/GatherTextFromAssetsCommandlet.h")
 @:noClass @:uextern extern class UGatherTextFromAssetsCommandlet extends unreal.editor.UGatherTextCommandletBase {
   

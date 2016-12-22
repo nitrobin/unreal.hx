@@ -19,16 +19,10 @@ package unreal.landscape;
   
   Structure storing Layer Data for import
 **/
-@:umodule("Landscape")
 @:glueCppIncludes("LandscapeEditorObject.h")
 @:noCopy @:noEquals @:uextern extern class FLandscapeImportLayerInfo {
   #if WITH_EDITORONLY_DATA
-  
-  /**
-    Optional
-  **/
   public var SourceFilePath : unreal.FString;
-  public var ThumbnailMIC : unreal.UMaterialInstanceConstant;
   public var LayerInfo : unreal.landscape.ULandscapeLayerInfoObject;
   public var LayerName : unreal.FName;
   #end // WITH_EDITORONLY_DATA

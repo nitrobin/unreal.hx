@@ -17,12 +17,11 @@ package unreal.gameplayabilities;
 /**
   Class used to perform custom gameplay effect modifier calculations, either via blueprint or native code
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("GameplayModMagnitudeCalculation.h")
 @:uextern extern class UGameplayModMagnitudeCalculation extends unreal.gameplayabilities.UGameplayEffectCalculation {
   
   /**
-    Calculate the base magnitude of the gameplay effect modifier, given the specified spec. Note that the owngin spec def can still modify this base value
+    Calculate the base magnitude of the gameplay effect modifier, given the specified spec. Note that the owning spec def can still modify this base value
     with a coeffecient and pre/post multiply adds. see FCustomCalculationBasedFloat::CalculateMagnitude for details.
     
     @param Spec  Gameplay effect spec to use to calculate the magnitude with

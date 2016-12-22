@@ -19,7 +19,6 @@ package unreal.gameplaytagseditor;
   
   
 **/
-@:umodule("GameplayTagsEditor")
 @:glueCppIncludes("GameplayTagsK2Node_MultiCompareGameplayTagAssetInterface.h")
 @:noClass @:uextern extern class UGameplayTagsK2Node_MultiCompareGameplayTagAssetInterface extends unreal.gameplaytagseditor.UGameplayTagsK2Node_MultiCompareBase {
   

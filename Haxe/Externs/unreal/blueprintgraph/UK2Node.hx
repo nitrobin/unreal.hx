@@ -19,7 +19,6 @@ package unreal.blueprintgraph;
   
   Abstract base class of all blueprint graph nodes.
 **/
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node.h")
 @:uextern extern class UK2Node extends unreal.UEdGraphNode {
   

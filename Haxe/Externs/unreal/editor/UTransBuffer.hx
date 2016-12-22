@@ -13,7 +13,6 @@
 **/
 package unreal.editor;
 
-@:umodule("UnrealEd")
 @:glueCppIncludes("Editor/TransBuffer.h")
 @:uextern extern class UTransBuffer extends unreal.editor.UTransactor {
   

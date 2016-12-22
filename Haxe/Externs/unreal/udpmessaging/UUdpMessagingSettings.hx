@@ -19,7 +19,6 @@ package unreal.udpmessaging;
   
   
 **/
-@:umodule("UdpMessaging")
 @:glueCppIncludes("Private/Shared/UdpMessagingSettings.h")
 @:noClass @:uextern extern class UUdpMessagingSettings extends unreal.UObject {
   
@@ -76,7 +75,7 @@ package unreal.udpmessaging;
     The IP endpoint to listen to and send packets from.
     
     The format is IP_ADDRESS:PORT_NUMBER.
-    0.0.0.0:0 will bind to the default network adapter on Windows
+    0.0.0.0:0 will bind to the default network adapter on Windows,
     and all available network adapters on other operating systems.
   **/
   public var UnicastEndpoint : unreal.FString;

@@ -21,7 +21,6 @@ package unreal.gameplayabilities;
    -When to execute next
    -Replication callbacks
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("AbilitySystemComponent.h")
 @:uextern extern class FActiveGameplayEffect extends unreal.FFastArraySerializerItem {
   

@@ -19,9 +19,9 @@ package unreal.landscapeeditor;
   
   
 **/
-@:umodule("LandscapeEditor")
 @:glueCppIncludes("LandscapeEditorObject.h")
 @:noCopy @:noEquals @:uextern extern class FLandscapeImportLayer extends unreal.landscape.FLandscapeImportLayerInfo {
-  public var ImportError : unreal.landscapeeditor.ELandscapeImportLayerError;
+  public var ImportResult : unreal.landscapeeditor.ELandscapeImportResult;
+  public var ThumbnailMIC : unreal.landscape.ULandscapeMaterialInstanceConstant;
   
 }

@@ -19,7 +19,6 @@ package unreal.gameplayabilities;
   
   
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/GameplayAbilityTargetActor_ActorPlacement.h")
 @:noClass @:uextern extern class AGameplayAbilityTargetActor_ActorPlacement extends unreal.gameplayabilities.AGameplayAbilityTargetActor_GroundTrace {
   

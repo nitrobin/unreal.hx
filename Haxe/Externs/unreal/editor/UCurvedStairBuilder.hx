@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Builders/CurvedStairBuilder.h")
 @:uextern extern class UCurvedStairBuilder extends unreal.editor.UEditorBrushBuilder {
   

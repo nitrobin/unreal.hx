@@ -13,7 +13,6 @@
 **/
 package unreal.aimodule;
 
-@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Decorators/BTDecorator_IsBBEntryOfClass.h")
 @:uextern extern class UBTDecorator_IsBBEntryOfClass extends unreal.aimodule.UBTDecorator_BlackboardBase {
   private var TestClass : unreal.TSubclassOf<unreal.UObject>;

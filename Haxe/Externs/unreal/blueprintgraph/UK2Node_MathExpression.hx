@@ -21,7 +21,6 @@ package unreal.blueprintgraph;
   series of math nodes. If it is unsuccessful, then it generates a series of
   actionable errors.
 **/
-@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_MathExpression.h")
 @:uextern extern class UK2Node_MathExpression extends unreal.blueprintgraph.UK2Node_Composite {
   public var bMadeAfterRotChange : Bool;

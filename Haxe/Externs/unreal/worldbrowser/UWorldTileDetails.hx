@@ -22,7 +22,6 @@ package unreal.worldbrowser;
   Helper class to hold world tile information
   Holding this information in UObject gives us ability to use property editors and support undo operations
 **/
-@:umodule("WorldBrowser")
 @:glueCppIncludes("Private/Tiles/WorldTileDetails.h")
 @:noClass @:uextern extern class UWorldTileDetails extends unreal.UObject {
   public var LOD4 : unreal.worldbrowser.FTileLODEntryDetails;

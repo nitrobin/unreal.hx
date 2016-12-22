@@ -18,7 +18,6 @@ package unreal.umg;
   The state passed into OnPaint that we can expose as a single painting structure to blueprints to
   allow script code to override OnPaint behavior.
 **/
-@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class FPaintContext {
   

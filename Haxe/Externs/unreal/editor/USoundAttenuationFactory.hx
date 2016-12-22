@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/SoundAttenuationFactory.h")
 @:uextern extern class USoundAttenuationFactory extends unreal.editor.UFactory {
   

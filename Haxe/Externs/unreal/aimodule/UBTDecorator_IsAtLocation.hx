@@ -18,7 +18,6 @@ package unreal.aimodule;
   Is At Location decorator node.
   A decorator node that checks if AI controlled pawn is at given location.
 **/
-@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Decorators/BTDecorator_IsAtLocation.h")
 @:uextern extern class UBTDecorator_IsAtLocation extends unreal.aimodule.UBTDecorator_BlackboardBase {
   
@@ -26,6 +25,8 @@ package unreal.aimodule;
     if moving to an actor and this actor is a nav agent, then we will move to their nav agent location
   **/
   public var bUseNavAgentGoalLocation : Bool;
+  public var bUseParametrizedRadius : Bool;
+  public var ParametrizedAcceptableRadius : unreal.aimodule.FAIDataProviderFloatValue;
   
   /**
     distance threshold to accept as being at location

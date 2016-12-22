@@ -17,25 +17,9 @@ package unreal.mediaassets;
 /**
   Implements a playable sound asset for audio streams from UMediaPlayer assets.
 **/
-@:umodule("MediaAssets")
 @:glueCppIncludes("MediaSoundWave.h")
 @:uextern extern class UMediaSoundWave extends unreal.USoundWave {
-  
-  /**
-    The MediaPlayer asset to stream audio from.
-  **/
-  public var MediaPlayer : unreal.mediaassets.UMediaPlayer;
-  
-  /**
-    The index of the MediaPlayer's audio track to get the wave data from.
-  **/
-  public var AudioTrackIndex : unreal.Int32;
-  
-  /**
-    Sets the MediaPlayer asset to be used for this texture.
-    
-    @param InMediaPlayer The asset to set.
-  **/
-  @:final public function SetMediaPlayer(InMediaPlayer : unreal.mediaassets.UMediaPlayer) : Void;
+  private var MediaPlayer : unreal.mediaassets.UMediaPlayer;
+  private var AudioTrackIndex : unreal.Int32;
   
 }

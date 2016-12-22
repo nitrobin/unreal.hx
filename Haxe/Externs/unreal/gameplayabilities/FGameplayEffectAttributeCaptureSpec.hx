@@ -17,7 +17,6 @@ package unreal.gameplayabilities;
 /**
   Struct used to hold the result of a gameplay attribute capture; Initially seeded by definition data, but then populated by ability system component when appropriate
 **/
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("AbilitySystemComponent.h")
 @:uextern extern class FGameplayEffectAttributeCaptureSpec {
   

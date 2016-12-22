@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Builders/CylinderBuilder.h")
 @:uextern extern class UCylinderBuilder extends unreal.editor.UEditorBrushBuilder {
   

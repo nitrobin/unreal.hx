@@ -19,7 +19,6 @@ package unreal.aitestsuite;
   
   
 **/
-@:umodule("AITestSuite")
 @:glueCppIncludes("MockGameplayTasks.h")
 @:noClass @:uextern extern class UMockGameplayTaskOwner extends unreal.UObject implements unreal.gameplaytasks.IGameplayTaskOwnerInterface {
   public var GTComponent : unreal.gameplaytasks.UGameplayTasksComponent;

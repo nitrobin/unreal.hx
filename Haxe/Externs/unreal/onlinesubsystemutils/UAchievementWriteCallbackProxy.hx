@@ -19,8 +19,7 @@ package unreal.onlinesubsystemutils;
   
   
 **/
-@:umodule("OnlineSubsystemUtils")
 @:glueCppIncludes("AchievementWriteCallbackProxy.h")
-@:uextern extern class UAchievementWriteCallbackProxy extends unreal.onlinesubsystemutils.UOnlineBlueprintCallProxyBase {
+@:uextern extern class UAchievementWriteCallbackProxy extends unreal.UOnlineBlueprintCallProxyBase {
   
 }

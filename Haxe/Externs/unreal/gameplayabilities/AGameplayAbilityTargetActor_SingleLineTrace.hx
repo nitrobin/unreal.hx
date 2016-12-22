@@ -13,7 +13,6 @@
 **/
 package unreal.gameplayabilities;
 
-@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/GameplayAbilityTargetActor_SingleLineTrace.h")
 @:uextern extern class AGameplayAbilityTargetActor_SingleLineTrace extends unreal.gameplayabilities.AGameplayAbilityTargetActor_Trace {
   

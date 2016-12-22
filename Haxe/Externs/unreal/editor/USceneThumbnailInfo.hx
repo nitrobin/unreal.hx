@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("ThumbnailRendering/SceneThumbnailInfo.h")
 @:uextern extern class USceneThumbnailInfo extends unreal.UThumbnailInfo {
   

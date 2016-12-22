@@ -13,7 +13,6 @@
 **/
 package unreal.editor;
 
-@:umodule("UnrealEd")
 @:glueCppIncludes("Editor/UnrealEdEngine.h")
 @:uextern extern class UUnrealEdEngine extends unreal.editor.UEditorEngine {
   
@@ -41,11 +40,6 @@ package unreal.editor;
     Whether the user needs to be prompted about a package being saved with an engine version newer than the current one or not
   **/
   public var bNeedWarningForPkgEngineVer : Bool;
-  
-  /**
-    If we have packages that are pending and we should notify the user that they need to be checked out
-  **/
-  public var bNeedToPromptForCheckout : Bool;
   
   /**
     Current target for LOD parenting operations (actors will use this as the replacement)

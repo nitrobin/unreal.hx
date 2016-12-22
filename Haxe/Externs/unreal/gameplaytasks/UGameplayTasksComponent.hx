@@ -17,12 +17,11 @@ package unreal.gameplaytasks;
 /**
   The core ActorComponent for interfacing with the GameplayAbilities System
 **/
-@:umodule("GameplayTasks")
 @:glueCppIncludes("GameplayTasksComponent.h")
 @:uextern extern class UGameplayTasksComponent extends unreal.UActorComponent implements unreal.gameplaytasks.IGameplayTaskOwnerInterface {
   
   /**
-    Array of currently active UAbilityTasks that require ticking
+    Array of currently active UGameplayTask that require ticking
   **/
   private var TickingTasks : unreal.TArray<unreal.gameplaytasks.UGameplayTask>;
   private var TaskPriorityQueue : unreal.TArray<unreal.gameplaytasks.UGameplayTask>;

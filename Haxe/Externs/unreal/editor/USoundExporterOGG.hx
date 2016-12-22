@@ -19,7 +19,6 @@ package unreal.editor;
   
   
 **/
-@:umodule("UnrealEd")
 @:glueCppIncludes("Exporters/SoundExporterOGG.h")
 @:noClass @:uextern extern class USoundExporterOGG extends unreal.UExporter {
   
