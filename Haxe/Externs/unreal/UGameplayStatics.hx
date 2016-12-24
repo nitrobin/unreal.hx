@@ -592,7 +592,7 @@ package unreal;
     @param HitItem               Primitive-specific data recording which item in the primitive was hit
     @param FaceIndex             If colliding with trimesh or landscape, index of face that was hit.
   **/
-  static public function BreakHitResult(Hit : unreal.Const<unreal.PRef<unreal.FHitResult>>, bBlockingHit : Bool, bInitialOverlap : Bool, Time : unreal.Float32, Location : unreal.PRef<unreal.FVector>, ImpactPoint : unreal.PRef<unreal.FVector>, Normal : unreal.PRef<unreal.FVector>, ImpactNormal : unreal.PRef<unreal.FVector>, PhysMat : unreal.PRef<unreal.UPhysicalMaterial>, HitActor : unreal.PRef<unreal.AActor>, HitComponent : unreal.PRef<unreal.UPrimitiveComponent>, HitBoneName : unreal.PRef<unreal.FName>, HitItem : unreal.Int32, FaceIndex : unreal.Int32, TraceStart : unreal.PRef<unreal.FVector>, TraceEnd : unreal.PRef<unreal.FVector>) : Void;
+//  static public function BreakHitResult(Hit : unreal.Const<unreal.PRef<unreal.FHitResult>>, bBlockingHit : Bool, bInitialOverlap : Bool, Time : unreal.Float32, Location : unreal.PRef<unreal.FVector>, ImpactPoint : unreal.PRef<unreal.FVector>, Normal : unreal.PRef<unreal.FVector>, ImpactNormal : unreal.PRef<unreal.FVector>, PhysMat : unreal.PRef<unreal.UPhysicalMaterial>, HitActor : unreal.PRef<unreal.AActor>, HitComponent : unreal.PRef<unreal.UPrimitiveComponent>, HitBoneName : unreal.PRef<unreal.FName>, HitItem : unreal.Int32, FaceIndex : unreal.Int32, TraceStart : unreal.PRef<unreal.FVector>, TraceEnd : unreal.PRef<unreal.FVector>) : Void;
   
   /**
     Create a HitResult struct
