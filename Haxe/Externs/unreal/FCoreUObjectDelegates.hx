@@ -15,7 +15,8 @@ import unreal.*;
   // Called after garbage collection
   public static var PostGarbageCollect:FSimpleMulticastDelegate;
 
-  public static var PreLoadMap:FSimpleMulticastDelegate;
+//  DECLARE_MULTICAST_DELEGATE_OneParam(FPreLoadMapDelegate, const FString&);
+//  public static var PreLoadMap:FPreLoadMapDelegate;
 
   public static var PostLoadMap:FSimpleMulticastDelegate;
 }

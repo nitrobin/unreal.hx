@@ -324,7 +324,7 @@ class TypeConv {
         set.add("UObject/WeakObjectPtrTemplates.h");
       }
       if (flags.hasAny(OSubclassOf)) {
-        set.add("UObject/ObjectBase.h");
+        //set.add("UObject/ObjectBase.h");
       }
 
       if (forwardDecls != null) {
@@ -383,7 +383,7 @@ class TypeConv {
         case PWeak | PAutoWeak:
           set.add("UObject/WeakObjectPtrTemplates.h");
         case PSubclassOf:
-          set.add("UObject/ObjectBase.h");
+          //set.add("UObject/ObjectBase.h");
         case PNone:
       }
       if (forwardDecls == null) {

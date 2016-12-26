@@ -43,7 +43,7 @@ extern class AGameMode_Extra {
   private function HandleLeavingMap() : Void;
   private function HandleMatchAborted() : Void;
 
-  function ShouldSpawnAtStartSpot(player:AController) : Bool;
+//  function ShouldSpawnAtStartSpot(player:AController) : Bool;
 
   function AllowCheats(P:APlayerController) : Bool;
 
