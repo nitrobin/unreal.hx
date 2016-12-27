@@ -53,4 +53,6 @@ extern class AGameMode_Extra {
      Options:Const<PRef<FString>>,
      Portal:Const<PRef<FString>>) : FString;
    */
+
+  function AddInactivePlayer(PlayerState:APlayerState, PC:APlayerController) : Void;
 }
