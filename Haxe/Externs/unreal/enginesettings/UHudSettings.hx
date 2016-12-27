@@ -13,6 +13,7 @@
 **/
 package unreal.enginesettings;
 
+@:umodule("EngineSettings")
 @:glueCppIncludes("HudSettings.h")
 @:uextern extern class UHudSettings extends unreal.UObject {
   

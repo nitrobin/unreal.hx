@@ -27,6 +27,7 @@ package unreal.aimodule;
   - IsDecoratorExecutionActive (true after ExecutionStart, until ExecutionFinish)
   - IsDecoratorObserverActive (true after ObserverActivated, until ObserverDeactivated)
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Decorators/BTDecorator_BlueprintBase.h")
 @:uextern extern class UBTDecorator_BlueprintBase extends unreal.aimodule.UBTDecorator {
   

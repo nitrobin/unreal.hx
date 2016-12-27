@@ -19,6 +19,7 @@ package unreal.aimodule;
   Note that this node is generic and is handing multiple special cases,
   If you want a more efficient solution you'll need to implement it yourself (or wait for our BTTask_PlayCharacterAnimation)
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Tasks/BTTask_PlayAnimation.h")
 @:uextern extern class UBTTask_PlayAnimation extends unreal.aimodule.UBTTaskNode {
   public var CachedSkelMesh : unreal.USkeletalMeshComponent;

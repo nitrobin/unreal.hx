@@ -20,6 +20,7 @@ package unreal.umg;
   to give themselves many of the same capabilities as AActor blueprints, like dynamic delegate binding for
   widgets.
 **/
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UWidgetBlueprintGeneratedClass extends unreal.UBlueprintGeneratedClass {
   public var bCanEverPaint : Bool;

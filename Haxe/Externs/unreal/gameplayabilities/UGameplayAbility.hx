@@ -17,6 +17,7 @@ package unreal.gameplayabilities;
 /**
   Abilities define custom gameplay logic that can be activated by players or external game logic.
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/GameplayAbility.h")
 @:uextern extern class UGameplayAbility extends unreal.UObject implements unreal.gameplaytasks.IGameplayTaskOwnerInterface {
   

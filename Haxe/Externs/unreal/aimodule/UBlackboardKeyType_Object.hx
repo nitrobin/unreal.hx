@@ -13,6 +13,7 @@
 **/
 package unreal.aimodule;
 
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Blackboard/BlackboardKeyType_Object.h")
 @:uextern extern class UBlackboardKeyType_Object extends unreal.aimodule.UBlackboardKeyType {
   public var BaseClass : unreal.UClass;

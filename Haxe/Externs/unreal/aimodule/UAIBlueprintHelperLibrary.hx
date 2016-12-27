@@ -13,6 +13,7 @@
 **/
 package unreal.aimodule;
 
+@:umodule("AIModule")
 @:glueCppIncludes("Blueprint/AIBlueprintHelperLibrary.h")
 @:uextern extern class UAIBlueprintHelperLibrary extends unreal.UBlueprintFunctionLibrary {
   static public function CreateMoveToProxyObject(WorldContextObject : unreal.UObject, Pawn : unreal.APawn, Destination : unreal.FVector, TargetActor : unreal.AActor, AcceptanceRadius : unreal.Float32, bStopOnOverlap : Bool) : unreal.aimodule.UAIAsyncTaskBlueprintProxy;

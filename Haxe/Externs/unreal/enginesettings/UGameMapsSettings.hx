@@ -13,6 +13,7 @@
 **/
 package unreal.enginesettings;
 
+@:umodule("EngineSettings")
 @:glueCppIncludes("GameMapsSettings.h")
 @:uextern extern class UGameMapsSettings extends unreal.UObject {
   

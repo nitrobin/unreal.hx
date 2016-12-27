@@ -19,6 +19,7 @@ package unreal.gameplayabilities;
       The GameplayEffect definition. This is the data asset defined in the editor that drives everything.
    This is only blueprintable to allow for templating gameplay effects. Gameplay effects should NOT contain blueprint graphs.
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("GameplayEffect.h")
 @:uextern extern class UGameplayEffect extends unreal.UObject implements unreal.gameplaytags.IGameplayTagAssetInterface {
   

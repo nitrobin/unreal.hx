@@ -20,6 +20,7 @@ package unreal.levelsequence;
   This class keeps track of playback state and provides functions for manipulating
   an level sequence while its playing.
 **/
+@:umodule("LevelSequence")
 @:glueCppIncludes("LevelSequencePlayer.h")
 @:uextern extern class ULevelSequencePlayer extends unreal.UObject {
   

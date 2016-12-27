@@ -17,6 +17,7 @@ package unreal.gameplayabilities;
 /**
   A set of gameplay cue actors to handle gameplay cue events
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("GameplayCueSet.h")
 @:uextern extern class UGameplayCueSet extends unreal.UDataAsset {
   public var GameplayCueData : unreal.TArray<unreal.gameplayabilities.FGameplayCueNotifyData>;

@@ -13,6 +13,7 @@
 **/
 package unreal.umg;
 
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UScrollBar extends unreal.umg.UWidget {
   

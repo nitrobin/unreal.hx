@@ -18,6 +18,7 @@ package unreal.aimodule;
   Blackboard comparison decorator node.
   A decorator node that bases its condition on a comparison between two Blackboard keys.
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Decorators/BTDecorator_CompareBBEntries.h")
 @:uextern extern class UBTDecorator_CompareBBEntries extends unreal.aimodule.UBTDecorator {
   

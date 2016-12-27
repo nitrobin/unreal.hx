@@ -13,6 +13,7 @@
 **/
 package unreal.aimodule;
 
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Tasks/BTTask_BlackboardBase.h")
 @:uextern extern class UBTTask_BlackboardBase extends unreal.aimodule.UBTTaskNode {
   

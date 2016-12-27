@@ -19,6 +19,7 @@ package unreal.aimodule;
   
   
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/EQSQueryResultSourceInterface.h")
 @:uextern extern interface IEQSQueryResultSourceInterface {
   

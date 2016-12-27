@@ -18,6 +18,7 @@ package unreal.aimodule;
   Run Environment Query System Query task node.
   Runs the specified environment query when executed.
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Tasks/BTTask_RunEQSQuery.h")
 @:uextern extern class UBTTask_RunEQSQuery extends unreal.aimodule.UBTTask_BlackboardBase {
   public var EQSRequest : unreal.aimodule.FEQSParametrizedQueryExecutionRequest;

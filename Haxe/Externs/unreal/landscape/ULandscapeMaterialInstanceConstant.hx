@@ -19,6 +19,7 @@ package unreal.landscape;
   
   
 **/
+@:umodule("Landscape")
 @:glueCppIncludes("LandscapeMaterialInstanceConstant.h")
 @:uextern extern class ULandscapeMaterialInstanceConstant extends unreal.UMaterialInstanceConstant {
   public var bDisableTessellation : Bool;

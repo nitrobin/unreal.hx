@@ -17,6 +17,7 @@ package unreal.gameplayabilities;
 /**
   The core ActorComponent for interfacing with the GameplayAbilities System
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("AbilitySystemComponent.h")
 @:uextern extern class UAbilitySystemComponent extends unreal.gameplaytasks.UGameplayTasksComponent implements unreal.gameplaytags.IGameplayTagAssetInterface {
   @:final public function K2_InitStats(Attributes : unreal.TSubclassOf<unreal.gameplayabilities.UAttributeSet>, DataTable : unreal.Const<unreal.UDataTable>) : Void;

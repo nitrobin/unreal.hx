@@ -17,6 +17,7 @@ package unreal.umg;
 /**
   Turn static mesh data into Slate's simple vector art format.
 **/
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class USlateVectorArtData extends unreal.UObject {
   

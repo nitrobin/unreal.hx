@@ -21,6 +21,7 @@ package unreal.onlinesubsystemutils;
   On the host, the life cycle is managed by an AOnlineBeaconHostObject
   On the client, the life cycle is managed by the game
 **/
+@:umodule("OnlineSubsystemUtils")
 @:glueCppIncludes("OnlineBeaconClient.h")
 @:uextern extern class AOnlineBeaconClient extends unreal.onlinesubsystemutils.AOnlineBeacon {
   

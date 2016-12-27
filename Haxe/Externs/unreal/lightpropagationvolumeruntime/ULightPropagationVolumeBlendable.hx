@@ -19,6 +19,7 @@ package unreal.lightpropagationvolumeruntime;
   
   BlueprintType to make the object spawnable in blueprint
 **/
+@:umodule("LightPropagationVolumeRuntime")
 @:glueCppIncludes("LightPropagationVolumeBlendable.h")
 @:uextern extern class ULightPropagationVolumeBlendable extends unreal.UObject implements unreal.IBlendableInterface {
   

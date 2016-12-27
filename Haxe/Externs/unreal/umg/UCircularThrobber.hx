@@ -20,6 +20,7 @@ package unreal.umg;
   * No Children
   * Spinner Progress
 **/
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UCircularThrobber extends unreal.umg.UWidget {
   public var Image : unreal.slatecore.FSlateBrush;

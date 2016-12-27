@@ -19,6 +19,7 @@ package unreal.landscape;
   
   
 **/
+@:umodule("Landscape")
 @:glueCppIncludes("LandscapeProxy.h")
 @:uextern extern class ALandscapeProxy extends unreal.AActor {
   

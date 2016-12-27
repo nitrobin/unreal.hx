@@ -17,6 +17,7 @@ package unreal.paper2d;
 /**
   A tile map is a 2D grid with a defined width and height (in tiles).  There can be multiple layers, each of which can specify which tile should appear in each cell of the map for that layer.
 **/
+@:umodule("Paper2D")
 @:glueCppIncludes("PaperTileMap.h")
 @:uextern extern class UPaperTileMap extends unreal.UObject {
   

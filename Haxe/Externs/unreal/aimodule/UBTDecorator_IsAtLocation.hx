@@ -18,6 +18,7 @@ package unreal.aimodule;
   Is At Location decorator node.
   A decorator node that checks if AI controlled pawn is at given location.
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Decorators/BTDecorator_IsAtLocation.h")
 @:uextern extern class UBTDecorator_IsAtLocation extends unreal.aimodule.UBTDecorator_BlackboardBase {
   

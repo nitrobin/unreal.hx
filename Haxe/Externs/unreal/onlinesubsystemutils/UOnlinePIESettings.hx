@@ -19,6 +19,7 @@ package unreal.onlinesubsystemutils;
   
   Setup up login credentials for the Play In Editor (PIE) feature
 **/
+@:umodule("OnlineSubsystemUtils")
 @:glueCppIncludes("Private/OnlinePIESettings.h")
 @:noClass @:uextern extern class UOnlinePIESettings extends unreal.UDeveloperSettings {
   

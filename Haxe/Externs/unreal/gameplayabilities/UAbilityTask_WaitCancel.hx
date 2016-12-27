@@ -19,6 +19,7 @@ package unreal.gameplayabilities;
   
   
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/Tasks/AbilityTask_WaitCancel.h")
 @:uextern extern class UAbilityTask_WaitCancel extends unreal.gameplayabilities.UAbilityTask {
   

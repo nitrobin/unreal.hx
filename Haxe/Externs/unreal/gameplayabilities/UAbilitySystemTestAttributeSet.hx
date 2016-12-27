@@ -13,6 +13,7 @@
 **/
 package unreal.gameplayabilities;
 
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("AbilitySystemTestAttributeSet.h")
 @:uextern extern class UAbilitySystemTestAttributeSet extends unreal.gameplayabilities.UAttributeSet {
   public var NoStackAttribute : unreal.Float32;

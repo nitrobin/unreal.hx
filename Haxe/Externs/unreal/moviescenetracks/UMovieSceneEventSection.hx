@@ -19,6 +19,7 @@ package unreal.moviescenetracks;
   
   Implements a section in movie scene event tracks.
 **/
+@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Sections/MovieSceneEventSection.h")
 @:uextern extern class UMovieSceneEventSection extends unreal.moviescene.UMovieSceneSection {
   

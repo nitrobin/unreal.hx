@@ -18,6 +18,7 @@ package unreal.gameplayabilities;
   This is an example DataAsset that could be used for defining a set of abilities to give to an AbilitySystemComponent and bind to an input command.
   Your project is free to implement this however it wants!
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("GameplayAbilitySet.h")
 @:uextern extern class UGameplayAbilitySet extends unreal.UDataAsset {
   public var Abilities : unreal.TArray<unreal.gameplayabilities.FGameplayAbilityBindInfo>;

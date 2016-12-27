@@ -13,6 +13,7 @@
 **/
 package unreal.aimodule;
 
+@:umodule("AIModule")
 @:glueCppIncludes("Actions/PawnAction_Sequence.h")
 @:uextern extern class UPawnAction_Sequence extends unreal.aimodule.UPawnAction {
   public var RecentActionCopy : unreal.aimodule.UPawnAction;

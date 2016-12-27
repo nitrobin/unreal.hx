@@ -19,6 +19,7 @@ package unreal.gameplayabilities;
   
   Applies force to character's movement
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/Tasks/AbilityTask_ApplyRootMotionConstantForce.h")
 @:uextern extern class UAbilityTask_ApplyRootMotionConstantForce extends unreal.gameplayabilities.UAbilityTask {
   private var MovementComponent : unreal.UCharacterMovementComponent;

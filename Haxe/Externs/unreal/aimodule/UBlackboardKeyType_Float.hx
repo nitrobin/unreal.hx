@@ -13,6 +13,7 @@
 **/
 package unreal.aimodule;
 
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Blackboard/BlackboardKeyType_Float.h")
 @:uextern extern class UBlackboardKeyType_Float extends unreal.aimodule.UBlackboardKeyType {
   

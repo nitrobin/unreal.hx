@@ -19,6 +19,7 @@ package unreal.niagara;
   
   
 **/
+@:umodule("Niagara")
 @:glueCppIncludes("NiagaraEmitterProperties.h")
 @:noCopy @:noEquals @:uextern extern class FNiagaraVariableInfo {
   public var Type : unreal.niagara.ENiagaraDataType;

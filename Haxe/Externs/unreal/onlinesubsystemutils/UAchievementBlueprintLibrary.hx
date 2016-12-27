@@ -17,6 +17,7 @@ package unreal.onlinesubsystemutils;
 /**
   Library of synchronous achievement calls
 **/
+@:umodule("OnlineSubsystemUtils")
 @:glueCppIncludes("AchievementBlueprintLibrary.h")
 @:uextern extern class UAchievementBlueprintLibrary extends unreal.UBlueprintFunctionLibrary {
   

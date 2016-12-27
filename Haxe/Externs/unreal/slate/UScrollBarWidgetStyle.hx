@@ -19,6 +19,7 @@ package unreal.slate;
   
   
 **/
+@:umodule("Slate")
 @:glueCppIncludes("Framework/Styling/ScrollBarWidgetStyle.h")
 @:uextern extern class UScrollBarWidgetStyle extends unreal.slatecore.USlateWidgetStyleContainerBase {
   

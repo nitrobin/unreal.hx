@@ -17,6 +17,7 @@ package unreal.levelsequence;
 /**
   Movie scene animation for Actors.
 **/
+@:umodule("LevelSequence")
 @:glueCppIncludes("LevelSequence.h")
 @:uextern extern class ULevelSequence extends unreal.moviescene.UMovieSceneSequence {
   

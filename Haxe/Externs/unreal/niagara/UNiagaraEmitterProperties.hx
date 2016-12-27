@@ -20,6 +20,7 @@ package unreal.niagara;
   UNiagaraEmitterProperties stores the attributes of an FNiagaraSimulation
   that need to be serialized and are used for its initialization
 **/
+@:umodule("Niagara")
 @:glueCppIncludes("NiagaraEmitterProperties.h")
 @:uextern extern class UNiagaraEmitterProperties extends unreal.UObject {
   public var SpawnScriptProps : unreal.niagara.FNiagaraEmitterScriptProperties;

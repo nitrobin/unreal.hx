@@ -19,6 +19,7 @@ package unreal.landscape;
   
   
 **/
+@:umodule("Landscape")
 @:glueCppIncludes("LandscapeGrassType.h")
 @:uextern extern class ULandscapeGrassType extends unreal.UObject {
   @:deprecated public var AlignToSurface_DEPRECATED : Bool;

@@ -17,6 +17,7 @@ package unreal.mediaassets;
 /**
   Implements a media player asset that can play movies and other media sources.
 **/
+@:umodule("MediaAssets")
 @:glueCppIncludes("MediaPlayer.h")
 @:uextern extern class UMediaPlayer extends unreal.UObject {
   

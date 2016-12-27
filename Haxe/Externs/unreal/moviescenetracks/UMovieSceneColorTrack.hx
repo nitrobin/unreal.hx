@@ -19,6 +19,7 @@ package unreal.moviescenetracks;
   
   Handles manipulation of float properties in a movie scene
 **/
+@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Tracks/MovieSceneColorTrack.h")
 @:uextern extern class UMovieSceneColorTrack extends unreal.moviescenetracks.UMovieScenePropertyTrack {
   

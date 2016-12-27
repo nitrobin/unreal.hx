@@ -13,6 +13,7 @@
 **/
 package unreal.foliage;
 
+@:umodule("Foliage")
 @:glueCppIncludes("ProceduralFoliageVolume.h")
 @:uextern extern class AProceduralFoliageVolume extends unreal.AVolume {
   public var ProceduralComponent : unreal.foliage.UProceduralFoliageComponent;

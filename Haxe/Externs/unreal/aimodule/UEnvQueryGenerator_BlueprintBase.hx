@@ -13,6 +13,7 @@
 **/
 package unreal.aimodule;
 
+@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/Generators/EnvQueryGenerator_BlueprintBase.h")
 @:uextern extern class UEnvQueryGenerator_BlueprintBase extends unreal.aimodule.UEnvQueryGenerator {
   

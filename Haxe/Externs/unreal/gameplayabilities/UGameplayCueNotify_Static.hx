@@ -17,6 +17,7 @@ package unreal.gameplayabilities;
 /**
   A non instantiated UObject that acts as a handler for a GameplayCue. These are useful for one-off "burst" effects.
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("GameplayCueNotify_Static.h")
 @:uextern extern class UGameplayCueNotify_Static extends unreal.UObject {
   

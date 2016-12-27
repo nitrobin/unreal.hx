@@ -18,6 +18,7 @@ package unreal.geometrycache;
   A Geometry Cache is a piece/set of geometry that consists of individual Mesh/Transformation samples.
   In contrast with Static Meshes they can have their vertices animated in certain ways. *
 **/
+@:umodule("GeometryCache")
 @:glueCppIncludes("GeometryCache.h")
 @:uextern extern class UGeometryCache extends unreal.UObject implements unreal.IInterface_AssetUserData {
   

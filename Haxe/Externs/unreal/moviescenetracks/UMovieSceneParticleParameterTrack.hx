@@ -19,6 +19,7 @@ package unreal.moviescenetracks;
   
   Handles manipulation of material parameters in a movie scene.
 **/
+@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Tracks/MovieSceneParticleParameterTrack.h")
 @:uextern extern class UMovieSceneParticleParameterTrack extends unreal.moviescene.UMovieSceneNameableTrack {
   

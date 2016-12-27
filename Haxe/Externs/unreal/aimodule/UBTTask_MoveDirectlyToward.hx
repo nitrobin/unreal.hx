@@ -18,6 +18,7 @@ package unreal.aimodule;
   Move Directly Toward task node.
   Moves the AI pawn toward the specified Actor or Location (Vector) blackboard entry in a straight line, without regard to any navigation system. If you need the AI to navigate, use the "Move To" node instead.
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Tasks/BTTask_MoveDirectlyToward.h")
 @:uextern extern class UBTTask_MoveDirectlyToward extends unreal.aimodule.UBTTask_MoveTo {
   public var bProjectVectorGoalToNavigation : Bool;

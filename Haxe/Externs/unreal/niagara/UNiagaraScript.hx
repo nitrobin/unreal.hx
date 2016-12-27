@@ -19,6 +19,7 @@ package unreal.niagara;
   
   Runtime script for a Niagara system
 **/
+@:umodule("Niagara")
 @:glueCppIncludes("NiagaraScript.h")
 @:uextern extern class UNiagaraScript extends unreal.UObject {
   #if WITH_EDITORONLY_DATA

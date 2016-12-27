@@ -17,6 +17,7 @@ package unreal.gameplayabilities;
 /**
   Selects everything within a given radius of the source actor.
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/GameplayAbilityTargetActor_Radius.h")
 @:uextern extern class AGameplayAbilityTargetActor_Radius extends unreal.gameplayabilities.AGameplayAbilityTargetActor {
   

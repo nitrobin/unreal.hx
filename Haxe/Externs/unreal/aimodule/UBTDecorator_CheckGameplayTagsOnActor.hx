@@ -19,6 +19,7 @@ package unreal.aimodule;
   A decorator node that bases its condition on whether the specified Actor (in the blackboard) has a Gameplay Tag or
   Tags specified.
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Decorators/BTDecorator_CheckGameplayTagsOnActor.h")
 @:uextern extern class UBTDecorator_CheckGameplayTagsOnActor extends unreal.aimodule.UBTDecorator {
   

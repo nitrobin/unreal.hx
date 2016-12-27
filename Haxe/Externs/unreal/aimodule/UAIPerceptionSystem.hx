@@ -17,6 +17,7 @@ package unreal.aimodule;
 /**
   By design checks perception between hostile teams
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("Perception/AIPerceptionSystem.h")
 @:uextern extern class UAIPerceptionSystem extends unreal.UObject {
   private var PerceptionAgingRate : unreal.Float32;

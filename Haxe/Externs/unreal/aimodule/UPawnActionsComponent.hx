@@ -13,6 +13,7 @@
 **/
 package unreal.aimodule;
 
+@:umodule("AIModule")
 @:glueCppIncludes("Actions/PawnActionsComponent.h")
 @:uextern extern class UPawnActionsComponent extends unreal.UActorComponent {
   private var CurrentAction : unreal.aimodule.UPawnAction;

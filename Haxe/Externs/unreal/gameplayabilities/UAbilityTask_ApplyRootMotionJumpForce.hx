@@ -19,6 +19,7 @@ package unreal.gameplayabilities;
   
   Applies force to character's movement
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/Tasks/AbilityTask_ApplyRootMotionJumpForce.h")
 @:uextern extern class UAbilityTask_ApplyRootMotionJumpForce extends unreal.gameplayabilities.UAbilityTask {
   private var MovementComponent : unreal.UCharacterMovementComponent;

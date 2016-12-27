@@ -13,6 +13,7 @@
 **/
 package unreal.gameplayabilities;
 
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/GameplayAbility.h")
 @:uextern extern class FGameplayEventData {
   

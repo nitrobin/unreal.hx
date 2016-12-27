@@ -19,6 +19,7 @@ package unreal.slate;
   
   
 **/
+@:umodule("Slate")
 @:glueCppIncludes("Framework/Styling/EditableTextWidgetStyle.h")
 @:uextern extern class UEditableTextWidgetStyle extends unreal.slatecore.USlateWidgetStyleContainerBase {
   

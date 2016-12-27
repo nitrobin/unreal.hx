@@ -19,6 +19,7 @@ package unreal.landscape;
   
   
 **/
+@:umodule("Landscape")
 @:glueCppIncludes("LandscapeMeshProxyComponent.h")
 @:uextern extern class ULandscapeMeshProxyComponent extends unreal.UStaticMeshComponent {
   

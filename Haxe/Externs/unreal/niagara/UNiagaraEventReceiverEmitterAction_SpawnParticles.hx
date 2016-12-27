@@ -19,6 +19,7 @@ package unreal.niagara;
   
   
 **/
+@:umodule("Niagara")
 @:glueCppIncludes("NiagaraEvents.h")
 @:noClass @:uextern extern class UNiagaraEventReceiverEmitterAction_SpawnParticles extends unreal.niagara.UNiagaraEventReceiverEmitterAction {
   

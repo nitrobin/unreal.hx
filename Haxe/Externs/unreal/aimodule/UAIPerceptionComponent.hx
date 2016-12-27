@@ -18,6 +18,7 @@ package unreal.aimodule;
   AIPerceptionComponent is used to register as stimuli listener in AIPerceptionSystem
   and gathers registered stimuli. UpdatePerception is called when component gets new stimuli (batched)
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("Perception/AIPerceptionComponent.h")
 @:uextern extern class UAIPerceptionComponent extends unreal.UActorComponent {
   private var AIOwner : unreal.aimodule.AAIController;

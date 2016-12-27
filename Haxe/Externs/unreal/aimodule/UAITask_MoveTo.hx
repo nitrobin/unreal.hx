@@ -13,6 +13,7 @@
 **/
 package unreal.aimodule;
 
+@:umodule("AIModule")
 @:glueCppIncludes("Tasks/AITask_MoveTo.h")
 @:uextern extern class UAITask_MoveTo extends unreal.aimodule.UAITask {
   static public function AIMoveTo(Controller : unreal.aimodule.AAIController, GoalLocation : unreal.FVector, GoalActor : unreal.AActor, AcceptanceRadius : unreal.Float32, StopOnOverlap : unreal.aimodule.EAIOptionFlag, AcceptPartialPath : unreal.aimodule.EAIOptionFlag, bUsePathfinding : Bool, bLockAILogic : Bool) : unreal.aimodule.UAITask_MoveTo;

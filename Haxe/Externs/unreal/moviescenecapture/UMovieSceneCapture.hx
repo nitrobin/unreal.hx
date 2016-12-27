@@ -17,6 +17,7 @@ package unreal.moviescenecapture;
 /**
   Class responsible for capturing scene data
 **/
+@:umodule("MovieSceneCapture")
 @:glueCppIncludes("MovieSceneCapture.h")
 @:uextern extern class UMovieSceneCapture extends unreal.UObject implements unreal.moviescenecapture.IMovieSceneCaptureInterface {
   

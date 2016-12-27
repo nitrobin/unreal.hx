@@ -13,6 +13,7 @@
 **/
 package unreal.inputcore;
 
+@:umodule("InputCore")
 @:glueCppIncludes("GameFramework/InputSettings.h")
 @:uextern extern class FKey {
   

@@ -15,7 +15,7 @@ package unreal;
 
 
 /**
-  WARNING: This type is defined as NoExport by UHT. It will be empty because of it: UObject
+  WARNING: This type is defined as NoExport by UHT. It will be empty because of it
   
   
 **/

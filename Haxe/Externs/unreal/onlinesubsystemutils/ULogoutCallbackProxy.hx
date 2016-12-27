@@ -19,6 +19,7 @@ package unreal.onlinesubsystemutils;
   
   
 **/
+@:umodule("OnlineSubsystemUtils")
 @:glueCppIncludes("LogoutCallbackProxy.h")
 @:uextern extern class ULogoutCallbackProxy extends unreal.UBlueprintAsyncActionBase {
   

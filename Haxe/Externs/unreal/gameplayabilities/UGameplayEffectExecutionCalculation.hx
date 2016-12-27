@@ -13,6 +13,7 @@
 **/
 package unreal.gameplayabilities;
 
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("GameplayEffectExecutionCalculation.h")
 @:uextern extern class UGameplayEffectExecutionCalculation extends unreal.gameplayabilities.UGameplayEffectCalculation {
   #if WITH_EDITORONLY_DATA

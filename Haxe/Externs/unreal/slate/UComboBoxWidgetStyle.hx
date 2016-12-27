@@ -19,6 +19,7 @@ package unreal.slate;
   
   
 **/
+@:umodule("Slate")
 @:glueCppIncludes("Framework/Styling/ComboBoxWidgetStyle.h")
 @:uextern extern class UComboBoxWidgetStyle extends unreal.slatecore.USlateWidgetStyleContainerBase {
   

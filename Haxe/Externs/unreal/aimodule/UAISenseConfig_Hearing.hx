@@ -13,6 +13,7 @@
 **/
 package unreal.aimodule;
 
+@:umodule("AIModule")
 @:glueCppIncludes("Perception/AISenseConfig_Hearing.h")
 @:uextern extern class UAISenseConfig_Hearing extends unreal.aimodule.UAISenseConfig {
   public var DetectionByAffiliation : unreal.aimodule.FAISenseAffiliationFilter;

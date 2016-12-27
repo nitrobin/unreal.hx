@@ -19,6 +19,7 @@ package unreal.levelsequence;
   
   Frame snapshot information for a level sequence
 **/
+@:umodule("LevelSequence")
 @:glueCppIncludes("LevelSequenceBurnIn.h")
 @:noCopy @:noEquals @:uextern extern class FLevelSequencePlayerSnapshot {
   public var Settings : unreal.levelsequence.FLevelSequenceSnapshotSettings;

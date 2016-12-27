@@ -19,6 +19,7 @@ package unreal.moviescene;
   
   Base class for movie scene tracks that can be renamed by the user.
 **/
+@:umodule("MovieScene")
 @:glueCppIncludes("MovieSceneNameableTrack.h")
 @:uextern extern class UMovieSceneNameableTrack extends unreal.moviescene.UMovieSceneTrack {
   

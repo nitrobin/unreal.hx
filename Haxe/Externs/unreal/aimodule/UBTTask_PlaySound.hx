@@ -18,6 +18,7 @@ package unreal.aimodule;
   Play Sound task node.
   Plays the specified sound when executed.
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Tasks/BTTask_PlaySound.h")
 @:uextern extern class UBTTask_PlaySound extends unreal.aimodule.UBTTaskNode {
   

@@ -13,6 +13,7 @@
 **/
 package unreal.enginesettings;
 
+@:umodule("EngineSettings")
 @:glueCppIncludes("GeneralProjectSettings.h")
 @:uextern extern class UGeneralProjectSettings extends unreal.UObject {
   public var bAllowMinimize : Bool;

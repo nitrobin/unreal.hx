@@ -19,6 +19,7 @@ package unreal.moviescenetracks;
   
   Handles manipulation of path tracks in a movie scene
 **/
+@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Tracks/MovieScene3DPathTrack.h")
 @:uextern extern class UMovieScene3DPathTrack extends unreal.moviescenetracks.UMovieScene3DConstraintTrack {
   

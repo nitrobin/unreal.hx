@@ -17,6 +17,7 @@ package unreal.geometrycache;
 /**
   GeometryCache actor, serves as a place-able actor for GeometryCache objects
 **/
+@:umodule("GeometryCache")
 @:glueCppIncludes("GeometryCacheActor.h")
 @:uextern extern class AGeometryCacheActor extends unreal.AActor {
   public var GeometryCacheComponent : unreal.geometrycache.UGeometryCacheComponent;

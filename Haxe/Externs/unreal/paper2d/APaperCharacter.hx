@@ -18,6 +18,7 @@ package unreal.paper2d;
   APaperCharacter behaves like ACharacter, but uses a UPaperFlipbookComponent instead of a USkeletalMeshComponent as a visual representation
   Note: The variable named Mesh will not be set up on this actor!
 **/
+@:umodule("Paper2D")
 @:glueCppIncludes("PaperCharacter.h")
 @:uextern extern class APaperCharacter extends unreal.ACharacter {
   

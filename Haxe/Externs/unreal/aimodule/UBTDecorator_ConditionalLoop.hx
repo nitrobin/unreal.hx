@@ -18,6 +18,7 @@ package unreal.aimodule;
   Conditional loop decorator node.
   A decorator node that loops execution as long as condition is satisfied.
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Decorators/BTDecorator_ConditionalLoop.h")
 @:uextern extern class UBTDecorator_ConditionalLoop extends unreal.aimodule.UBTDecorator_Blackboard {
   

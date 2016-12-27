@@ -19,6 +19,7 @@ package unreal.moviescenetracks;
   
   Handles when a spawnable should be spawned and destroyed
 **/
+@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Tracks/MovieSceneSpawnTrack.h")
 @:uextern extern class UMovieSceneSpawnTrack extends unreal.moviescene.UMovieSceneTrack {
   

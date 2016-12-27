@@ -19,6 +19,7 @@ package unreal.moviescenetracks;
   
   Implements a movie scene track that controls a fade.
 **/
+@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Tracks/MovieSceneFadeTrack.h")
 @:uextern extern class UMovieSceneFadeTrack extends unreal.moviescenetracks.UMovieSceneFloatTrack {
   

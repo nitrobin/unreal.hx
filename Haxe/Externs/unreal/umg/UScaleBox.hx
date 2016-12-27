@@ -22,6 +22,7 @@ package unreal.umg;
   * Single Child
   * Aspect Ratio
 **/
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UScaleBox extends unreal.umg.UContentWidget {
   

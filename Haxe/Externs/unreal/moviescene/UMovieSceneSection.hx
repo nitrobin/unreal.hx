@@ -19,6 +19,7 @@ package unreal.moviescene;
   
   Base class for movie scene sections
 **/
+@:umodule("MovieScene")
 @:glueCppIncludes("MovieSceneSection.h")
 @:uextern extern class UMovieSceneSection extends unreal.UObject {
   

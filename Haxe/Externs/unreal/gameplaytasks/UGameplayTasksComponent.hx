@@ -17,6 +17,7 @@ package unreal.gameplaytasks;
 /**
   The core ActorComponent for interfacing with the GameplayAbilities System
 **/
+@:umodule("GameplayTasks")
 @:glueCppIncludes("GameplayTasksComponent.h")
 @:uextern extern class UGameplayTasksComponent extends unreal.UActorComponent implements unreal.gameplaytasks.IGameplayTaskOwnerInterface {
   

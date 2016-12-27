@@ -20,6 +20,7 @@ package unreal.umg;
   * No Children
   * Text Entry
 **/
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UEditableTextBox extends unreal.umg.UWidget {
   

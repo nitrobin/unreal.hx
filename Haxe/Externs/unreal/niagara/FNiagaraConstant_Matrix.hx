@@ -19,6 +19,7 @@ package unreal.niagara;
   
   
 **/
+@:umodule("Niagara")
 @:glueCppIncludes("NiagaraEmitterProperties.h")
 @:noCopy @:noEquals @:uextern extern class FNiagaraConstant_Matrix extends unreal.niagara.FNiagaraConstantBase {
   public var Value : unreal.FMatrix;

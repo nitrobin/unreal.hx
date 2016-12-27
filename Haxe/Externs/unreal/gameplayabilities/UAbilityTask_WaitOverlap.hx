@@ -21,6 +21,7 @@ package unreal.gameplayabilities;
           -Only actually activates on Blocking hits
           -Uses first PrimitiveComponent instead of being able to specify arbitrary component.
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/Tasks/AbilityTask_WaitOverlap.h")
 @:uextern extern class UAbilityTask_WaitOverlap extends unreal.gameplayabilities.UAbilityTask {
   

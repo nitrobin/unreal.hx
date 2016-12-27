@@ -22,12 +22,12 @@ package unreal;
 @:glueCppIncludes("Engine/SkeletalMesh.h")
 @:noCopy @:noEquals @:uextern extern class FMeshUVChannelInfo {
   
-//  /**
-//    The UV density in the mesh, before any transform scaling, in world unit per UV.
-//    This value represents the length taken to cover a full UV unit.
-//  **/
+  /**
+    The UV density in the mesh, before any transform scaling, in world unit per UV.
+    This value represents the length taken to cover a full UV unit.
+  **/
 //  public var LocalUVDensities : unreal.Float32;
-//
+
   /**
     Whether this values was set manually or is auto generated.
   **/

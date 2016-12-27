@@ -13,6 +13,7 @@
 **/
 package unreal.aimodule;
 
+@:umodule("AIModule")
 @:glueCppIncludes("AISystem.h")
 @:uextern extern class UAISystem extends unreal.UAISystemBase {
   private var HotSpotManager : unreal.aimodule.UAIHotSpotManager;

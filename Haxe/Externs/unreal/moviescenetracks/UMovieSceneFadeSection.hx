@@ -19,6 +19,7 @@ package unreal.moviescenetracks;
   
   A single floating point section.
 **/
+@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Sections/MovieSceneFadeSection.h")
 @:uextern extern class UMovieSceneFadeSection extends unreal.moviescenetracks.UMovieSceneFloatSection {
   

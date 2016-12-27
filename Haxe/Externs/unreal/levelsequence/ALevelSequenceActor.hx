@@ -17,6 +17,7 @@ package unreal.levelsequence;
 /**
   Actor responsible for controlling a specific level sequence in the world.
 **/
+@:umodule("LevelSequence")
 @:glueCppIncludes("LevelSequenceActor.h")
 @:uextern extern class ALevelSequenceActor extends unreal.AActor {
   public var BurnInOptions : unreal.levelsequence.ULevelSequenceBurnInOptions;

@@ -21,6 +21,7 @@ package unreal.umg;
   * Single Child
   * Image
 **/
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UBorder extends unreal.umg.UContentWidget {
   

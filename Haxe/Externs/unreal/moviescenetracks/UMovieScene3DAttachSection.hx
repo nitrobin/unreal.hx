@@ -19,6 +19,7 @@ package unreal.moviescenetracks;
   
   A 3D Attach section
 **/
+@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Sections/MovieScene3DAttachSection.h")
 @:uextern extern class UMovieScene3DAttachSection extends unreal.moviescenetracks.UMovieScene3DConstraintSection {
   public var bConstrainRz : Bool;

@@ -13,6 +13,7 @@
 **/
 package unreal.aimodule;
 
+@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/EnvQueryInstanceBlueprintWrapper.h")
 @:uextern extern class UEnvQueryInstanceBlueprintWrapper extends unreal.UObject implements unreal.aimodule.IEQSQueryResultSourceInterface {
   

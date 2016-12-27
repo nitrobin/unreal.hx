@@ -28,6 +28,7 @@ package unreal.gameplaytasks;
   Long term we can also use this task as a sync point. If the executing client could wait execution until the server creates and replicates the
   actor down to him. We could potentially also use this to do predictive actor spawning / reconciliation.
 **/
+@:umodule("GameplayTasks")
 @:glueCppIncludes("Tasks/GameplayTask_SpawnActor.h")
 @:uextern extern class UGameplayTask_SpawnActor extends unreal.gameplaytasks.UGameplayTask {
   private var ClassToSpawn : unreal.TSubclassOf<unreal.AActor>;

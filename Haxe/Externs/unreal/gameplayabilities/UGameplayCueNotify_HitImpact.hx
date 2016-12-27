@@ -18,6 +18,7 @@ package unreal.gameplayabilities;
   Non instanced GAmeplayCueNotify for spawning particle and sound FX.
   Still WIP - needs to be fleshed out more.
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("GameplayCueNotify_HitImpact.h")
 @:uextern extern class UGameplayCueNotify_HitImpact extends unreal.gameplayabilities.UGameplayCueNotify_Static {
   

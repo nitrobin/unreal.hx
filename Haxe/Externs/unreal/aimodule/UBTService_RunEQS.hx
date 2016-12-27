@@ -13,6 +13,7 @@
 **/
 package unreal.aimodule;
 
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Services/BTService_RunEQS.h")
 @:uextern extern class UBTService_RunEQS extends unreal.aimodule.UBTService_BlackboardBase {
   private var EQSRequest : unreal.aimodule.FEQSParametrizedQueryExecutionRequest;

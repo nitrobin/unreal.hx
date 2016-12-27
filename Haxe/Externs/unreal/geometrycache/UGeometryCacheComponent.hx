@@ -17,6 +17,7 @@ package unreal.geometrycache;
 /**
   GeometryCacheComponent, encapsulates a GeometryCache asset instance and implements functionality for rendering/and playback of GeometryCaches
 **/
+@:umodule("GeometryCache")
 @:glueCppIncludes("GeometryCacheComponent.h")
 @:uextern extern class UGeometryCacheComponent extends unreal.UMeshComponent {
   

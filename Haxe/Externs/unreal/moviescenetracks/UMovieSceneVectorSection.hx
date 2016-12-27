@@ -19,6 +19,7 @@ package unreal.moviescenetracks;
   
   A vector section.
 **/
+@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Sections/MovieSceneVectorSection.h")
 @:uextern extern class UMovieSceneVectorSection extends unreal.moviescene.UMovieSceneSection {
   

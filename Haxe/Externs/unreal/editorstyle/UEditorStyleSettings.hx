@@ -17,6 +17,7 @@ package unreal.editorstyle;
 /**
   Implements the Editor style settings.
 **/
+@:umodule("EditorStyle")
 @:glueCppIncludes("Classes/EditorStyleSettings.h")
 @:uextern extern class UEditorStyleSettings extends unreal.UObject {
   

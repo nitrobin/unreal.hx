@@ -19,6 +19,7 @@ package unreal.umg;
   
   
 **/
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:noCopy @:noEquals @:uextern extern class FDelegateRuntimeBinding {
   

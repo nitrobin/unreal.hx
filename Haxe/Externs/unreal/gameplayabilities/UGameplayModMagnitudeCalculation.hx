@@ -17,6 +17,7 @@ package unreal.gameplayabilities;
 /**
   Class used to perform custom gameplay effect modifier calculations, either via blueprint or native code
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("GameplayModMagnitudeCalculation.h")
 @:uextern extern class UGameplayModMagnitudeCalculation extends unreal.gameplayabilities.UGameplayEffectCalculation {
   

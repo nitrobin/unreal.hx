@@ -13,6 +13,7 @@
 **/
 package unreal.moviescenecapture;
 
+@:umodule("MovieSceneCapture")
 @:glueCppIncludes("Protocols/CompositionGraphCaptureProtocol.h")
 @:uextern extern class UCompositionGraphCaptureSettings extends unreal.moviescenecapture.UMovieSceneCaptureProtocolSettings {
   

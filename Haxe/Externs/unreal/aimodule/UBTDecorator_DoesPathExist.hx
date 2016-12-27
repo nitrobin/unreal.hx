@@ -18,6 +18,7 @@ package unreal.aimodule;
   Cooldown decorator node.
   A decorator node that bases its condition on whether a path exists between two points from the Blackboard.
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Decorators/BTDecorator_DoesPathExist.h")
 @:uextern extern class UBTDecorator_DoesPathExist extends unreal.aimodule.UBTDecorator {
   

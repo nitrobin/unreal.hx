@@ -19,6 +19,7 @@ package unreal.cablecomponent;
   
   An actor that renders a simulated cable
 **/
+@:umodule("CableComponent")
 @:glueCppIncludes("CableActor.h")
 @:noClass @:uextern extern class ACableActor extends unreal.AActor {
   

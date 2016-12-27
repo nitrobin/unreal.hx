@@ -13,6 +13,7 @@
 **/
 package unreal.moviescenecapture;
 
+@:umodule("MovieSceneCapture")
 @:glueCppIncludes("AutomatedLevelSequenceCapture.h")
 @:uextern extern class UAutomatedLevelSequenceCapture extends unreal.moviescenecapture.UMovieSceneCapture {
   #if WITH_EDITORONLY_DATA

@@ -13,6 +13,7 @@
 **/
 package unreal.landscape;
 
+@:umodule("Landscape")
 @:glueCppIncludes("Materials/MaterialExpressionLandscapeLayerSample.h")
 @:uextern extern class UMaterialExpressionLandscapeLayerSample extends unreal.UMaterialExpression {
   

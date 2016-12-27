@@ -13,6 +13,7 @@
 **/
 package unreal.landscape;
 
+@:umodule("Landscape")
 @:glueCppIncludes("Materials/MaterialExpressionLandscapeLayerWeight.h")
 @:uextern extern class UMaterialExpressionLandscapeLayerWeight extends unreal.UMaterialExpression {
   

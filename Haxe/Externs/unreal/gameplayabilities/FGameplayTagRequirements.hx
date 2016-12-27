@@ -17,6 +17,7 @@ package unreal.gameplayabilities;
 /**
   Encapsulate require and ignore tags
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("GameplayEffect.h")
 @:uextern extern class FGameplayTagRequirements {
   

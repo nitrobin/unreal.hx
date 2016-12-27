@@ -19,6 +19,7 @@ package unreal.slate;
   
   
 **/
+@:umodule("Slate")
 @:glueCppIncludes("Framework/Styling/ProgressWidgetStyle.h")
 @:uextern extern class UProgressWidgetStyle extends unreal.slatecore.USlateWidgetStyleContainerBase {
   

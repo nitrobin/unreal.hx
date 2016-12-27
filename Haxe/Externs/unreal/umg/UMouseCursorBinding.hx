@@ -13,6 +13,7 @@
 **/
 package unreal.umg;
 
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UMouseCursorBinding extends unreal.umg.UPropertyBinding {
   @:thisConst @:final public function GetValue() : unreal.EMouseCursor;

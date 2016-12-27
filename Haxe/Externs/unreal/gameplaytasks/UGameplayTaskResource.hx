@@ -13,6 +13,7 @@
 **/
 package unreal.gameplaytasks;
 
+@:umodule("GameplayTasks")
 @:glueCppIncludes("GameplayTaskResource.h")
 @:uextern extern class UGameplayTaskResource extends unreal.UObject {
   public var bManuallySetID : Bool;

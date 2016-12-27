@@ -19,6 +19,7 @@ package unreal.paper2d;
   
   @see UPrimitiveComponent, UPaperSprite
 **/
+@:umodule("Paper2D")
 @:glueCppIncludes("PaperGroupedSpriteComponent.h")
 @:uextern extern class UPaperGroupedSpriteComponent extends unreal.UMeshComponent {
   

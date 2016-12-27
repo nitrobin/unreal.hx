@@ -17,6 +17,7 @@ package unreal.slatecore;
 /**
   Represents the appearance of an SSpinBox
 **/
+@:umodule("SlateCore")
 @:glueCppIncludes("Framework/Styling/SpinBoxWidgetStyle.h")
 @:uextern extern class FSpinBoxStyle extends unreal.slatecore.FSlateWidgetStyle {
   

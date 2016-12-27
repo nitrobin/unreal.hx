@@ -19,6 +19,7 @@ package unreal.aimodule;
      The reason is to stop it from showing as valid player pawn type when configuring
      project's game mode.
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/EQSTestingPawn.h")
 @:uextern extern class AEQSTestingPawn extends unreal.ACharacter implements unreal.aimodule.IEQSQueryResultSourceInterface {
   #if WITH_EDITORONLY_DATA

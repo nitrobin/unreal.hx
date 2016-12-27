@@ -24,6 +24,7 @@ package unreal.umg;
   * Single Child
   * Caching / Performance
 **/
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class URetainerBox extends unreal.umg.UContentWidget {
   

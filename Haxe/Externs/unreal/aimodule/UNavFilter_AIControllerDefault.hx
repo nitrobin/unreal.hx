@@ -13,6 +13,7 @@
 **/
 package unreal.aimodule;
 
+@:umodule("AIModule")
 @:glueCppIncludes("Navigation/NavFilter_AIControllerDefault.h")
 @:uextern extern class UNavFilter_AIControllerDefault extends unreal.UNavigationQueryFilter {
   

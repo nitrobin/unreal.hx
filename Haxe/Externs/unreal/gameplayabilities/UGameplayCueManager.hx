@@ -13,6 +13,7 @@
 **/
 package unreal.gameplayabilities;
 
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("GameplayCueManager.h")
 @:uextern extern class UGameplayCueManager extends unreal.UDataAsset {
   private var PreallocationInfoList_Internal : unreal.TArray<unreal.gameplayabilities.FPreallocationInfo>;

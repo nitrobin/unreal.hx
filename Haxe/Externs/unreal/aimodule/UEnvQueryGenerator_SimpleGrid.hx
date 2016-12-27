@@ -19,6 +19,7 @@ package unreal.aimodule;
   
   Simple grid, generates points in 2D square around context
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/Generators/EnvQueryGenerator_SimpleGrid.h")
 @:noClass @:uextern extern class UEnvQueryGenerator_SimpleGrid extends unreal.aimodule.UEnvQueryGenerator_ProjectedPoints {
   

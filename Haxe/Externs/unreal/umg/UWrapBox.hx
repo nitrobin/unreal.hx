@@ -21,6 +21,7 @@ package unreal.umg;
   * Flows
   * Wraps
 **/
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UWrapBox extends unreal.umg.UPanelWidget {
   

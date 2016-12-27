@@ -13,6 +13,7 @@
 **/
 package unreal.aimodule;
 
+@:umodule("AIModule")
 @:glueCppIncludes("Perception/AISense_Sight.h")
 @:uextern extern class UAISense_Sight extends unreal.aimodule.UAISense {
   private var SightLimitQueryImportance : unreal.Float32;

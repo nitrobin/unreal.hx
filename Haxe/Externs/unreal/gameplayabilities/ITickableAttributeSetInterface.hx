@@ -19,6 +19,7 @@ package unreal.gameplayabilities;
   
   
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("TickableAttributeSetInterface.h")
 @:uextern extern interface ITickableAttributeSetInterface {
   

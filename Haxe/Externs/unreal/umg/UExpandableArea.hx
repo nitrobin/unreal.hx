@@ -13,6 +13,7 @@
 **/
 package unreal.umg;
 
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UExpandableArea extends unreal.umg.UWidget implements unreal.umg.INamedSlotInterface {
   private var BodyContent : unreal.umg.UWidget;

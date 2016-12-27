@@ -21,6 +21,7 @@ package unreal.onlinesubsystemutils;
   The AOnlineBeaconHostObject is responsible for spawning the server version of the AOnlineBeaconClient
   The AOnlineBeaconHost pairs the two client actors, verifies the validity of the exchange, and accepts/continues the connection
 **/
+@:umodule("OnlineSubsystemUtils")
 @:glueCppIncludes("OnlineBeaconHost.h")
 @:uextern extern class AOnlineBeaconHost extends unreal.onlinesubsystemutils.AOnlineBeacon {
   

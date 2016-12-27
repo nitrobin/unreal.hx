@@ -17,6 +17,7 @@ package unreal.enginesettings;
 /**
   Implements the settings for the UConsole class.
 **/
+@:umodule("EngineSettings")
 @:glueCppIncludes("ConsoleSettings.h")
 @:uextern extern class UConsoleSettings extends unreal.UObject {
   

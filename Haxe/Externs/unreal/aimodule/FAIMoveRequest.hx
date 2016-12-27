@@ -13,6 +13,7 @@
 **/
 package unreal.aimodule;
 
+@:umodule("AIModule")
 @:glueCppIncludes("Tasks/AITask_MoveTo.h")
 @:uextern extern class FAIMoveRequest {
   

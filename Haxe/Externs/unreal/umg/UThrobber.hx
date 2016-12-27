@@ -17,6 +17,7 @@ package unreal.umg;
 /**
   A Throbber widget that shows several zooming circles in a row.
 **/
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UThrobber extends unreal.umg.UWidget {
   public var Image : unreal.slatecore.FSlateBrush;

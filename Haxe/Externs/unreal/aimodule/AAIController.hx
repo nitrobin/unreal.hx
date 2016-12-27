@@ -23,6 +23,7 @@ package unreal.aimodule;
   
   @see https://docs.unrealengine.com/latest/INT/Gameplay/Framework/Controller/
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("AIController.h")
 @:uextern extern class AAIController extends unreal.AController implements unreal.aimodule.IAIPerceptionListenerInterface implements unreal.gameplaytasks.IGameplayTaskOwnerInterface implements unreal.aimodule.IGenericTeamAgentInterface implements unreal.IVisualLoggerDebugSnapshotInterface {
   private var DefaultNavigationFilterClass : unreal.TSubclassOf<unreal.UNavigationQueryFilter>;

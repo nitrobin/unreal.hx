@@ -23,6 +23,7 @@ package unreal.aimodule;
   - initialize task with values if needed
   - use StartGameplayTask() helper to execute and get node result
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Tasks/BTTask_GameplayTaskBase.h")
 @:uextern extern class UBTTask_GameplayTaskBase extends unreal.aimodule.UBTTaskNode {
   

@@ -18,6 +18,7 @@ package unreal.umg;
   A slot for UUniformGridPanel, these slots all share the same size as the largest slot
   in the grid.
 **/
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UUniformGridSlot extends unreal.umg.UPanelSlot {
   

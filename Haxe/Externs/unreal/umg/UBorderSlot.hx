@@ -17,6 +17,7 @@ package unreal.umg;
 /**
   The Slot for the UBorderSlot, contains the widget displayed in a border's single slot
 **/
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UBorderSlot extends unreal.umg.UPanelSlot {
   @:final public function SetPadding(InPadding : unreal.slatecore.FMargin) : Void;

@@ -18,6 +18,7 @@ package unreal.aimodule;
   Time Limit decorator node.
   A decorator node that bases its condition on whether a timer has exceeded a specified value. The timer is reset each time the node becomes relevant.
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Decorators/BTDecorator_TimeLimit.h")
 @:uextern extern class UBTDecorator_TimeLimit extends unreal.aimodule.UBTDecorator {
   

@@ -13,6 +13,7 @@
 **/
 package unreal.aimodule;
 
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/BlackboardComponent.h")
 @:uextern extern class UBlackboardComponent extends unreal.UActorComponent {
   @:thisConst @:final public function GetValueAsObject(KeyName : unreal.Const<unreal.PRef<unreal.FName>>) : unreal.UObject;

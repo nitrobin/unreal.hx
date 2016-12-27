@@ -18,6 +18,7 @@ package unreal.aimodule;
   Blackboard decorator node.
   A decorator node that bases its condition on a Blackboard key.
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Decorators/BTDecorator_Blackboard.h")
 @:uextern extern class UBTDecorator_Blackboard extends unreal.aimodule.UBTDecorator_BlackboardBase {
   #if WITH_EDITORONLY_DATA

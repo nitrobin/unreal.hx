@@ -13,6 +13,7 @@
 **/
 package unreal.paper2d;
 
+@:umodule("Paper2D")
 @:glueCppIncludes("PaperFlipbookComponent.h")
 @:uextern extern class UPaperFlipbookComponent extends unreal.UMeshComponent {
   

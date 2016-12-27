@@ -17,6 +17,7 @@ package unreal.gameplayabilities;
 /**
   meta =(RestrictedToClasses="GameplayAbility")
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("AbilitySystemBlueprintLibrary.h")
 @:uextern extern class UAbilitySystemBlueprintLibrary extends unreal.UBlueprintFunctionLibrary {
   static public function GetAbilitySystemComponent(Actor : unreal.AActor) : unreal.gameplayabilities.UAbilitySystemComponent;

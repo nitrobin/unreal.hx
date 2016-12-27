@@ -20,6 +20,7 @@ package unreal.aimodule;
   Projects points on navigation or geometry, will modify value of projected items.
   Works only on item type: point
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/Tests/EnvQueryTest_Project.h")
 @:uextern extern class UEnvQueryTest_Project extends unreal.aimodule.UEnvQueryTest {
   

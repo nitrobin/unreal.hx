@@ -19,6 +19,7 @@ package unreal.landscape;
   
   
 **/
+@:umodule("Landscape")
 @:glueCppIncludes("LandscapeInfoMap.h")
 @:noClass @:uextern extern class ULandscapeInfoMap extends unreal.UObject {
   

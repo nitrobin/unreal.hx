@@ -19,6 +19,7 @@ package unreal.paper2d;
   
   Groups together a set of sprites that will try to share the same texture atlas (allowing them to be combined into a single draw call)
 **/
+@:umodule("Paper2D")
 @:glueCppIncludes("PaperSpriteAtlas.h")
 @:uextern extern class UPaperSpriteAtlas extends unreal.UObject {
   #if WITH_EDITORONLY_DATA

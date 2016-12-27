@@ -27,6 +27,7 @@ package unreal.gameplaytags;
   -Better support could be added for adding new tags. We could match existing tags and autocomplete subtags as
   the user types (e.g, autocomplete 'Damage.Physical' as the user is adding a 'Damage.Physical.Slash' tag).
 **/
+@:umodule("GameplayTags")
 @:glueCppIncludes("GameplayTagsSettings.h")
 @:uextern extern class UGameplayTagsSettings extends unreal.UObject {
   public var NetIndexFirstBitSegment : unreal.Int32;

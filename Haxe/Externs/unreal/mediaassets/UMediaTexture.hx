@@ -17,6 +17,7 @@ package unreal.mediaassets;
 /**
   Implements a texture asset for rendering video tracks from UMediaPlayer assets.
 **/
+@:umodule("MediaAssets")
 @:glueCppIncludes("MediaTexture.h")
 @:uextern extern class UMediaTexture extends unreal.UTexture {
   private var VideoTrackIndex : unreal.Int32;

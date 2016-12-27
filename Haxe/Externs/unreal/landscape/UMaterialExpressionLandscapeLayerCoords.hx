@@ -13,6 +13,7 @@
 **/
 package unreal.landscape;
 
+@:umodule("Landscape")
 @:glueCppIncludes("Materials/MaterialExpressionLandscapeLayerCoords.h")
 @:uextern extern class UMaterialExpressionLandscapeLayerCoords extends unreal.UMaterialExpression {
   

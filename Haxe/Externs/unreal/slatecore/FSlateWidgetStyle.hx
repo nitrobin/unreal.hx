@@ -17,6 +17,7 @@ package unreal.slatecore;
 /**
   Base structure for widget styles.
 **/
+@:umodule("SlateCore")
 @:glueCppIncludes("Framework/Styling/ButtonWidgetStyle.h")
 @:uextern extern class FSlateWidgetStyle {
   

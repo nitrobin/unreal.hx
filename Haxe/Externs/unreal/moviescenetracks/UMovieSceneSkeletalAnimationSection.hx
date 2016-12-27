@@ -19,6 +19,7 @@ package unreal.moviescenetracks;
   
   Movie scene section that control skeletal animation
 **/
+@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Sections/MovieSceneSkeletalAnimationSection.h")
 @:uextern extern class UMovieSceneSkeletalAnimationSection extends unreal.moviescene.UMovieSceneSection {
   

@@ -13,6 +13,7 @@
 **/
 package unreal.moviescenecapture;
 
+@:umodule("MovieSceneCapture")
 @:glueCppIncludes("Protocols/ImageSequenceProtocol.h")
 @:uextern extern class UImageCaptureSettings extends unreal.moviescenecapture.UFrameGrabberProtocolSettings {
   

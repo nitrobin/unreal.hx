@@ -17,6 +17,7 @@ package unreal.slatecore;
 /**
   An brush which contains information about how to draw a Slate element
 **/
+@:umodule("SlateCore")
 @:glueCppIncludes("Framework/Styling/ButtonWidgetStyle.h")
 @:uextern extern class FSlateBrush {
   

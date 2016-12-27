@@ -19,6 +19,7 @@ package unreal.niagara;
   
   Movie scene sequence used by Niagara.
 **/
+@:umodule("Niagara")
 @:glueCppIncludes("NiagaraSequence.h")
 @:uextern extern class UNiagaraSequence extends unreal.moviescene.UMovieSceneSequence {
   

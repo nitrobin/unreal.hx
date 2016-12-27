@@ -19,6 +19,7 @@ package unreal.gameplayabilities;
   
   
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("Abilities/Tasks/AbilityTask_VisualizeTargeting.h")
 @:uextern extern class UAbilityTask_VisualizeTargeting extends unreal.gameplayabilities.UAbilityTask {
   

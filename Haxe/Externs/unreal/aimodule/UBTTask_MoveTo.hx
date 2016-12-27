@@ -18,6 +18,7 @@ package unreal.aimodule;
   Move To task node.
   Moves the AI pawn toward the specified Actor or Location blackboard entry using the navigation system.
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Tasks/BTTask_MoveTo.h")
 @:uextern extern class UBTTask_MoveTo extends unreal.aimodule.UBTTask_BlackboardBase {
   

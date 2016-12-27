@@ -19,6 +19,7 @@ package unreal.paper2d;
   
   'Material' setup for a 2D terrain spline (stores references to sprites that will be instanced along the spline path, not actually related to UMaterialInterface).
 **/
+@:umodule("Paper2D")
 @:glueCppIncludes("PaperTerrainMaterial.h")
 @:uextern extern class UPaperTerrainMaterial extends unreal.UDataAsset {
   

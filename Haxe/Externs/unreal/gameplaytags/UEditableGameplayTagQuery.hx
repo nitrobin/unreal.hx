@@ -20,6 +20,7 @@ package unreal.gameplaytags;
   the query struct is rewritten and these UObjects are discarded.
   This query representation is not intended for runtime use.
 **/
+@:umodule("GameplayTags")
 @:glueCppIncludes("GameplayTagContainer.h")
 @:uextern extern class UEditableGameplayTagQuery extends unreal.UObject {
   

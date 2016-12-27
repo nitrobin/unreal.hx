@@ -13,6 +13,7 @@
 **/
 package unreal.moviescenecapture;
 
+@:umodule("MovieSceneCapture")
 @:glueCppIncludes("LevelCapture.h")
 @:uextern extern class ULevelCapture extends unreal.moviescenecapture.UMovieSceneCapture {
   

@@ -18,6 +18,7 @@ package unreal.paper2d;
   The terrain visualization component for an associated spline component.
   This takes a 2D terrain material and instances sprite geometry along the spline path.
 **/
+@:umodule("Paper2D")
 @:glueCppIncludes("PaperTerrainComponent.h")
 @:uextern extern class UPaperTerrainComponent extends unreal.UPrimitiveComponent {
   

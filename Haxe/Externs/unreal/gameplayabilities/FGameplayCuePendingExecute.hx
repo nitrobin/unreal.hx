@@ -19,6 +19,7 @@ package unreal.gameplayabilities;
   
   Structure to keep track of pending gameplay cues that haven't been applied yet.
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("GameplayCueManager.h")
 @:noCopy @:noEquals @:uextern extern class FGameplayCuePendingExecute {
   

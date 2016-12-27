@@ -18,6 +18,7 @@ package unreal.proceduralmeshcomponent;
   Component that allows you to specify custom triangle mesh geometry
   Beware! This feature is experimental and may be substantially changed in future releases.
 **/
+@:umodule("ProceduralMeshComponent")
 @:glueCppIncludes("ProceduralMeshComponent.h")
 @:uextern extern class UProceduralMeshComponent extends unreal.UMeshComponent implements unreal.IInterface_CollisionDataProvider {
   

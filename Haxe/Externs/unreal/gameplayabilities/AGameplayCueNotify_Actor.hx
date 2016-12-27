@@ -17,6 +17,7 @@ package unreal.gameplayabilities;
 /**
   An instantiated Actor that acts as a handler of a GameplayCue. Since they are instantiated, they can maintain state and tick/update every frame if necessary.
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("GameplayCueNotify_Actor.h")
 @:uextern extern class AGameplayCueNotify_Actor extends unreal.AActor {
   public function OnOwnerDestroyed(DestroyedActor : unreal.AActor) : Void;

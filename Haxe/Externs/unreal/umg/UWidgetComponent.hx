@@ -24,6 +24,7 @@ package unreal.umg;
   TintColorAndOpacity [Vector]
   OpacityFromTexture [Scalar]
 **/
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UWidgetComponent extends unreal.UMeshComponent {
   

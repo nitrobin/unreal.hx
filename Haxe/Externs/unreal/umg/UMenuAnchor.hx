@@ -20,6 +20,7 @@ package unreal.umg;
   * Single Child
   * Popup
 **/
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UMenuAnchor extends unreal.umg.UContentWidget {
   

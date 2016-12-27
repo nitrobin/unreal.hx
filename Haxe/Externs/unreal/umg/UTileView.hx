@@ -17,6 +17,7 @@ package unreal.umg;
 /**
   A flow panel that presents the contents as a set of tiles all uniformly sized.
 **/
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UTileView extends unreal.umg.UTableViewBase {
   public var SelectionMode : unreal.slate.ESelectionMode;

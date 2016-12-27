@@ -17,6 +17,7 @@ package unreal.umg;
 /**
   The Slot for the UWrapBox, contains the widget that is flowed vertically
 **/
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class UWrapBoxSlot extends unreal.umg.UPanelSlot {
   

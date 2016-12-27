@@ -17,6 +17,7 @@ package unreal.mediaassets;
 /**
   Implements a playable sound asset for audio streams from UMediaPlayer assets.
 **/
+@:umodule("MediaAssets")
 @:glueCppIncludes("MediaSoundWave.h")
 @:uextern extern class UMediaSoundWave extends unreal.USoundWave {
   private var MediaPlayer : unreal.mediaassets.UMediaPlayer;

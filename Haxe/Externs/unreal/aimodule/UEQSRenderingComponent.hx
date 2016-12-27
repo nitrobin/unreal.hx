@@ -13,6 +13,7 @@
 **/
 package unreal.aimodule;
 
+@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/EQSRenderingComponent.h")
 @:uextern extern class UEQSRenderingComponent extends unreal.UPrimitiveComponent {
   

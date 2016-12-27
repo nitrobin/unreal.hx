@@ -13,6 +13,7 @@
 **/
 package unreal.aimodule;
 
+@:umodule("AIModule")
 @:glueCppIncludes("EnvironmentQuery/Items/EnvQueryItemType_Direction.h")
 @:uextern extern class UEnvQueryItemType_Direction extends unreal.aimodule.UEnvQueryItemType_VectorBase {
   

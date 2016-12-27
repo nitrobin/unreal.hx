@@ -19,6 +19,7 @@ package unreal.onlinesubsystemutils;
   
   
 **/
+@:umodule("OnlineSubsystemUtils")
 @:glueCppIncludes("JoinSessionCallbackProxy.h")
 @:uextern extern class UJoinSessionCallbackProxy extends unreal.UOnlineBlueprintCallProxyBase {
   

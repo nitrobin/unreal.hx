@@ -19,6 +19,7 @@ package unreal.moviescene;
   
   Abstract base class for movie scene animations (C++ version).
 **/
+@:umodule("MovieScene")
 @:glueCppIncludes("MovieSceneSequence.h")
 @:uextern extern class UMovieSceneSequence extends unreal.UObject {
   

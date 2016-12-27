@@ -21,6 +21,7 @@ package unreal.umg;
   * Single Child
   * Fixed Size
 **/
+@:umodule("UMG")
 @:glueCppIncludes("UMG.h")
 @:uextern extern class USizeBox extends unreal.umg.UContentWidget {
   public var MaxAspectRatio : unreal.Float32;

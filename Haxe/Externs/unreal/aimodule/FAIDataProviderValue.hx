@@ -23,6 +23,7 @@ package unreal.aimodule;
   
   Non editable properties are holding data
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Decorators/BTDecorator_IsAtLocation.h")
 @:uextern extern class FAIDataProviderValue {
   

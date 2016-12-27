@@ -19,6 +19,7 @@ package unreal.niagara;
   
   Base class for actions that an event receiver will perform at the emitter level.
 **/
+@:umodule("Niagara")
 @:glueCppIncludes("NiagaraEvents.h")
 @:noClass @:uextern extern class UNiagaraEventReceiverEmitterAction extends unreal.UObject {
   

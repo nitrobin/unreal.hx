@@ -21,6 +21,7 @@ package unreal.aimodule;
   This prevents from resuming activity started by Execute, but does not handle external events.
   Please use them safely (unregister at abort) and call IsTaskExecuting() when in doubt.
 **/
+@:umodule("AIModule")
 @:glueCppIncludes("BehaviorTree/Tasks/BTTask_BlueprintBase.h")
 @:uextern extern class UBTTask_BlueprintBase extends unreal.aimodule.UBTTaskNode {
   

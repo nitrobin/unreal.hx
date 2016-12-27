@@ -19,6 +19,7 @@ package unreal.niagara;
   
   Runtime data for a Niagara system
 **/
+@:umodule("Niagara")
 @:glueCppIncludes("NiagaraScriptSourceBase.h")
 @:uextern extern class UNiagaraScriptSourceBase extends unreal.UObject {
   

@@ -17,6 +17,7 @@ package unreal.gameplayabilities;
 /**
   Holds global data for the ability system. Can be configured per project via config file
 **/
+@:umodule("GameplayAbilities")
 @:glueCppIncludes("AbilitySystemGlobals.h")
 @:uextern extern class UAbilitySystemGlobals extends unreal.UObject {
   private var GlobalGameplayCueManager : unreal.gameplayabilities.UGameplayCueManager;

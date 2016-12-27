@@ -19,6 +19,7 @@ package unreal.moviescenetracks;
   
   A single movie scene section which can contain data for multiple named parameters.
 **/
+@:umodule("MovieSceneTracks")
 @:glueCppIncludes("Sections/MovieSceneParameterSection.h")
 @:uextern extern class UMovieSceneParameterSection extends unreal.moviescene.UMovieSceneSection {
   
