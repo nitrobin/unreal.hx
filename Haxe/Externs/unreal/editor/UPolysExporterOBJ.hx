@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Exporters/PolysExporterOBJ.h")
 @:noClass @:uextern extern class UPolysExporterOBJ extends unreal.UExporter {
   

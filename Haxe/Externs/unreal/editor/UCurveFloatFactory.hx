@@ -19,6 +19,7 @@ package unreal.editor;
   
   Factory that creates float curve assets
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/CurveFactory.h")
 @:uextern extern class UCurveFloatFactory extends unreal.editor.UCurveFactory {
   

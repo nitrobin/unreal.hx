@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Preferences/UnrealEdKeyBindings.h")
 @:noClass @:uextern extern class UUnrealEdKeyBindings extends unreal.UObject {
   

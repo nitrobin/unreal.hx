@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/SoundMixFactory.h")
 @:uextern extern class USoundMixFactory extends unreal.editor.UFactory {
   

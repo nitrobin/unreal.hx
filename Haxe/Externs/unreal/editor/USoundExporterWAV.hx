@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Exporters/SoundExporterWAV.h")
 @:noClass @:uextern extern class USoundExporterWAV extends unreal.UExporter {
   

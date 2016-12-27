@@ -17,6 +17,7 @@ package unreal.paper2deditor;
 /**
   Base class for import data and options used when importing a tile map
 **/
+@:umodule("Paper2DEditor")
 @:glueCppIncludes("TileMapAssetImportData.h")
 @:uextern extern class UTileMapAssetImportData extends unreal.UAssetImportData {
   public var TileSetMap : unreal.TArray<unreal.paper2deditor.FTileSetImportMapping>;

@@ -19,6 +19,7 @@ package unreal.translationeditor;
   
   
 **/
+@:umodule("TranslationEditor")
 @:glueCppIncludes("Private/TranslationPickerEditWindow.h")
 @:noClass @:uextern extern class UTranslationPickerSettings extends unreal.UObject {
   

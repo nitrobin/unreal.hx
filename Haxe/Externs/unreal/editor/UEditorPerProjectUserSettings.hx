@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Editor/EditorPerProjectUserSettings.h")
 @:uextern extern class UEditorPerProjectUserSettings extends unreal.UObject {
   public var MaterialQualityLevel : unreal.Int32;

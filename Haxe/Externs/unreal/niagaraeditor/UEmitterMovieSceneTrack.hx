@@ -19,6 +19,7 @@ package unreal.niagaraeditor;
   
   Single track containing exactly one UNiagaraMovieSceneSection, representing one emitter
 **/
+@:umodule("NiagaraEditor")
 @:glueCppIncludes("Private/NiagaraSequencer.h")
 @:uextern extern class UEmitterMovieSceneTrack extends unreal.moviescene.UMovieSceneNameableTrack {
   

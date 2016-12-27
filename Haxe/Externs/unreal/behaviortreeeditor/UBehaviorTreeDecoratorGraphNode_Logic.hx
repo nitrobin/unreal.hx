@@ -19,6 +19,7 @@ package unreal.behaviortreeeditor;
   
   
 **/
+@:umodule("BehaviorTreeEditor")
 @:glueCppIncludes("BehaviorTreeDecoratorGraphNode_Logic.h")
 @:noClass @:uextern extern class UBehaviorTreeDecoratorGraphNode_Logic extends unreal.behaviortreeeditor.UBehaviorTreeDecoratorGraphNode {
   public var LogicMode : unreal.behaviortreeeditor.EDecoratorLogicMode;

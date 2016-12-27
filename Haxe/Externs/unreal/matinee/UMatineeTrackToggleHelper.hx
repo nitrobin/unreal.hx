@@ -19,6 +19,7 @@ package unreal.matinee;
   
   
 **/
+@:umodule("Matinee")
 @:glueCppIncludes("MatineeTrackToggleHelper.h")
 @:noClass @:uextern extern class UMatineeTrackToggleHelper extends unreal.matinee.UInterpTrackHelper {
   

@@ -19,6 +19,7 @@ package unreal.animgraph;
   
   
 **/
+@:umodule("AnimGraph")
 @:glueCppIncludes("AnimGraphNode_RotateRootBone.h")
 @:uextern extern class UAnimGraphNode_RotateRootBone extends unreal.animgraph.UAnimGraphNode_Base {
   public var Node : unreal.animgraphruntime.FAnimNode_RotateRootBone;

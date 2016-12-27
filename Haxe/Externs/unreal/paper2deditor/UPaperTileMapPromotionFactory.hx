@@ -19,6 +19,7 @@ package unreal.paper2deditor;
   
   
 **/
+@:umodule("Paper2DEditor")
 @:glueCppIncludes("PaperTileMapPromotionFactory.h")
 @:noClass @:uextern extern class UPaperTileMapPromotionFactory extends unreal.editor.UFactory {
   

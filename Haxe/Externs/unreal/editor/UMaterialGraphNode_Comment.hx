@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("MaterialGraph/MaterialGraphNode_Comment.h")
 @:uextern extern class UMaterialGraphNode_Comment extends unreal.editor.UEdGraphNode_Comment {
   

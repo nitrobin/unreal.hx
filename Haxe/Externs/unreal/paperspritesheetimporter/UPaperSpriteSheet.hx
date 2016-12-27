@@ -19,6 +19,7 @@ package unreal.paperspritesheetimporter;
   
   
 **/
+@:umodule("PaperSpriteSheetImporter")
 @:glueCppIncludes("Private/PaperSpriteSheet.h")
 @:noClass @:uextern extern class UPaperSpriteSheet extends unreal.UObject {
   #if WITH_EDITORONLY_DATA

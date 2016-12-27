@@ -13,6 +13,7 @@
 **/
 package unreal.matinee;
 
+@:umodule("Matinee")
 @:glueCppIncludes("InterpTrackHelper.h")
 @:uextern extern class UInterpTrackHelper extends unreal.UObject {
   

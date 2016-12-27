@@ -19,6 +19,7 @@ package unreal.umgeditor;
   
   
 **/
+@:umodule("UMGEditor")
 @:glueCppIncludes("WidgetBlueprintFactory.h")
 @:uextern extern class UWidgetBlueprintFactory extends unreal.editor.UFactory {
   

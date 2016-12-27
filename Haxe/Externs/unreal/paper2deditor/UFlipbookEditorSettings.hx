@@ -19,6 +19,7 @@ package unreal.paper2deditor;
   
   Settings for the Paper2D sprite editor
 **/
+@:umodule("Paper2DEditor")
 @:glueCppIncludes("Private/FlipbookEditor/FlipbookEditorSettings.h")
 @:noClass @:uextern extern class UFlipbookEditorSettings extends unreal.UObject {
   

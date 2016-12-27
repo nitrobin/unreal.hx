@@ -19,6 +19,7 @@ package unreal.editor;
   
   Import data and options used when importing any mesh from FBX
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/FbxMeshImportData.h")
 @:noClass @:uextern extern class UFbxMeshImportData extends unreal.editor.UFbxAssetImportData {
   

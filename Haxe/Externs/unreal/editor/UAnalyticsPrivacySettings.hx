@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Analytics/AnalyticsPrivacySettings.h")
 @:uextern extern class UAnalyticsPrivacySettings extends unreal.UObject implements unreal.IImportantToggleSettingInterface {
   

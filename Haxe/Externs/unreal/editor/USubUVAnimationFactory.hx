@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/SubUVAnimationFactory.h")
 @:uextern extern class USubUVAnimationFactory extends unreal.editor.UFactory {
   

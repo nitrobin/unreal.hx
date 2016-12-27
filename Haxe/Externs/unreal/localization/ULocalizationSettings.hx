@@ -17,6 +17,7 @@ package unreal.localization;
 /**
   Class for loading/saving configuration settings and the details view objects needed for localization dashboard functionality.
 **/
+@:umodule("Localization")
 @:glueCppIncludes("LocalizationSettings.h")
 @:uextern extern class ULocalizationSettings extends unreal.UObject {
   

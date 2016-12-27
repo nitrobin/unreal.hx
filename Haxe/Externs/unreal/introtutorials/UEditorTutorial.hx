@@ -17,6 +17,7 @@ package unreal.introtutorials;
 /**
   An asset used to build a stage-by-stage tutorial in the editor
 **/
+@:umodule("IntroTutorials")
 @:glueCppIncludes("EditorTutorial.h")
 @:uextern extern class UEditorTutorial extends unreal.UObject {
   

@@ -19,6 +19,7 @@ package unreal.functionaltesting;
   
   
 **/
+@:umodule("FunctionalTesting")
 @:glueCppIncludes("ScreenshotFunctionalTest.h")
 @:noCopy @:noEquals @:uextern extern class FAutomationScreenshotOptions {
   

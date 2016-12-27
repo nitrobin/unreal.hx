@@ -19,6 +19,7 @@ package unreal.blueprintgraph;
   
   
 **/
+@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_SwitchInteger.h")
 @:uextern extern class UK2Node_SwitchInteger extends unreal.blueprintgraph.UK2Node_Switch {
   

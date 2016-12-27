@@ -19,6 +19,7 @@ package unreal.gameplayabilitieseditor;
   
   
 **/
+@:umodule("GameplayAbilitiesEditor")
 @:glueCppIncludes("GameplayAbilitiesBlueprintFactory.h")
 @:uextern extern class UGameplayAbilitiesBlueprintFactory extends unreal.editor.UFactory {
   

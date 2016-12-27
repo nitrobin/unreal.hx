@@ -19,6 +19,7 @@ package unreal.behaviortreeeditor;
   
   
 **/
+@:umodule("BehaviorTreeEditor")
 @:glueCppIncludes("EdGraphSchema_BehaviorTree.h")
 @:uextern extern class UEdGraphSchema_BehaviorTree extends unreal.aigraph.UAIGraphSchema {
   

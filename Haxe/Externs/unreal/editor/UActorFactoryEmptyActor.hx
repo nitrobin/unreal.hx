@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("ActorFactories/ActorFactoryEmptyActor.h")
 @:uextern extern class UActorFactoryEmptyActor extends unreal.editor.UActorFactory {
   

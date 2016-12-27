@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Builders/TetrahedronBuilder.h")
 @:uextern extern class UTetrahedronBuilder extends unreal.editor.UEditorBrushBuilder {
   public var GroupName : unreal.FName;

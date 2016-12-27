@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("ActorFactories/ActorFactoryBoxReflectionCapture.h")
 @:uextern extern class UActorFactoryBoxReflectionCapture extends unreal.editor.UActorFactory {
   

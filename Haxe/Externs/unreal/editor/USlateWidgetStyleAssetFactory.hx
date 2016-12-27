@@ -19,6 +19,7 @@ package unreal.editor;
   
   Factory for creating SlateStyles
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/SlateWidgetStyleAssetFactory.h")
 @:uextern extern class USlateWidgetStyleAssetFactory extends unreal.editor.UFactory {
   public var StyleType : unreal.TSubclassOf<unreal.slatecore.USlateWidgetStyleContainerBase>;

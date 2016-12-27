@@ -19,6 +19,7 @@ package unreal.paperspritesheetimporter;
   
   Reimports a UPaperSpriteSheet asset
 **/
+@:umodule("PaperSpriteSheetImporter")
 @:glueCppIncludes("Private/PaperSpriteSheetReimportFactory.h")
 @:noClass @:uextern extern class UPaperSpriteSheetReimportFactory extends unreal.paperspritesheetimporter.UPaperSpriteSheetImportFactory {
   

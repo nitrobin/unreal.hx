@@ -13,6 +13,7 @@
 **/
 package unreal.editor;
 
+@:umodule("UnrealEd")
 @:glueCppIncludes("MaterialEditor/MaterialEditorInstanceConstant.h")
 @:uextern extern class UMaterialEditorInstanceConstant extends unreal.UObject {
   

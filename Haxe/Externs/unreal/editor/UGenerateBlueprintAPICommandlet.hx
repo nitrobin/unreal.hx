@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Commandlets/GenerateBlueprintAPICommandlet.h")
 @:noClass @:uextern extern class UGenerateBlueprintAPICommandlet extends unreal.UCommandlet {
   

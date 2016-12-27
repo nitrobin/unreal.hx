@@ -19,6 +19,7 @@ package unreal.editor;
   
   Factory for creating SlateBrushAssets
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/SlateBrushAssetFactory.h")
 @:uextern extern class USlateBrushAssetFactory extends unreal.editor.UFactory {
   

@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/DataAssetFactory.h")
 @:uextern extern class UDataAssetFactory extends unreal.editor.UFactory {
   public var DataAssetClass : unreal.TSubclassOf<unreal.UDataAsset>;

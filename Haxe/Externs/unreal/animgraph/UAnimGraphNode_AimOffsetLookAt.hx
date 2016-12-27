@@ -19,6 +19,7 @@ package unreal.animgraph;
   
   
 **/
+@:umodule("AnimGraph")
 @:glueCppIncludes("AnimGraphNode_AimOffsetLookAt.h")
 @:uextern extern class UAnimGraphNode_AimOffsetLookAt extends unreal.animgraph.UAnimGraphNode_BlendSpaceBase {
   public var Node : unreal.animgraphruntime.FAnimNode_AimOffsetLookAt;

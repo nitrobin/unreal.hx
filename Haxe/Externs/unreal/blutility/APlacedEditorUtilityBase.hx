@@ -17,6 +17,7 @@ package unreal.blutility;
 /**
   , Blueprintable
 **/
+@:umodule("Blutility")
 @:glueCppIncludes("PlacedEditorUtilityBase.h")
 @:uextern extern class APlacedEditorUtilityBase extends unreal.AActor {
   public var HelpText : unreal.FString;

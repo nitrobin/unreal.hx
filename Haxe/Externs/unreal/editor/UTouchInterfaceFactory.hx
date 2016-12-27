@@ -13,6 +13,7 @@
 **/
 package unreal.editor;
 
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/TouchInterfaceFactory.h")
 @:uextern extern class UTouchInterfaceFactory extends unreal.editor.UFactory {
   

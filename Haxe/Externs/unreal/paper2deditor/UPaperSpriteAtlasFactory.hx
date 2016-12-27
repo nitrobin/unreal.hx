@@ -19,6 +19,7 @@ package unreal.paper2deditor;
   
   
 **/
+@:umodule("Paper2DEditor")
 @:glueCppIncludes("Private/Atlasing/PaperSpriteAtlasFactory.h")
 @:noClass @:uextern extern class UPaperSpriteAtlasFactory extends unreal.editor.UFactory {
   

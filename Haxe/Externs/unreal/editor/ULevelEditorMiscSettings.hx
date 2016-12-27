@@ -17,6 +17,7 @@ package unreal.editor;
 /**
   Configure miscellaneous settings for the Level Editor.
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Settings/LevelEditorMiscSettings.h")
 @:uextern extern class ULevelEditorMiscSettings extends unreal.UDeveloperSettings {
   

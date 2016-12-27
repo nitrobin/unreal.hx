@@ -19,6 +19,7 @@ package unreal.gameplayabilitieseditor;
   
   
 **/
+@:umodule("GameplayAbilitiesEditor")
 @:glueCppIncludes("GameplayAbilityGraphSchema.h")
 @:uextern extern class UGameplayAbilityGraphSchema extends unreal.blueprintgraph.UEdGraphSchema_K2 {
   

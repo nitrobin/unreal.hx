@@ -18,6 +18,7 @@ package unreal.editor;
   Base class for all factories
   An object responsible for creating and importing new objects.
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/Factory.h")
 @:uextern extern class UFactory extends unreal.UObject {
   

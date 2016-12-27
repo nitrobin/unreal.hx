@@ -19,6 +19,7 @@ package unreal.statsviewer;
   
   Statistics page for primitives.
 **/
+@:umodule("StatsViewer")
 @:glueCppIncludes("PrimitiveStats.h")
 @:uextern extern class UPrimitiveStats extends unreal.UObject {
   

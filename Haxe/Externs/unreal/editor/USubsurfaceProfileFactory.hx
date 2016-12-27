@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/SubsurfaceProfileFactory.h")
 @:noClass @:uextern extern class USubsurfaceProfileFactory extends unreal.editor.UFactory {
   

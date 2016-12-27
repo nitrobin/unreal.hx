@@ -17,6 +17,7 @@ package unreal.editor;
 /**
   Implements the Level Editor's loading and saving settings.
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Settings/ContentBrowserSettings.h")
 @:uextern extern class UContentBrowserSettings extends unreal.UObject {
   

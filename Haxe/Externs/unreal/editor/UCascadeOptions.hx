@@ -13,6 +13,7 @@
 **/
 package unreal.editor;
 
+@:umodule("UnrealEd")
 @:glueCppIncludes("Preferences/CascadeOptions.h")
 @:uextern extern class UCascadeOptions extends unreal.UObject {
   

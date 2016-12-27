@@ -19,6 +19,7 @@ package unreal.editor;
   
   Factory that creates curve assets, prompting to pick the kind of curve at creation time
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/CurveFactory.h")
 @:uextern extern class UCurveFactory extends unreal.editor.UFactory {
   

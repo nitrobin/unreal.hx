@@ -19,6 +19,7 @@ package unreal.environmentqueryeditor;
   
   
 **/
+@:umodule("EnvironmentQueryEditor")
 @:glueCppIncludes("EnvironmentQueryGraphNode_Root.h")
 @:noClass @:uextern extern class UEnvironmentQueryGraphNode_Root extends unreal.environmentqueryeditor.UEnvironmentQueryGraphNode {
   public var bHasDebugError : Bool;

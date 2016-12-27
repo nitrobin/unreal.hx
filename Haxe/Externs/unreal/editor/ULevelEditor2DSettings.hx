@@ -17,6 +17,7 @@ package unreal.editor;
 /**
   Configure settings for the 2D Level Editor
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Settings/EditorProjectSettings.h")
 @:uextern extern class ULevelEditor2DSettings extends unreal.UDeveloperSettings {
   

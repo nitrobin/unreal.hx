@@ -13,6 +13,7 @@
 **/
 package unreal.editor;
 
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/FbxFactory.h")
 @:uextern extern class UFbxFactory extends unreal.editor.UFactory {
   public var ImportUI : unreal.editor.UFbxImportUI;

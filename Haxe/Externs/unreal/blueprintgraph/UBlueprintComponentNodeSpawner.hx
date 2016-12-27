@@ -19,6 +19,7 @@ package unreal.blueprintgraph;
   portion of certain FBlueprintActionMenuItems. Evolved from
   FEdGraphSchemaAction_K2AddComponent.
 **/
+@:umodule("BlueprintGraph")
 @:glueCppIncludes("BlueprintComponentNodeSpawner.h")
 @:uextern extern class UBlueprintComponentNodeSpawner extends unreal.blueprintgraph.UBlueprintNodeSpawner {
   

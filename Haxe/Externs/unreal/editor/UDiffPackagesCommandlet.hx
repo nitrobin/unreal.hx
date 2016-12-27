@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Commandlets/DiffPackagesCommandlet.h")
 @:noClass @:uextern extern class UDiffPackagesCommandlet extends unreal.UCommandlet {
   

@@ -13,6 +13,7 @@
 **/
 package unreal.editor;
 
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/FbxSceneImportData.h")
 @:uextern extern class UFbxSceneImportData extends unreal.UObject {
   #if WITH_EDITORONLY_DATA

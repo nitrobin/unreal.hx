@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/FbxStaticMeshImportData.h")
 @:uextern extern class UFbxStaticMeshImportData extends unreal.editor.UFbxMeshImportData {
   

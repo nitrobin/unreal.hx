@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/TextureRenderTargetCubeFactoryNew.h")
 @:uextern extern class UTextureRenderTargetCubeFactoryNew extends unreal.editor.UFactory {
   

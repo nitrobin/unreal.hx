@@ -19,6 +19,7 @@ package unreal.aitestsuite;
   
   
 **/
+@:umodule("AITestSuite")
 @:glueCppIncludes("BehaviorTree/TestBTDecorator_DelayedAbort.h")
 @:noClass @:uextern extern class UTestBTDecorator_DelayedAbort extends unreal.aimodule.UBTDecorator {
   public var bOnlyOnce : Bool;

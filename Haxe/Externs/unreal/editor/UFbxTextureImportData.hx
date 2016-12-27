@@ -17,6 +17,7 @@ package unreal.editor;
 /**
   Import data and options used when importing any mesh from FBX
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/FbxTextureImportData.h")
 @:uextern extern class UFbxTextureImportData extends unreal.editor.UFbxAssetImportData {
   public var BaseSpecularTextureName : unreal.FString;

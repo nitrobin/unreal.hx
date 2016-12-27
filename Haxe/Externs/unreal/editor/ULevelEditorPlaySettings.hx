@@ -17,6 +17,7 @@ package unreal.editor;
 /**
   Implements the Editor's play settings.
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Settings/LevelEditorPlaySettings.h")
 @:uextern extern class ULevelEditorPlaySettings extends unreal.UObject {
   

@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/SoundConcurrencyFactory.h")
 @:uextern extern class USoundConcurrencyFactory extends unreal.editor.UFactory {
   

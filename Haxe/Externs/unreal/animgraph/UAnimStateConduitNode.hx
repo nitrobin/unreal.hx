@@ -19,6 +19,7 @@ package unreal.animgraph;
   
   
 **/
+@:umodule("AnimGraph")
 @:glueCppIncludes("AnimStateConduitNode.h")
 @:uextern extern class UAnimStateConduitNode extends unreal.animgraph.UAnimStateNodeBase {
   

@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Commandlets/DumpBlueprintsInfoCommandlet.h")
 @:noClass @:uextern extern class UDumpBlueprintsInfoCommandlet extends unreal.UCommandlet {
   

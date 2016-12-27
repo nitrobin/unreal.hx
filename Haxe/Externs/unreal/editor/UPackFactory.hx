@@ -19,6 +19,7 @@ package unreal.editor;
   
   Factory for unpacking upack files
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/PackFactory.h")
 @:noClass @:uextern extern class UPackFactory extends unreal.editor.UFactory {
   

@@ -19,6 +19,7 @@ package unreal.functionaltesting;
   
   
 **/
+@:umodule("FunctionalTesting")
 @:glueCppIncludes("FunctionalTestingManager.h")
 @:uextern extern class UFunctionalTestingManager extends unreal.UBlueprintFunctionLibrary {
   public var AllTests : unreal.TArray<unreal.functionaltesting.AFunctionalTest>;

@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Commandlets/AudioTestCommandlet.h")
 @:noClass @:uextern extern class UAudioTestCommandlet extends unreal.UCommandlet {
   

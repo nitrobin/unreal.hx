@@ -17,6 +17,7 @@ package unreal.editor;
 /**
   Implements the Editor's user settings.
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Settings/ProjectPackagingSettings.h")
 @:uextern extern class UProjectPackagingSettings extends unreal.UObject {
   

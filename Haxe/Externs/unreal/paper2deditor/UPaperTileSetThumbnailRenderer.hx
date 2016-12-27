@@ -19,6 +19,7 @@ package unreal.paper2deditor;
   
   
 **/
+@:umodule("Paper2DEditor")
 @:glueCppIncludes("PaperTileSetThumbnailRenderer.h")
 @:noClass @:uextern extern class UPaperTileSetThumbnailRenderer extends unreal.editor.UDefaultSizedThumbnailRenderer {
   

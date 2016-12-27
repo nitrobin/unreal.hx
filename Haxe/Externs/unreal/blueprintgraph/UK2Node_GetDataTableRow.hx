@@ -13,6 +13,7 @@
 **/
 package unreal.blueprintgraph;
 
+@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_GetDataTableRow.h")
 @:uextern extern class UK2Node_GetDataTableRow extends unreal.blueprintgraph.UK2Node {
   

@@ -13,6 +13,7 @@
 **/
 package unreal.animgraphruntime;
 
+@:umodule("AnimGraphRuntime")
 @:glueCppIncludes("AnimGraphNode_AnimDynamics.h")
 @:uextern extern class FAnimNode_SkeletalControlBase extends unreal.FAnimNode_Base {
   public var ActualAlpha : unreal.Float32;

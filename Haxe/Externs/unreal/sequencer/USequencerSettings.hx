@@ -17,6 +17,7 @@ package unreal.sequencer;
 /**
   Serializable options for sequencer.
 **/
+@:umodule("Sequencer")
 @:glueCppIncludes("SequencerSettings.h")
 @:uextern extern class USequencerSettings extends unreal.UObject {
   

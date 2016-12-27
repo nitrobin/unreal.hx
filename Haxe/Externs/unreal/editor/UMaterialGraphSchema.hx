@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("MaterialGraph/MaterialGraphSchema.h")
 @:uextern extern class UMaterialGraphSchema extends unreal.UEdGraphSchema {
   public var AlphaPinColor : unreal.FLinearColor;

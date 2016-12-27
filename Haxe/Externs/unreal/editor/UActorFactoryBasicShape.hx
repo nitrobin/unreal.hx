@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("ActorFactories/ActorFactoryBasicShape.h")
 @:uextern extern class UActorFactoryBasicShape extends unreal.editor.UActorFactoryStaticMesh {
   

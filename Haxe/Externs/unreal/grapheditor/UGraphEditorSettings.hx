@@ -17,6 +17,7 @@ package unreal.grapheditor;
 /**
   Implements settings for the graph editor.
 **/
+@:umodule("GraphEditor")
 @:glueCppIncludes("GraphEditorSettings.h")
 @:uextern extern class UGraphEditorSettings extends unreal.UObject {
   public var TracePositionExponent : unreal.Float32;

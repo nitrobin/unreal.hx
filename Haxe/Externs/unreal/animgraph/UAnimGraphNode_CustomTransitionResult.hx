@@ -19,6 +19,7 @@ package unreal.animgraph;
   
   
 **/
+@:umodule("AnimGraph")
 @:glueCppIncludes("AnimGraphNode_CustomTransitionResult.h")
 @:uextern extern class UAnimGraphNode_CustomTransitionResult extends unreal.animgraph.UAnimGraphNode_Root {
   

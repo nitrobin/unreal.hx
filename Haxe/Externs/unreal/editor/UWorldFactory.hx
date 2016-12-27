@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/WorldFactory.h")
 @:uextern extern class UWorldFactory extends unreal.editor.UFactory {
   

@@ -19,6 +19,7 @@ package unreal.editor;
   
   Factory that creates vector curve assets
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/CurveFactory.h")
 @:uextern extern class UCurveVectorFactory extends unreal.editor.UCurveFactory {
   

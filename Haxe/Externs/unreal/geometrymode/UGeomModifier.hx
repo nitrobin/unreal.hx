@@ -19,6 +19,7 @@ package unreal.geometrymode;
   
   
 **/
+@:umodule("GeometryMode")
 @:glueCppIncludes("GeomModifier.h")
 @:noClass @:uextern extern class UGeomModifier extends unreal.UObject {
   

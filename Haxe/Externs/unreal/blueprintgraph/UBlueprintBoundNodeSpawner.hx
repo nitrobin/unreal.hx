@@ -18,6 +18,7 @@ package unreal.blueprintgraph;
   Takes care of spawning various bound nodes. Acts as the
   "action" portion of certain FBlueprintActionMenuItems.
 **/
+@:umodule("BlueprintGraph")
 @:glueCppIncludes("BlueprintBoundNodeSpawner.h")
 @:uextern extern class UBlueprintBoundNodeSpawner extends unreal.blueprintgraph.UBlueprintNodeSpawner {
   

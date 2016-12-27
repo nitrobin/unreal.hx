@@ -19,6 +19,7 @@ package unreal.blueprintgraph;
   "action" portion for certain FBlueprintActionMenuItems. Evolved from
   FEdGraphSchemaAction_K2Delegate, FEdGraphSchemaAction_K2AssignDelegate, etc.
 **/
+@:umodule("BlueprintGraph")
 @:glueCppIncludes("BlueprintDelegateNodeSpawner.h")
 @:uextern extern class UBlueprintDelegateNodeSpawner extends unreal.blueprintgraph.UBlueprintFieldNodeSpawner {
   

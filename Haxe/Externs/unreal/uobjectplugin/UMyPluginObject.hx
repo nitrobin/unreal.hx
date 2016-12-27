@@ -19,6 +19,7 @@ package unreal.uobjectplugin;
   
   Example of declaring a UObject in a plugin module
 **/
+@:umodule("UObjectPlugin")
 @:glueCppIncludes("MyPluginObject.h")
 @:noClass @:uextern extern class UMyPluginObject extends unreal.UObject {
   

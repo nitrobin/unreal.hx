@@ -19,6 +19,7 @@ package unreal.paper2deditor;
   
   Factory used to pad out each individual tile in a tile sheet texture
 **/
+@:umodule("Paper2DEditor")
 @:glueCppIncludes("Private/TileSetEditor/TileSheetPaddingFactory.h")
 @:noClass @:uextern extern class UTileSheetPaddingFactory extends unreal.editor.UFactory {
   

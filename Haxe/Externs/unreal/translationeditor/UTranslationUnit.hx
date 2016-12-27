@@ -19,6 +19,7 @@ package unreal.translationeditor;
   
   
 **/
+@:umodule("TranslationEditor")
 @:glueCppIncludes("Private/TranslationUnit.h")
 @:uextern extern class UTranslationUnit extends unreal.UObject {
   

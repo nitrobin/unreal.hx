@@ -19,6 +19,7 @@ package unreal.aitestsuite;
   
   
 **/
+@:umodule("AITestSuite")
 @:glueCppIncludes("BehaviorTree/TestBTTask_LatentWithFlags.h")
 @:noClass @:uextern extern class UTestBTTask_LatentWithFlags extends unreal.aimodule.UBTTaskNode {
   public var LogResult : unreal.aimodule.EBTNodeResult;

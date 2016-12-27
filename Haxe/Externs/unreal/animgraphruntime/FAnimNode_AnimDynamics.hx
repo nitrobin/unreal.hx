@@ -13,6 +13,7 @@
 **/
 package unreal.animgraphruntime;
 
+@:umodule("AnimGraphRuntime")
 @:glueCppIncludes("AnimGraphNode_AnimDynamics.h")
 @:uextern extern class FAnimNode_AnimDynamics extends unreal.animgraphruntime.FAnimNode_SkeletalControlBase {
   

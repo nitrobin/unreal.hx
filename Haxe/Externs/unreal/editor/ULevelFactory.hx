@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/LevelFactory.h")
 @:uextern extern class ULevelFactory extends unreal.editor.UFactory {
   

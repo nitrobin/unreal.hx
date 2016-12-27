@@ -13,6 +13,7 @@
 **/
 package unreal.editor;
 
+@:umodule("UnrealEd")
 @:glueCppIncludes("Animation/EditorParentPlayerListObj.h")
 @:uextern extern class UEditorParentPlayerListObj extends unreal.UObject {
   

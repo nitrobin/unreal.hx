@@ -13,6 +13,7 @@
 **/
 package unreal.gameplaytaskseditor;
 
+@:umodule("GameplayTasksEditor")
 @:glueCppIncludes("K2Node_LatentGameplayTaskCall.h")
 @:uextern extern class UK2Node_LatentGameplayTaskCall extends unreal.blueprintgraph.UK2Node_BaseAsyncTask {
   public var SpawnParamPins : unreal.TArray<unreal.FString>;

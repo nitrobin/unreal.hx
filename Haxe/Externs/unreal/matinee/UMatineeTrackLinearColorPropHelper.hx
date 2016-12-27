@@ -19,6 +19,7 @@ package unreal.matinee;
   
   
 **/
+@:umodule("Matinee")
 @:glueCppIncludes("MatineeTrackLinearColorPropHelper.h")
 @:noClass @:uextern extern class UMatineeTrackLinearColorPropHelper extends unreal.matinee.UMatineeTrackVectorPropHelper {
   

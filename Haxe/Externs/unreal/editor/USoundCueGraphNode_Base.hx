@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("SoundCueGraph/SoundCueGraphNode_Base.h")
 @:uextern extern class USoundCueGraphNode_Base extends unreal.UEdGraphNode {
   

@@ -19,6 +19,7 @@ package unreal.paper2deditor;
   
   Settings for the Paper2D sprite editor
 **/
+@:umodule("Paper2DEditor")
 @:glueCppIncludes("Private/SpriteEditor/SpriteEditorSettings.h")
 @:noClass @:uextern extern class USpriteEditorSettings extends unreal.UObject {
   

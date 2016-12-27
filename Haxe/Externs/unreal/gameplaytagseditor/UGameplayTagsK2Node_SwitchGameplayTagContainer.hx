@@ -19,6 +19,7 @@ package unreal.gameplaytagseditor;
   
   
 **/
+@:umodule("GameplayTagsEditor")
 @:glueCppIncludes("GameplayTagsK2Node_SwitchGameplayTagContainer.h")
 @:uextern extern class UGameplayTagsK2Node_SwitchGameplayTagContainer extends unreal.blueprintgraph.UK2Node_Switch {
   

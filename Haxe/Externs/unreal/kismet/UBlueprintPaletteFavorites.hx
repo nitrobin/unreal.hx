@@ -17,6 +17,7 @@ package unreal.kismet;
 /**
   FBlueprintPaletteFavorites
 **/
+@:umodule("Kismet")
 @:glueCppIncludes("BlueprintPaletteFavorites.h")
 @:uextern extern class UBlueprintPaletteFavorites extends unreal.UObject {
   

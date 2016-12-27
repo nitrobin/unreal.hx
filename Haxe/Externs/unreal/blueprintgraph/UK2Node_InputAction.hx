@@ -19,6 +19,7 @@ package unreal.blueprintgraph;
   
   
 **/
+@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_InputAction.h")
 @:uextern extern class UK2Node_InputAction extends unreal.blueprintgraph.UK2Node {
   

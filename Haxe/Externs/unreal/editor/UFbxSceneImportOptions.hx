@@ -19,6 +19,7 @@ package unreal.editor;
   
   Fbx_AddToBlueprint UMETA(DisplayName = "Add to an existing Blueprint asset"),
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/FbxSceneImportOptions.h")
 @:uextern extern class UFbxSceneImportOptions extends unreal.UObject {
   

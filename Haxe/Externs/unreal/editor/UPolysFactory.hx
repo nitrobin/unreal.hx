@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/PolysFactory.h")
 @:noClass @:uextern extern class UPolysFactory extends unreal.editor.UFactory {
   

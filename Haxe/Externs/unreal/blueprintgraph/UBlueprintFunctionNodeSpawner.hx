@@ -18,6 +18,7 @@ package unreal.blueprintgraph;
   Takes care of spawning various UK2Node_CallFunction nodes. Acts as the
   "action" portion of certain FBlueprintActionMenuItems.
 **/
+@:umodule("BlueprintGraph")
 @:glueCppIncludes("BlueprintFunctionNodeSpawner.h")
 @:uextern extern class UBlueprintFunctionNodeSpawner extends unreal.blueprintgraph.UBlueprintFieldNodeSpawner {
   

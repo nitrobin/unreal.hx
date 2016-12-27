@@ -19,6 +19,7 @@ package unreal.animgraph;
   
   
 **/
+@:umodule("AnimGraph")
 @:glueCppIncludes("AnimationStateMachineGraph.h")
 @:uextern extern class UAnimationStateMachineGraph extends unreal.UEdGraph {
   

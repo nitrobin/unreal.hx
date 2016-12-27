@@ -19,6 +19,7 @@ package unreal.introtutorials;
   
   
 **/
+@:umodule("IntroTutorials")
 @:glueCppIncludes("Private/EditorTutorialFactory.h")
 @:noClass @:uextern extern class UEditorTutorialFactory extends unreal.editor.UFactory {
   

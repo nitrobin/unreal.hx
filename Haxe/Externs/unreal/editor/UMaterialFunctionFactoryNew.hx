@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/MaterialFunctionFactoryNew.h")
 @:uextern extern class UMaterialFunctionFactoryNew extends unreal.editor.UFactory {
   

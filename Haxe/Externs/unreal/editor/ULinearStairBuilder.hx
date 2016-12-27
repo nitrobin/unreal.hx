@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Builders/LinearStairBuilder.h")
 @:uextern extern class ULinearStairBuilder extends unreal.editor.UEditorBrushBuilder {
   public var GroupName : unreal.FName;

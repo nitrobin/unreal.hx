@@ -19,6 +19,7 @@ package unreal.blueprintgraph;
   
   
 **/
+@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_InputAxisEvent.h")
 @:uextern extern class UK2Node_InputAxisEvent extends unreal.blueprintgraph.UK2Node_Event {
   

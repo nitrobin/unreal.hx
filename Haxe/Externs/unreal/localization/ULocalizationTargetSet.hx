@@ -13,6 +13,7 @@
 **/
 package unreal.localization;
 
+@:umodule("Localization")
 @:glueCppIncludes("LocalizationTargetTypes.h")
 @:uextern extern class ULocalizationTargetSet extends unreal.UObject {
   public var TargetObjects : unreal.TArray<unreal.localization.ULocalizationTarget>;

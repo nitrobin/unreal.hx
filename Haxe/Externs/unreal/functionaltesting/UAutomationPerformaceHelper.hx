@@ -20,6 +20,7 @@ package unreal.functionaltesting;
   Automatic captures using external CPU and GPU profilers.
   Triggering and ending of writing full stats to a file.
 **/
+@:umodule("FunctionalTesting")
 @:glueCppIncludes("FunctionalTest.h")
 @:uextern extern class UAutomationPerformaceHelper extends unreal.UObject {
   

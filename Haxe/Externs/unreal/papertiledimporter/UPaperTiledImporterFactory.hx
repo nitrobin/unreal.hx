@@ -19,6 +19,7 @@ package unreal.papertiledimporter;
   
   Imports a tile map (and associated textures & tile sets) exported from Tiled (http:www.mapeditor.org/)
 **/
+@:umodule("PaperTiledImporter")
 @:glueCppIncludes("PaperTiledImporterFactory.h")
 @:noClass @:uextern extern class UPaperTiledImporterFactory extends unreal.editor.UFactory {
   

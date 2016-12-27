@@ -13,6 +13,7 @@
 **/
 package unreal.editor;
 
+@:umodule("UnrealEd")
 @:glueCppIncludes("MaterialEditor/DEditorStaticSwitchParameterValue.h")
 @:uextern extern class UDEditorStaticSwitchParameterValue extends unreal.editor.UDEditorParameterValue {
   public var ParameterValue : Bool;

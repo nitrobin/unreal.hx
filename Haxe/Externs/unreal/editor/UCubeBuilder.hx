@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Builders/CubeBuilder.h")
 @:uextern extern class UCubeBuilder extends unreal.editor.UEditorBrushBuilder {
   

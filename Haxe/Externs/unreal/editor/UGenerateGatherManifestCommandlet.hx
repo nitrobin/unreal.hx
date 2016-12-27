@@ -19,6 +19,7 @@ package unreal.editor;
   
   UGenerateGatherManifestCommandlet: Generates a localisation manifest; generally used as a gather step.
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Commandlets/GenerateGatherManifestCommandlet.h")
 @:noClass @:uextern extern class UGenerateGatherManifestCommandlet extends unreal.editor.UGatherTextCommandletBase {
   

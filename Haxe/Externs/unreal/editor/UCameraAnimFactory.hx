@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/CameraAnimFactory.h")
 @:uextern extern class UCameraAnimFactory extends unreal.editor.UFactory {
   

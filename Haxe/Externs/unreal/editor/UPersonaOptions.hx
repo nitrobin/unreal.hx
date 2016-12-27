@@ -13,6 +13,7 @@
 **/
 package unreal.editor;
 
+@:umodule("UnrealEd")
 @:glueCppIncludes("Preferences/PersonaOptions.h")
 @:uextern extern class UPersonaOptions extends unreal.UObject {
   public var bAllowPreviewMeshCollectionsToSelectFromDifferentSkeletons : Bool;

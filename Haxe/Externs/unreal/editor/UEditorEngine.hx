@@ -18,6 +18,7 @@ package unreal.editor;
   Engine that drives the Editor.
   Separate from UGameEngine because it may have much different functionality than desired for an instance of a game itself.
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Editor/EditorEngine.h")
 @:uextern extern class UEditorEngine extends unreal.UEngine {
   

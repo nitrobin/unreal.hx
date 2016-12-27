@@ -19,6 +19,7 @@ package unreal.editor;
   
   UGenerateGatherArchiveCommandlet: Generates a localisation archive; generally used as a gather step.
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Commandlets/GenerateGatherArchiveCommandlet.h")
 @:noClass @:uextern extern class UGenerateGatherArchiveCommandlet extends unreal.editor.UGatherTextCommandletBase {
   

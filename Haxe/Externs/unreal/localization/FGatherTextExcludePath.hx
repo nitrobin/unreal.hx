@@ -19,6 +19,7 @@ package unreal.localization;
   
   
 **/
+@:umodule("Localization")
 @:glueCppIncludes("LocalizationSettings.h")
 @:noCopy @:noEquals @:uextern extern class FGatherTextExcludePath {
   public var Pattern : unreal.FString;

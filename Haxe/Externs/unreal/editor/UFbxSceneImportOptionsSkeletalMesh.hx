@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/FbxSceneImportOptionsSkeletalMesh.h")
 @:uextern extern class UFbxSceneImportOptionsSkeletalMesh extends unreal.UObject {
   

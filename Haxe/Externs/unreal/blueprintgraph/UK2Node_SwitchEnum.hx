@@ -19,6 +19,7 @@ package unreal.blueprintgraph;
   
   
 **/
+@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_SwitchEnum.h")
 @:uextern extern class UK2Node_SwitchEnum extends unreal.blueprintgraph.UK2Node_Switch implements unreal.blueprintgraph.INodeDependingOnEnumInterface {
   

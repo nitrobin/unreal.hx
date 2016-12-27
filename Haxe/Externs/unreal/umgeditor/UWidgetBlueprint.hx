@@ -17,6 +17,7 @@ package unreal.umgeditor;
 /**
   The widget blueprint enables extending UUserWidget the user extensible UWidget.
 **/
+@:umodule("UMGEditor")
 @:glueCppIncludes("WidgetBlueprint.h")
 @:uextern extern class UWidgetBlueprint extends unreal.UBlueprint {
   #if WITH_EDITORONLY_DATA

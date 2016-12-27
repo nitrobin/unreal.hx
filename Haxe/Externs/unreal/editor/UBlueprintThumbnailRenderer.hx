@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("ThumbnailRendering/BlueprintThumbnailRenderer.h")
 @:uextern extern class UBlueprintThumbnailRenderer extends unreal.editor.UDefaultSizedThumbnailRenderer {
   

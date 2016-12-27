@@ -19,6 +19,7 @@ package unreal.logvisualizer;
   
   
 **/
+@:umodule("LogVisualizer")
 @:glueCppIncludes("Private/VisualLoggerHUD.h")
 @:noClass @:uextern extern class AVisualLoggerHUD extends unreal.ADebugCameraHUD {
   

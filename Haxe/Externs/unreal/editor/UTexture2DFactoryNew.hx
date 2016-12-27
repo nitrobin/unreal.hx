@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/Texture2dFactoryNew.h")
 @:uextern extern class UTexture2DFactoryNew extends unreal.editor.UFactory {
   

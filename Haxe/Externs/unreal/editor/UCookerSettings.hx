@@ -17,6 +17,7 @@ package unreal.editor;
 /**
   Various cooker settings.
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("CookerSettings.h")
 @:uextern extern class UCookerSettings extends unreal.UDeveloperSettings {
   

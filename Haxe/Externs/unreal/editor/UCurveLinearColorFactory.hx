@@ -19,6 +19,7 @@ package unreal.editor;
   
   Factory that creates linear color curve assets
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/CurveFactory.h")
 @:uextern extern class UCurveLinearColorFactory extends unreal.editor.UCurveFactory {
   

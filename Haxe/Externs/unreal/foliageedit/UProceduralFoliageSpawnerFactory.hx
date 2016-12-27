@@ -19,6 +19,7 @@ package unreal.foliageedit;
   
   
 **/
+@:umodule("FoliageEdit")
 @:glueCppIncludes("Private/ProceduralFoliageSpawnerFactory.h")
 @:noClass @:uextern extern class UProceduralFoliageSpawnerFactory extends unreal.editor.UFactory {
   

@@ -19,6 +19,7 @@ package unreal.gameplayabilitieseditor;
   
   
 **/
+@:umodule("GameplayAbilitiesEditor")
 @:glueCppIncludes("K2Node_LatentAbilityCall.h")
 @:noClass @:uextern extern class UK2Node_LatentAbilityCall extends unreal.gameplaytaskseditor.UK2Node_LatentGameplayTaskCall {
   

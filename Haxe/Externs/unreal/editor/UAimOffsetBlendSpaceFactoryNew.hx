@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/AimOffsetBlendSpaceFactoryNew.h")
 @:uextern extern class UAimOffsetBlendSpaceFactoryNew extends unreal.editor.UBlendSpaceFactoryNew {
   

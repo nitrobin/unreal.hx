@@ -19,6 +19,7 @@ package unreal.configeditor;
   
   
 **/
+@:umodule("ConfigEditor")
 @:glueCppIncludes("ConfigPropertyHelper.h")
 @:uextern extern class UConfigHierarchyPropertyView extends unreal.UObject {
   public var ConfigFilePropertyObjects : unreal.TArray<unreal.configeditor.UPropertyConfigFileDisplayRow>;

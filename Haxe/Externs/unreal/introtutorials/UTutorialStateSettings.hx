@@ -19,6 +19,7 @@ package unreal.introtutorials;
   
   Tutorial settings used to track completion state
 **/
+@:umodule("IntroTutorials")
 @:glueCppIncludes("Private/TutorialStateSettings.h")
 @:noClass @:uextern extern class UTutorialStateSettings extends unreal.UObject {
   public var TutorialsProgress : unreal.TArray<unreal.introtutorials.FTutorialProgress>;

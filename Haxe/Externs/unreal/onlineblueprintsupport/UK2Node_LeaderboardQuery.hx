@@ -13,6 +13,7 @@
 **/
 package unreal.onlineblueprintsupport;
 
+@:umodule("OnlineBlueprintSupport")
 @:glueCppIncludes("K2Node_LeaderboardQuery.h")
 @:uextern extern class UK2Node_LeaderboardQuery extends unreal.blueprintgraph.UK2Node_BaseAsyncTask {
   

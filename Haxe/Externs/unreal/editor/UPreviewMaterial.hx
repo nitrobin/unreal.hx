@@ -13,6 +13,7 @@
 **/
 package unreal.editor;
 
+@:umodule("UnrealEd")
 @:glueCppIncludes("MaterialEditor/PreviewMaterial.h")
 @:uextern extern class UPreviewMaterial extends unreal.UMaterial {
   

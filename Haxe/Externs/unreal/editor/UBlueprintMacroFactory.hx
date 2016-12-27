@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/BlueprintMacroFactory.h")
 @:uextern extern class UBlueprintMacroFactory extends unreal.editor.UBlueprintFactory {
   

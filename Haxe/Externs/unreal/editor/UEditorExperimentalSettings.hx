@@ -17,6 +17,7 @@ package unreal.editor;
 /**
   Implements Editor settings for experimental features.
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Settings/EditorExperimentalSettings.h")
 @:uextern extern class UEditorExperimentalSettings extends unreal.UObject {
   

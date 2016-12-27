@@ -19,6 +19,7 @@ package unreal.referenceviewer;
   
   
 **/
+@:umodule("ReferenceViewer")
 @:glueCppIncludes("ReferenceViewerSchema.h")
 @:noClass @:uextern extern class UReferenceViewerSchema extends unreal.UEdGraphSchema {
   

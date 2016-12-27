@@ -19,6 +19,7 @@ package unreal.geometrycacheed;
   
   Factory class for spawning and creating GeometryCacheActors
 **/
+@:umodule("GeometryCacheEd")
 @:glueCppIncludes("ActorFactoryGeometryCache.h")
 @:uextern extern class UActorFactoryGeometryCache extends unreal.editor.UActorFactory {
   

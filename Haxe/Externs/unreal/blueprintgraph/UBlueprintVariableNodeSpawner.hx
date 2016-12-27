@@ -20,6 +20,7 @@ package unreal.blueprintgraph;
   FEdGraphSchemaAction_K2Var, and can spawn nodes for both member-variables and
   local function variables.
 **/
+@:umodule("BlueprintGraph")
 @:glueCppIncludes("BlueprintVariableNodeSpawner.h")
 @:uextern extern class UBlueprintVariableNodeSpawner extends unreal.blueprintgraph.UBlueprintFieldNodeSpawner {
   

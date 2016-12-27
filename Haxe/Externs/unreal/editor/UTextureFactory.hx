@@ -13,6 +13,7 @@
 **/
 package unreal.editor;
 
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/TextureFactory.h")
 @:uextern extern class UTextureFactory extends unreal.editor.UFactory {
   

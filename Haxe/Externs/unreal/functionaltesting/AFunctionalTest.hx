@@ -13,6 +13,7 @@
 **/
 package unreal.functionaltesting;
 
+@:umodule("FunctionalTesting")
 @:glueCppIncludes("FunctionalTest.h")
 @:uextern extern class AFunctionalTest extends unreal.AActor {
   #if WITH_EDITORONLY_DATA

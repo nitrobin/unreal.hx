@@ -19,6 +19,7 @@ package unreal.editor;
   
   
 **/
+@:umodule("UnrealEd")
 @:glueCppIncludes("Factories/InterpDataFactoryNew.h")
 @:uextern extern class UInterpDataFactoryNew extends unreal.editor.UFactory {
   

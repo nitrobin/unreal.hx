@@ -19,6 +19,7 @@ package unreal.blueprintgraph;
   
   
 **/
+@:umodule("BlueprintGraph")
 @:glueCppIncludes("K2Node_FunctionEntry.h")
 @:uextern extern class UK2Node_FunctionEntry extends unreal.blueprintgraph.UK2Node_FunctionTerminator {
   
