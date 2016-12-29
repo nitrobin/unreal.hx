@@ -38,8 +38,13 @@ class BaseModuleRules extends ModuleRules
     if (allGames.length > 1) {
       trace("AllGameFolders is returning more than one: ",allGames);
     }
-    modulePath = RulesCompiler.GetModuleFilename(curName);
-    var haxeInitPath = RulesCompiler.GetModuleFilename("HaxeInit");
+
+    modulePath = RulesCompiler.GetFileNameFromType(cs.Lib.toNativeType(std.Type.getClass(this)));
+    var haxeInitPath = RulesCompiler.GetFileNameFromType(cs.Lib.toNativeType(std.Type.resolveClass("UnrealBuildTool.Rules.HaxeInit")));
+
+    trace('modulePath: $modulePath');
+    trace('haxeInitPath: $haxeInitPath');
+
     pluginPath = Path.GetFullPath('$haxeInitPath/../../..');
     thirdPartyPath = Path.GetFullPath(haxeInitPath + "/../../ThirdParty");
     gameDir = allGames[0].ToString();
